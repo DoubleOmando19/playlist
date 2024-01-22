@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>utube playlist</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/video.css">
+  <link rel="stylesheet" href="styles/sidebar.css">
+
+  <style>
+    p {
+      font-family: Roboto, Arial;
+      margin-top: 0;
+      margin-bottom: 0;
+      text-decoration: none;
+    }
+
+
+    body {
+      /*This is the way*/
+      font-family: Roboto, Arial;
+      background-color: rgb(238, 238, 238);
+      margin: 0;
+      padding-left: 96px;
+      padding-top: 30px;
+      padding-right: 24px;
+      margin-bottom: 1000px;
+
+    }
+
+    .thumbnail {
+      width: 100%;
+      margin-top: 25px;
+
+    }
+
+    .video-title {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      margin-bottom: 10px;
+
+    }
+
+    .video-info-grid {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+    }
+
+    .profile-picture {
+      width: 36px;
+      border-radius: 50px;
+    }
+
+    .thumbnail-row {
+      margin-bottom: 4px;
+      margin-top: 25px;
+      position: relative;
+    }
+
+    .video-author,
+    .video-stats {
+      font-size: 12px;
+      color: rgb(96, 96, 96);
+
+    }
+
+    .video-author {
+      margin-bottom: 4px;
+      color: blue;
+    }
+
+    .video-grid {
+      color: blue;
+      font-family: Roboto, Arial;
+      margin-top: 1px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 10px;
+      row-gap: 1px;
+      text-decoration: none;
+
+    }
+
+    @media (max-width: 600px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+
+      }
+    }
+
+    @media(min-width: 1200px) {
+      .video-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .header {
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: red;
+      color: red;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-bottom-color: black;
+      font-weight: bold;
+      margin-top: 10px;
+      z-index: 1;
+
+
+    }
+
+    .left-section {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+
+    }
+
+    .middle-section {
+      flex: 1;
+      max-width: 500px;
+      margin-left: 70px;
+      margin-right: 35px;
+      display: flex;
+      align-items: center;
+
+    }
+
+    .right-section {
+      width: 180px;
+      margin-right: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .hamburger-menu {
+      height: 24px;
+      margin-left: 24px;
+      margin-right: 24px;
+      font-weight: bold;
+
+    }
+
+
+    .hamburger-menu-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 37px;
+      width: 40px;
+
+      margin-left: -1px;
+      margin-right: 10px;
+      position: relative;
+      border-radius: 50px;
+
+    }
+
+    .hamburger-menu-container .tooltip2 {
+      font-family: Roboto, Arial;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 10px;
+      padding-bottom: 12px;
+      border-radius: 2px;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      font-size: 13px;
+      bottom: -45px;
+      opacity: 0;
+      pointer-events: none;
+      margin-right: 100px;
+      white-space: nowrap;
+
+    }
+
+    .hamburger-menu-container:hover .tooltip2 {
+      font-family: Roboto, Arial;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: -300px;
+    }
+
+    .youtube-logo {
+      height: 20px;
+    }
+
+    .search-bar {
+      color: rgb(239, 236, 236);
+      flex: 1;
+      height: 36px;
+      padding-left: 10px;
+      font-size: 19px;
+      border-radius: 50px;
+      cursor: pointer;
+
+
+
+    }
+
+    .search-bar::placeholder {
+      width: 200px;
+      font-family: Roboto, Arial;
+      font-size: 17px;
+      border: 1px solid black;
+      cursor: pointer;
+
+    }
+
+    input {
+      padding: 3px;
+      width: 400px;
+      border: 1px solid black;
+      font-size: 17px;
+      caret-color: red;
+      color: black;
+
+    }
+
+    input:focus {
+      border: 1px solid black;
+      border-color: black;
+      color: black;
+      font-size: 17px;
+    }
+
+    input::placeholder {
+      font-size: 17px;
+
+    }
+
+    .search-button {
+      height: 45px;
+      width: 120px;
+      background-color: black;
+      margin-left: -1px;
+      margin-right: 10px;
+      cursor: pointer;
+      position: relative;
+      border-radius: 3px;
+      border: 2px solid black;
+
+    }
+
+    .search-button .tooltip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 2px;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      font-size: 12px;
+      bottom: -45px;
+      opacity: 0;
+      transition: opacity 0.15s;
+      pointer-events: none;
+    }
+
+    .search-button:hover .tooltip {
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+
+    }
+
+    .search-icon {
+      background-color: rgb(240, 240, 240);
+      height: 25px;
+      margin-top: 4px;
+      cursor: pointer;
+
+    }
+
+    .voice-search-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 37px;
+      width: 40px;
+      background-color: rgb(247, 245, 245);
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(247, 245, 245);
+      margin-left: -1px;
+      margin-right: 10px;
+      cursor: pointer;
+      position: relative;
+      border-radius: 50px;
+    }
+
+    .voice-search-button .tooltip1 {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 2px;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      font-size: 12px;
+      bottom: -45px;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+
+
+    }
+
+    .voice-search-button:hover .tooltip1 {
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+
+    }
+
+    .voice-search-icon {
+      height: 24px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+
+    }
+
+    .upload-icon {
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+
+
+    }
+
+    .upload-icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 37px;
+      width: 40px;
+      background-color: white rgb(250, 250, 250);
+      margin-left: -1px;
+      margin-right: 10px;
+      position: relative;
+      border-radius: 50px;
+
+    }
+
+    .upload-icon-container .tooltip2 {
+      font-family: Roboto, Arial;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 10px;
+      padding-bottom: 12px;
+      border-radius: 2px;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      font-size: 13px;
+      bottom: -45px;
+      opacity: 0;
+      pointer-events: none;
+      margin-right: 100px;
+      white-space: nowrap;
+
+    }
+
+    .upload-icon-container:hover .tooltip2 {
+      font-family: Roboto, Arial;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: -300px;
+    }
+
+    .youtube-apps-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-size: 14px;
+      height: 24px;
+      cursor: pointer;
+
+
+
+    }
+
+    .youtube-apps-icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 37px;
+      width: 35px;
+      margin-left: -1px;
+      margin-right: 15px;
+      position: relative;
+      border-radius: 100px;
+      font-size: 14px;
+
+    }
+
+    .youtube-apps-icon-container .tooltip3 {
+      font-family: Roboto, Arial;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 2px;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      font-size: 12px;
+      bottom: -45px;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+
+    }
+
+    .youtube-apps-icon-container:hover .tooltip3 {
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 200px;
+    }
+
+    .notifications-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-size: 12px;
+      height: 24px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .notifications-icon-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-size: 12px;
+      height: 24px;
+    }
+
+    .notifications-count {
+      position: absolute;
+      top: -3px;
+      right: 0;
+      background-color: rgb(200, 0, 0);
+      color: white;
+      font-family: roboto, Arial;
+      font-size: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      border-radius: 20px;
+      margin-right: 15px;
+    }
+
+    .notifications-icon-container .tooltip4 {
+      font-family: Roboto, Arial;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 2px;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      font-size: 13px;
+      bottom: -45px;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .notifications-icon-container:hover .tooltip4 {
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .current-user-picture {
+      display: flex;
+      height: 37px;
+      border-radius: 30px;
+      margin-right: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      border-color: white;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      font-family: Roboto, Arial;
+      font-size: 10px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      top: 55px;
+      width: 72px;
+      z-index: 1;
+      padding-top: 5px;
+      border-radius: 10px;
+    }
+
+    .sidebar-link {
+      background-color: white;
+      height: 74px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .sidebar-link:hover {
+      color: rgb(243, 243, 243);
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .sidebar-link img {
+      color: rgb(240, 239, 239);
+      background-color: rgb(255, 254, 254);
+      height: 24px;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-link div {
+      font-family: Roboto, Arial;
+      font-size: 10;
+    }
+
+    .tab {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p
+      style="height: 50px; color: rgb(100, 232, 113); border-radius: 2px; background-color: black; box-shadow: 10px 5px 5px  black;  font-size: 50px; font-family: copperplate; margin-top: 0px;padding-top: 5px; padding-left: 2px; margin-bottom: 2px;">
+      utube playlist
+    </p>
+  </div>
+
+  <div style="font-weight: bold; color: red; background-color:red; box-shadow: 10px 1px 1px red;" class="header">
+    <div style="margin-top: 20px; margin-left: 5px;" class="hamburger-menu-container">
+      <div style="font-weight: bold;" class="left-section"><a href="https://1b1534-2.myshopify.com/" target="_blank">
+          <img style="font-weight: bold; height: 30px;" class="hamburger-menu" src="logo.png">
+          <div class="tooltip2">DaPrints</div>
+      </div></a>
+    </div>
+    <div style="margin-top: 20px; margin-left: 5px;" class="hamburger-menu-container">
+      <div style="font-weight: bold;" class="left-section"><a href="https://www.openai.com" target="_blank">
+          <img style="font-weight: bold; height: 30px;" class="hamburger-menu" src="OpenAi.png">
+          <div class="tooltip2">OpenAi</div>
+      </div></a>
+    </div>
+
+    <div style="margin-top: 20px; margin-left: 5px;" class="hamburger-menu-container">
+      <div style="font-weight: bold;" class="left-section"><a href="https://www.youtube.com/shorts/" target="_blank">
+          <img style="font-weight: bold; height: 30px;" class="hamburger-menu" src="Shorts.png">
+          <div class="tooltip2">Shorts</div>
+      </div></a>
+    </div>
+
+    <div class="middle-section">
+      <form action="https://www.google.com/search" target="_blank" method="get" class="search-bar">
+        <input type="text"
+          style="background-color: black; color: white; border-radius: 20px; border: 3px solid black; height: 30px; font-size: 16px; font-family: copperplate; font-weight: bold;"
+          placeholder="What would you like to find...?" name="q">
+      </form>
+    </div>
+
+    <div class="right-section"><a href="https://www.nike.ca/" target="_blank">
+        <div class="upload-icon-container">
+          <img style="font-size: 16px; margin-right: 75px;" class="upload-icon" src="Nike-logo.png">
+          <div style="margin-right: 50px;" class="tooltip2">Nike</div>
+        </div>
+      </a>
+
+      <div class="youtube-apps-icon-container"><a href="https://www.sportchek.ca/en.html" target="_blank">
+          <img style="height: 23px; font-size: 12px; margin-right: 50px;" class="youtube-apps-icon"
+            src="sportcheklogo.png">
+          <div class="tooltip3">Sport Chek</div>
+      </div></a>
+
+      <div class="youtube-apps-icon-container"><a href="https://www.underarmour.ca" target="_blank">
+          <img style="height: 24px; font-size: 14px; margin-right: 25px; margin-top: 5px;" class="youtube-apps-icon-1"
+            src="underarmourlogo.png">
+          <div class="tooltip3">Under Armour</div>
+      </div></a>
+
+
+      <div class="notifications-icon-container"><a href="https://www.Adidas.ca/" target="_blank">
+          <img style="height: 19px; font-size: 14px; margin-right: 40px;" class="notifications-icon"
+            src="Adidas-logo.png">
+          <div class="tooltip4">Adidas</div>
+      </div></a>
+    </div>
+  </div>
+
+  <nav style="color: white; background-color: whites; border: 3px solid white;" class="sidebar">
+
+    <div class="sidebar-link"><a href="https://www.youtube.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white">
+          <img style="background-color: white; border-radius: 50px; border: 3px solid red;" src="youtube-music.svg">
+          <div style="font-size: 12px;">YouTube</div>
+        </button></a>
+    </div>
+
+
+    <div class="sidebar-link"><a href="https://www.amazon.ca" target="_blank">
+        <button style=" height: 30px; border: 1px solid white; border-radius: 25px; background-color: white;">
+          <img style="height: 50px; background-color:white; font-size: 19px; margin-top: 3px;" src="Amazonlogo.png">
+          <div style="font-size: 12px;"></div>
+        </button></a>
+
+    </div>
+
+    <div class="sidebar-link"><a href="https://www.youtube.com/shorts/" target="_blank">
+        <button
+          style="background-color: white; margin-bottom: 10px; margin-top: 1px;  border: 1px solid white; color: black">
+          <img style="color: black; border-radius: 50px;" src="bfpic.png">
+          <div style="font-size: 14px;">MSN</div>
+        </button></a>
+    </div>
+
+    <div class="sidebar-link"><a href="https://www.aliexpress.com" target="_blank">
+        <button style="background-color: white; border: 1px solid white; color: black;">
+          <img style="color: lightgreen; border-radius: 100px; " src="Aliexpresslogo.png">
+          <div style="font-size: 11px; ">Ali Express
+          </div>
+        </button></a>
+    </div>
+
+    <div class="sidebar-link"><a href="https://www.bestbuy.ca" target="_blank">
+        <button style="border: 1px solid white; background-color: white;">
+          <img style="border: 1px solid white; background-color: white; border-radius: 95px; border: 3px solid blue;"
+            src="bestbuy.png">
+          <div style="font-size: 12px;">Best Buy</div>
+        </button></a>
+    </div>
+
+    <div style="background-color: white;" class="tabs">
+      <img style="background-color: white; margin-top: 10px; margin-left: 21px;" src="bitcoin.png">
+      <a href="https://coinmarketcap.com/" target="_blank">
+        <button
+          style="color: black; background-color: black; margin-top: 5px; width: 72px; height: 24px; border: 1px solid white; background-color: rgb(255, 255, 255); font-size: 12px;"
+          class="subscribe-button">Bitcoin</button>
+      </a>
+      <div>
+
+        <div>
+          <img style="margin-top: 10px; margin-left: 30px; font-size: 5px; height: 30px;" src="logo-nba.svg">
+          <a href="https://www.nba.com/" target="_blank">
+            <button
+              style="width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px;"
+              class="subscribe-button-1">NBA</button></a>
+        </div>
+
+        <div>
+          <img style="margin-top: 10px; margin-left: 21px; font-size: 10px;" src="soccerballResize.jpg">
+          <a href="https://hoofoot.com/" target="_blank">
+            <button
+              style="width: 72px; height: 14px; border: 1px solid white; background-color: white; font-size: 12px; margin-top: 2px; margin-right: 2px;"
+              class="subscribe-button-2">Soccer</button></a>
+
+          <img style="margin-top: 16px; margin-left: 21px; font-size: 10px; border-radius: 3px;"
+            src="weatherpicResize.png">
+          <a href="https://www.theweathernetwork.com/" target="_blank">
+            <button
+              style="width: 72px; height: 24px; border: 1px white; background-color: white; font-size: 12px; margin-top: 10px;"
+              class="subscribe-button-4">Weather</button></a>
+  </nav>
+
+  <main>
+    <section class="video-grid">
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style=" color: blue; margin-top: 25px;" src="Okay (Official Music Video).mp4" controls width="285"
+            height="155">
+          </video>
+
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Frenchmontanapic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              French Montana, Lil Baby - Okay
+            </p>
+            <p class="video-author">
+              French Montana
+            </p>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="SHAQ & KOBE.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Rickrosspic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Rick Ross - SHAQ & KOBE
+            </p>
+            <p class="video-author">
+              Rick Ross
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="NLE Choppa - Shotta Flow 7 (Lyrics).mp4" controls width="285"
+            height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="NLEChop.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              NLE Choppa - Shotta Flow 7
+            </p>
+            <p class="video-author">
+              NLE CHOPPA
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="City Boys.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="burnaboi.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Burna Boy - City Boys
+            </p>
+            <p class="video-author">
+              Burna Boy
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="fukumean.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="gunnapic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Gunna - fukumean
+            </p>
+            <p class="video-author">
+              Gunna
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="First Person Shooter.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="ovologo.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Drake - First Person Shooter ft. J. Cole
+            </p>
+            <p class="video-author">
+              Drake
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main>
+    <section class="video-grid">
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="LET GO.mp4" controls width="285" height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="centalceepic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Cenral Cee - Let Go
+            </p>
+            <p class="video-author">
+              Central Cee
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Last Last.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="burnaboi.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Burna Boy - Last Last
+            </p>
+            <p class="video-author">
+              Burna Boy
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Snooze.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="SZApic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              SZA - Snooze
+            </p>
+            <p class="video-author">
+              SZA
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Calm Down.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="selinagomezpic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Rema, Selena Gomez - Calm Down
+            </p>
+            <p class="video-author">
+              Selena Gomez
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Anuel AA Dj Luian Mambo King - Mejor Que Yo (Video Oficial).mp4"
+            controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Anuel11pic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Anuel AA DJ Luian
+            </p>
+            <p class="video-author">
+              Anuel AA
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Baby.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Anuel11pic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Anuel AA, Quavo - Baby
+            </p>
+            <p class="video-author">
+              Anuel AA
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main>
+    <section class="video-grid">
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Mi Gata.mp4" controls width="285" height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="stanlypic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Mi Gata
+            </p>
+            <p class="video-author">
+              Stanly
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="UN PREVIEW.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Badbunnypic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Bad Bunny - Un Preview
+            </p>
+            <p class="video-author">
+              Bad Bunny
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Oh U Went.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="youngthugpic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Oh U Went
+            </p>
+            <p class="video-author">
+              Young Thug
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="What It Is (Block Boy) feat Kodak Black.mp4" controls width="285"
+            height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Doechiipic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Doechii - What it is ft Kodak Black
+            </p>
+            <p class="video-author">
+              Doechii
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Big 7.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="burnaboi.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Burna Boy - Big 7
+            </p>
+            <p class="video-author">
+              Burna Boy
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Greatness.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="quavopic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Quavo - Greatness (Official Video)
+            </p>
+            <p class="video-author">
+              Quavo
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main>
+    <section class="video-grid">
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="SHAKA LAKA.mp4" controls width="285" height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="69pic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              6ix9ine - Shaka Laka
+            </p>
+            <p class="video-author">
+              Tekashi 6ix9ine
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Rich Flex (Audio).mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="ovologo.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Drake - Rich Flex
+            </p>
+            <p class="video-author">
+              Drake
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="HVN ON EARTH.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="lilteccapic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Lil Tecca & Kodak Black - HVN ON EARTH
+            </p>
+            <p class="video-author">
+              Lil Tecca
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Entrapreneur.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="centalceepic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Central Cee - Entrapreneur
+            </p>
+            <p class="video-author">
+              Central Cee
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="BIG EVERYTHING.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="bustapic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Busta Rhymes - Big Everything
+            </p>
+            <p class="video-author">
+              Busta Rhymes
+            </p>
+            <p style="color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Giza.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="burnaboi.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Burna Boy - Giza
+            </p>
+            <p class="video-author">
+              Burna Boy
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main>
+    <section class="video-grid">
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Sticky.mp4" controls width="285" height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="ovologo.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Drake - Sticky
+            </p>
+            <p class="video-author">
+              Drake
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Patty Cake.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="quavopic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Quavo - Patty cake
+            </p>
+            <p class="video-author">
+              Quavo
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="PISTOL PACCIN.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="NLEChop.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              NLE Choppa - Pistol Paccin
+            </p>
+            <p class="video-author">
+              NLE Choppa
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="Dientes (Official Video).mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="jbalvinpic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              J Balvin - Dientes
+            </p>
+            <p class="video-author">
+              J Balvin
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;" src="LALA.mp4" controls width="285" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Miketowerspic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Mike Towers - LaLa
+            </p>
+            <p class="video-author">
+              Mike Towers
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 320px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video style="margin-top: 25px;"
+            src="Lil Durk - What Happened to Virgil ft Gunna (Directed by Cole Bennett).mp4" controls width="285"
+            height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Lildurkpic.jpg">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Lil Durk - What Happened to Virgil ft Gunna
+            </p>
+            <p class="video-author">
+              Lil Durk
+            </p>
+            <p style="color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
