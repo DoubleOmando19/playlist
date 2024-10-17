@@ -7,7 +7,7 @@
   <title>Utubeplaylist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylrsheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 
   <style>
     p {
@@ -108,11 +108,11 @@
     .video-grid {
       color: rgb(59, 59, 255);
       font-family: Roboto, Arial;
-      margin-top: -10px;
+      margin-top: 2px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 10px;
-      row-gap: 1px;
+      row-gap: 3px;
       text-decoration: none;
       margin-right: 5px;
     }
@@ -131,10 +131,10 @@
 
     .header {
       width: 1420px;
-      height: 60px;
+      height: 70px;
       display: flex;
       position: fixed;
-      top: 40px;
+      top: 50px;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -145,7 +145,6 @@
       border: 2px solid black;
       font-weight: bold;
       margin-top: 0px;
-      flex-shrink: 0;
       z-index: 1;
     }
 
@@ -158,7 +157,7 @@
 
     .middle-section {
       flex: 1;
-      max-width: 360px;
+      max-width: 370px;
       margin-left: 1px;
       margin-right: 300px;
       display: flex;
@@ -176,18 +175,17 @@
 
     .hamburger-menu {
       height: 24px;
-      margin-left: 25px;
+      margin-left: 24px;
       margin-right: 24px;
       font-weight: bold;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      z-index: 1px;
     }
 
     .hamburger-menu-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       height: 35px;
       width: 40px;
@@ -196,7 +194,6 @@
       margin-right: 50px;
       position: relative;
       border-radius: 50px;
-      z-index: 1px;
     }
 
     .hamburger-menu-container .tooltip2 {
@@ -219,6 +216,19 @@
       margin-right: 15px;
       white-space: nowrap;
       z-index: 1;
+    }
+
+    .hamburger-menu-container:hover .tooltip2 {
+      font-family: Roboto, Arial;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      margin-left: 15px;
     }
 
     .youtube-logo {
@@ -403,33 +413,40 @@
       white-space: nowrap;
     }
 
+    .upload-icon-container:hover .tooltip2 {
+      font-family: Roboto, Arial;
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 15px;
+    }
+
     .youtube-apps-icon {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       position: relative;
       font-size: 14px;
       height: 24px;
       cursor: pointer;
-      width: 50px;
-      margin-left: 10px;
-      margin-right: 150px;
-      z-index: 1px;
+      margin-left: 7px;
     }
 
     .youtube-apps-icon-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       height: 37px;
-      width: 100px;
+      width: 35px;
       margin-left: -1px;
-      margin-right: 115px;
+      margin-right: 15px;
       position: relative;
       border-radius: 100px;
       font-size: 14px;
-      flex-shrink: 0;
-      z-index: 1;
     }
 
     .youtube-apps-icon-container .tooltip3 {
@@ -454,6 +471,15 @@
       margin-left: -30px;
     }
 
+    .youtube-apps-icon-container:hover .tooltip3 {
+      background-color: rgb(120, 118, 118);
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 200px;
     }
 
     .notifications-icon {
@@ -550,7 +576,9 @@
       justify-content: center;
       align-items: center;
       text-decoration: none;
+      cursor: pointer;
       transition: 2s;
+      cursor: pointer;
     }
 
     .sidebar-link {
@@ -594,21 +622,21 @@
 
     .subscribe-button {
       text-decoration: none;
-      margin-left: 2px;
+      margin-left: 4px;
       background-color: white;
       color: white;
       margin-top: 0px;
     }
 
     .subscribe-button-1 {
-      margin-left: 2px;
+      margin-left: 4px;
       margin-top: 0px;
     }
 
     .subscribe-button-2 {
       background-color: white;
       color: white;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
     .tooltip2 {
@@ -620,65 +648,65 @@
 <body>
   <div>
     <p
-      style=" font-family: Helvetica; display: flex; width: 100%; height: 40px; position: fixed; top: 0; padding-bottom: 0px; color: white; border-radius: 2px; background-color: black; font-size: 30px; font-family: Helvetica; font-weight: bold; margin-top: 0px; padding-left: 5px; z-index: 1;">
+      style=" font-family: Helvetica; display: flex; width: 100%; height: 50px; position: fixed; top: 0; padding-bottom: 0px; color: white; border-radius: 2px; background-color: black; font-size: 35px; font-family: Helvetica; font-weight: bold; margin-top: 0px; padding-left: 5px; z-index: 1;">
       Utubeplaylist &#127926;</p>
   </div>
 
   <div style="font-weight: bold; background-color: red; width: 100%;" class="header">
     <div class="hamburger-menu-container"><a href="https://www.nike.com/" target="_blank">
         <img
-          style="font-size: 19px; display: flex; justify-content: center; height: 31px; align-items: center; margin-right: 0px;"
+          style="font-size: 19px; display: flex; justify-content: center; height: 30px; align-items: center; margin-right: 3px;"
           class="hamburger-menu" src="Nike-logo.png">
       </a>
     </div>
 
     <div class="youtube-apps-icon-container"><a href="https://www.underarmour.ca" target="_blank">
-        <img
-          style="z-index: 1; flex-shrink: 0; height: 24px; font-size: 14px; margin-top: 5px; margin-left: 10px; margin-right: 10px;"
+        <img style="height: 24px; font-size: 14px; margin-top: 5px; margin-left: 0px; margin-right: 15px;"
           class="youtube-apps-icon-1" src="underarmourlogo.png">
     </div></a>
 
     <div style="margin-left: 5px;" class="hamburger-menu-container">
-      <div style="font-weight: bold;" class="left-section"><a href="https://www.rabbit.tech" target="_blank">
+      <div style="font-weight: bold;" class="left-section"><a href="https://www.amazon.com/" target="_blank">
           <img class="hamburger-menu"
-            style="font-weight: bold; width: 35px; display: flex; height: 35px; justify-content: center; align-items: center; margin-top: 0px; margin-left: 75px;"
-            class="hamburger-menu" src="Rabbit1.png">
+            style="font-weight: bold; width: 40px; display: flex; height: 50px; justify-content: center; align-items: center; margin-top: 5px; margin-left: 70px;"
+            class="hamburger-menu" src="Amazonlogo.png">
       </div></a>
     </div>
 
+
     <div class="middle-section">
-      <form style="margin-left: 38px;" action="https://www.google.com/search" target="_blank" method="get"
+      <form style="margin-left: 37px;" action="https://www.google.com/search" target="_blank" method="get"
         class="search-bar">
         <input type="text"
-          style="background-color: red; color: black; margin-left: 2px; border-radius: 20px; border: 2px solid black; height: 25px; font-size: 16px; font-family: copperplate; font-weight: bold;"
+          style="background-color: red; color: black; margin-left: 2px; border-radius: 20px; border: 2px solid black; height: 30px; font-size: 16px; font-family: copperplate; font-weight: bold;"
           placeholder="             What would you like to find?" name="q">
       </form>
     </div>
 
     <div class="youtube-apps-icon-container"><a href="https://www.sportchek.ca/en.html" target="_blank">
-        <img style="display: flex; height: 23px; font-size: 12px; margin-right: 280px; flex-shrink: 0;"
+        <img style="display: flex; height: 23px; font-size: 12px; margin-right: 300px; flex-shrink: 0;"
           class="youtube-apps-icon" src="sportcheklogo.png">
     </div></a>
 
     <div style="margin-left: 0px;" class="hamburger-menu-container">
-      <div style="font-weight: bold;" class="left-section"><a href="https://www.amazon.com/" target="_blank">
+      <div style="font-weight: bold;" class="left-section"><a href="https://www.google.com" target="_blank">
           <img class="hamburger-menu"
-            style="z-index: 1px; font-weight: bold; width: 45px; display: flex; height: 50px; align-items: center; flex-shrink: 0; margin-right: 210px;"
-            src="Amazonlogo.png">
+            style="font-weight: bold; width: 20px; display: flex; height: 19px; align-items: center; flex-shrink: 0; margin-right: 250px;"
+            src="logo-googleResize.png">
       </div></a>
     </div>
 
     <div style="margin-left: 1px;" class="hamburger-menu-container">
       <div style="font-weight: bold;" class="left-section"><a href="https://www.openai.com" target="_blank">
           <img
-            style="z-index: 1px; font-weight: bold; display: flex; margin-right: 240px; justify-content: center; align-items: center; flex-shrink: 0;"
+            style="font-weight: bold; display: flex; margin-right: 290px; justify-content: center; align-items: center; flex-shrink: 0;"
             class="hamburger-menu" src="OpenAi.png">
       </div></a>
     </div>
 
   </div>
   </div>
-
+  
   <nav style="color: white; background-color: white; border: 3px solid white; text-decoration: none;" class="sidebar">
 
     <div style="background-color:white; color: white; margin-top: 0px;">
