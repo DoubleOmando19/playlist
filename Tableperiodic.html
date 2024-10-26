@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodic Table</title>
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+  <script defer src="https://pyscript.net/alpha/pyscript.js">"whatsup"</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1723413576629337"
+    crossorigin="anonymous"></script>
+  <style>
+    .button {
+      font-family: copperplate;
+      background-color: rgb(245, 1, 1);
+      color: white;
+      border: none;
+      height: 38px;
+      width: 120px;
+      border-radius: 2px;
+      cursor: pointer;
+      text-shadow: 0 0 10px red;
+      letter-spacing: 3px;
+      box-shadow:
+        0 0 10px red,
+        0 0 20px red;
+      position: relative;
+      display: grid;
+      place-items: center;
+      margin: auto;
+      text-transform: uppercase;
+      border-radius: 15px;
+      transition: 0.5s;
+      padding: 3px;
+      z-index: 1;
+    }
+
+    .button::before,
+    button::after {
+      content: '';
+      position: absolute;
+      background-color: red;
+      height: 100%;
+      width: 50%;
+      z-index: -1;
+      opacity: 0.5;
+      border-radius: 15px;
+    }
+
+    button:hover {
+      color: white;
+      border-color: red;
+      text-shadow: 0 0 10px red;
+      box-shadow:
+        0 0 10px red,
+        0 0 20px red;
+      letter-spacing: 5px;
+      border-radius: 15px;
+      width: 130px;
+
+    }
+
+    button:hover:before {
+      animation: pulse 2s ease-out infinite;
+      border-radius: 15px;
+      width: 100px;
+      color: white;
+    }
+
+    button:hover:after {
+      animation: pulse 2s 1s ease-out infinite;
+      border-radius: 15px;
+      width: 100px;
+      color: white;
+    }
+
+    @keyframes pulse {
+      100% {
+        transform: scale(3);
+        opacity: 0;
+        width: 100px;
+      }
+
+    }
+  </style>
+</head>
+
+<body
+  style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: lightyellow; font-size: 24px; font-family: copperplate; font-weight: bold;">
+  <h1
+    style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: lightyellow; font-size: 47px; font-family: copperplate; font-weight: bold;">
+    <button class="button"
+      style="padding: 5px; font-family: copperplate; font-size: 15px; display: flex; margin-top: 50px;"><a
+        style="display: flex; flex-direction: column; margin-top: 5px; font-family: copperplate; padding-bottom: 5px; padding-top: 5px;"
+        href="periodic.html" target="_blank">Periodic
+        Table</a></button>
+    <div>
+      <img
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 500px; width: 700px; margin-top: 70px; border: 3px solid white; border-radius: 5px;"
+        src="periodictable.png">
+    </div>
+</body>
+
+</html>
