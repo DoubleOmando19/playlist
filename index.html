@@ -21,6 +21,10 @@
       text-decoration: none;
     }
 
+    div {
+      flex-shrink: 0;
+    }
+    
     .button {
       text-decoration: none;
       width: 80px;
@@ -38,6 +42,7 @@
       margin-bottom: 1000px;
       height: 1200px;
       text-decoration: none;
+      flex-shrink: 0;
     }
 
     .thumbnail {
@@ -320,7 +325,7 @@
   </div>
 
   <div
-    style="flex-shrink: 0; border: solid 1px red; border-color: red; display: flex; flex-direction: row; position: fixed; top: 40px; cursor: pointer; z-index: 2; width: 100%; font-family: copperplate; font-weight: bold;">
+    style="border: solid 1px red; border-color: red; display: flex; flex-direction: row; position: fixed; top: 40px; cursor: pointer; z-index: 2; width: 100%; font-family: copperplate; font-weight: bold;">
     <div style="border-color: red; background-color: lightblue; width: 140px; height: 60px;">
       <button style="border: 1px; color: red; border-color: red; background-color: red; height: 60px; width: 140px;">
         <a style="font-size: 14px; border-color: red; color: white; font-family: copperplate; font-weight: bold; align-items: center; justify-content: center; border-radius: 20px; white-space: nowrap; text-decoration: none; cursor: pointer;"
@@ -328,25 +333,25 @@
       </button>
     </div>
 
-    <div style="flex-shrink: 0; border-color: red; background-color: lightpink; width: 140px; height: 60px;">
+    <div style="border-color: red; background-color: lightpink; width: 140px; height: 60px;">
       <button style="height: 60px; width: 140px; border: 1px; color: red; background-color: red; border-color: red;">
         <a style="font-size: 14px; padding-right: 3px; border-color: red; color: white; font-family: copperplate; font-weight: bold; cursor: pointer; align-items: center; justify-content: center; border-radius: 20px; white-space: nowrap; text-decoration: none;"
           href="https://www.underarmour.com" target="_blank">Underarmour</a>
       </button>
     </div>
 
-    <div style="flex-shrink: 0; border-color: red; background-color: lightyellow; width: 190px; height: 60px;">
+    <div style="border-color: red; background-color: lightyellow; width: 190px; height: 60px;">
       <button style="border: 1px; color: red; border-color: red; height: 60px; width: 190px; background-color: red;">
         <a style="font-size: 14px; border: red; color: white; font-family: copperplate; font-weight: bold; cursor: pointer; align-items: center; justify-content: center; border-radius: 20px; white-space: nowrap; text-decoration: none;"
           href="https://www.sportchek.ca" target="_blank">SportChek</a>
       </button>
     </div>
 
-    <div style="flex-shrink: 0; background-color: red; width: 400px;">
+    <div style="background-color: red; width: 400px;">
       <form action="https://www.google.com/search" target="_blank" method="get">
         <input type="text" style="height: 17px; font-family: copperplate; border: 1px solid black; border-color: black; color: black; font-weight: bold; background-color: white;
           margin-top: 20px; width: 400px; align-items: center; justify-content: center;"
-          placeholder="            What would you like to find?" name="q">
+          placeholder="           What would you like to find?" name="q">
       </form>
     </div>
 
