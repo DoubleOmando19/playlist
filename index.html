@@ -4,24 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>utubeplaylist.com</title>
+  <title>Utubeplaylist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 
   <style>
     p {
-      font-family: copperplate;
+      font-family: Helvetica;
       margin-top: 0px;
       margin-bottom: 0px;
       text-decoration: none;
-     
     }
-    
+
     a {
       text-decoration: none;
     }
-    
+
     .button {
       text-decoration: none;
       width: 80px;
@@ -29,7 +28,7 @@
 
     body {
       /*This is the way*/
-      font-family: copperplate;
+      font-family: Helvetica;
       background-color: white;
       margin: 0;
       margin-top: 130px;
@@ -39,7 +38,7 @@
       margin-bottom: 1000px;
       height: 1200px;
       text-decoration: none;
-      cursor: pointer;      
+      cursor: pointer;
     }
 
     .thumbnail {
@@ -47,7 +46,6 @@
       margin-top: 25px;
       margin-left: 5px;
       border: solid 3px black;
-      text-decoration: none;
     }
 
     .video-title {
@@ -64,8 +62,7 @@
       box-shadow: 5px 5px 10px black;
       border-radius: 5px;
       padding-left: 5px;
-      color: rgb(211, 211, 211);
-      text-decoration: none; 
+
     }
 
     .video-info-grid {
@@ -73,10 +70,10 @@
       grid-template-columns: 50px 1fr;
       color: black;
       font-weight: bold;
-      background-color: whitesmoke;
-      text-decoration: none;
+      background-color: white;
+      border: solid 2px black;
       border-radius: 10px;
-      box-shadow: 1px 1px 1px 1px black;
+      box-shadow: 1px 1px 1px black;
     }
 
     .profile-picture {
@@ -84,8 +81,7 @@
       border-radius: 50px;
       margin-left: 5px;
       margin-top: 8px;
-      border: solid 1px black;
-      box-shadow: 5px 5px 10px black;
+      border: solid 1px gold;
     }
 
     .thumbnail-row {
@@ -93,11 +89,10 @@
       margin-top: 5px;
       position: relative;
       display: flex;
-      border: 3px solid whitesmoke;
+      border: 3px solid black;
       background-color: black;
       justify-content: center;
       align-items: center;
-      border-radius: 5px;
     }
 
     .video-author,
@@ -109,7 +104,7 @@
     .video-author {
       color: rgb(211, 211, 211);
       margin-bottom: 4px;
-      width: 150px;
+      width: 130px;
       font-weight: bold;
       background-color: red;
       box-shadow: 5px 5px 10px black;
@@ -123,11 +118,11 @@
       border-color: black;
       background-color: white;
       font-family: Roboto, Arial;
-      margin-top: -12px;
+      margin-top: -21px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 10px;
-      row-gap: 0px;
+      row-gap: 1px;
       text-decoration: none;
       margin-right: 5px;
     }
@@ -143,7 +138,11 @@
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
-    
+
+    .youtube-logo {
+      height: 20px;
+    }
+
     .search-bar {
       color: rgb(239, 236, 236);
       flex: 1;
@@ -151,14 +150,16 @@
       padding-left: 10px;
       font-size: 19px;
       border-radius: 50px;
+      cursor: pointer;
       margin-right: 100px;
     }
 
     .search-bar::placeholder {
       width: 200px;
-      font-family: copperplate;
+      font-family: Roboto, Arial;
       font-size: 17px;
       border: 1px solid black;
+      cursor: pointer;
     }
 
     input {
@@ -166,27 +167,27 @@
       width: 350px;
       border: 1px solid black;
       font-size: 20px;
+      caret-color: black;
       color: black;
-      text-decoration: none;
     }
 
     input:focus {
       border: 1px solid black;
+      border-color: black;
       color: black;
       font-size: 20px;
-      text-decoration: none;
     }
 
     input::placeholder {
       font-size: 17px;
       color: black;
-      text-decoration: none;     
     }
 
     .search-icon {
       background-color: rgb(240, 240, 240);
       height: 25px;
       margin-top: 4px;
+      cursor: pointer;
     }
 
     .youtube-apps-icon {
@@ -227,7 +228,7 @@
       padding-top: 1px;
       padding-bottom: 1px;
       border-color: white;
-
+      cursor: pointer;
     }
 
     .sidebar {
@@ -264,6 +265,7 @@
     .sidebar-link:hover {
       color: white;
       background-color: white;
+      cursor: pointer;
       text-decoration: none;
     }
 
@@ -312,16 +314,17 @@
     }
   </style>
 </head>
-  
+
 <body>
   <div>
-    <p style="cursor: pointer; transition: 1s; text-shadow: 1px 1px 1px white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-right: 5px; display: flex; width: 100%; 
-      height: 45px; position: fixed; top: 0; padding-bottom: 0px; color: white; border-radius: 2px; background-color: black; font-size: 29px; font-weight: bold; margin-top: 0px; padding-left: 5px; z-index: 1;
-      >Utubeplaylist &#127911;</p>    
+    <p
+      style="cursor: pointer; text-shadow: 1px 1px 1px white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-right: 5px; display: flex; width: 100%; 
+      height: 45px; position: fixed; top: 0; padding-bottom: 0px; color: white; border-radius: 2px; background-color: black; font-size: 29px; font-weight: bold; margin-top: 0px; padding-left: 5px; z-index: 1;">
+      Utubeplaylist &#127911;</p>
   </div>
-  
-  <div style="cursor: pointer; background-color: red; width: 100%; border: solid 1px red; border-color: red; display: flex; flex-direction: row; position: fixed; top: 40px; cursor: pointer; z-index: 1; font-family: copperplate; font-weight: bold;">
-    
+
+  <div
+    style="border: solid 1px red; border-color: red; display: flex; flex-direction: row; position: fixed; top: 40px; cursor: pointer; z-index: 2; width: 100%; font-family: copperplate; font-weight: bold;">
     <div style="border-color: red; background-color: lightblue; width: 140px; height: 60px;">
       <button style="border: 1px; color: red; border-color: red; background-color: red; height: 60px; width: 140px;">
         <a style="font-size: 14px; border-color: red; color: white; font-family: copperplate; font-weight: bold; align-items: center; justify-content: center; border-radius: 20px; white-space: nowrap; text-decoration: none; cursor: pointer;"
@@ -345,9 +348,9 @@
 
     <div style="background-color: red; width: 400px;">
       <form action="https://www.google.com/search" target="_blank" method="get">
-        <input type="text" style="border-radius: 3px; height: 17px; font-family: copperplate; border: 1px solid black; border-color: black; color: black; font-weight: bold; background-color: white;
+        <input type="text" style=" height: 15px; font-family: copperplate; border: 1px solid black; border-radius: 3px; border-color: black; color: rgb(0, 0, 0); background-color: white;
           margin-top: 20px; width: 400px; align-items: center; justify-content: center;"
-          placeholder="           What would you like to find?" name="q">
+          placeholder="            What would you like to find?" name="q">
       </form>
     </div>
 
@@ -359,523 +362,526 @@
     </div>
 
     <div style="display: flex; background-color: lightpink; width: 160px; height: 60px;">
-      <button style="border: 1px; color: red; border-color: red; height: 60px; width: 210px; background-color: red;">
+      <button style="border: 1px; color: red; border-color: red; height: 60px; width: 160px; background-color: red;">
         <a style="font-size: 14px; align-items: center; justify-content: center; border-radius: 20px; font-family: copperplate; font-weight: bold; cursor: pointer; color: white; text-decoration: none;"
           href="https://www.rabbit.tech" target="_blank">Rabbit</a>
       </button>
     </div>
 
-    <div style="display: flex; background-color: red; height: 60px; width: 210px;">
-      <button style="z-index: 1; border: 1px; color: red; border-color: red; height: 60px; width: 160px; background-color: red;">
+    <div style="display: flex; background-color: red; width: 100%; height: 60px;">
+      <button
+        style="z-index: 1; flex-shrink: 0; border: 1px; color: red; border-color: red; height: 60px; width: 160px; background-color: red;">
         <a style="font-size: 14px; display: flex; align-items: center; justify-content: center; border-radius: 20px; font-family: copperplate; font-weight: bold; cursor: pointer; color: white; text-decoration: none;"
-          href="https://www.openai.com" target="_blank">Openai</a></button>
+          href="https://www.openai.com" target="_blank">Openai</a>
+      </button>
     </div>
+
   </div>
   </div>
   </div>
 
   <nav
-  style="vertical-align: middle; text-align: center; width: 80px; color: white; background-color: white; border: 3px solid white; text-decoration: none;"
-  class="sidebar">
+    style="vertical-align: middle; text-align: center; width: 80px; color: white; background-color: white; border: 3px solid white; text-decoration: none;"
+    class="sidebar">
 
-  <div style="background-color:white; color: white; margin-top: 0px; padding-botton: 3px;">
-    <img
-      style="color: white; background-color: white; text-decoration: none; display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 33px; font-size: 5px; height: 35px;"
-      src="logo-nba.png">
-    <a href="https://www.nba.com/" target="_blank">
-      <button
-        style="cursor: pointer; padding-top: 5px; margin-top: 0px; margin-left: 3px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
-        class="subscribe-button">NBA</button></a>
-  </div>
+    <div style="background-color:white; color: white; margin-top: 0px; padding-botton: 3px;">
+      <img
+        style="color: white; background-color: white; text-decoration: none; display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 33px; font-size: 5px; height: 35px;"
+        src="logo-nba.png">
+      <a href="https://www.nba.com/" target="_blank">
+        <button
+          style="cursor: pointer; padding-top: 5px; margin-top: 0px; margin-left: 3px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
+          class="subscribe-button">NBA</button></a>
+    </div>
 
-  <div style="background-color:white; color: white; margin-top: 0px;">
-    <img
-      style="padding-top: 5px; color: white; background-color: white; text-decoration: none; display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 23px; font-size: 5px; height: 35px;"
-      src="Youtube.png">
-    <a href="https://www.youtube.com/" target="_blank">
-      <button
-        style="cursor: pointer; padding-top: 5px; margin-top: 0px; margin-left: 3px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
-        class="subscribe-button">YouTube</button></a>
-  </div>
+    <div style="background-color:white; color: white; margin-top: 0px;">
+      <img
+        style="padding-top: 5px; color: white; background-color: white; text-decoration: none; display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 23px; font-size: 5px; height: 35px;"
+        src="Youtube.png">
+      <a href="https://www.youtube.com/" target="_blank">
+        <button
+          style="cursor: pointer; padding-top: 5px; margin-top: 0px; margin-left: 3px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
+          class="subscribe-button">YouTube</button></a>
+    </div>
 
-  <div style="margin-top: 0px; background-color:white; color: white; padding-top: 5px; padding-botton: 3px;">
-    <img
-      style="padding-top: 5px; color: white; background-color: white; display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 26px; font-size: 10px; background-color: white;"
-      src="soccerballResize.jpg">
-    <a href="https://hoofoot.com/" target="_blank">
-      <button
-        style="cursor: pointer; padding-top: 8px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 14px; border: 1px solid white; background-color: white; font-size: 12px; margin-top: 0px; margin-left: 3px; font-size: 12; font-weight: bold; font-family: copperplate; text-decoration: none;"
-        class="subscribe-button-2">Soccer</button></a>
-  </div>
+    <div style="margin-top: 0px; background-color:white; color: white; padding-top: 5px; padding-botton: 3px;">
+      <img
+        style="padding-top: 5px; color: white; background-color: white; display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 26px; font-size: 10px; background-color: white;"
+        src="soccerballResize.jpg">
+      <a href="https://hoofoot.com/" target="_blank">
+        <button
+          style="cursor: pointer; padding-top: 8px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 14px; border: 1px solid white; background-color: white; font-size: 12px; margin-top: 0px; margin-left: 3px; font-size: 12; font-weight: bold; font-family: copperplate; text-decoration: none;"
+          class="subscribe-button-2">Soccer</button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://nfl.com/?lang=en" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="padding-top: 12px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: white; border-radius: 50px;"
-          src="NFLlogo.png">
-        <div
-          style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          NFL</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://nfl.com/?lang=en" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="padding-top: 12px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: white; border-radius: 50px;"
+            src="NFLlogo.png">
+          <div
+            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            NFL</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.nhl.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: white; border-radius: 50px;"
-          src="NHL.jpg">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          NHL</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.nhl.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: white; border-radius: 50px;"
+            src="NHL.jpg">
+          <div
+            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            NHL</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.ufc.com/" target="_blank">
-      <button style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 3px; background-color: white; border-radius: 50px;"
-          src="UFClogo.jpg">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          UFC</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.ufc.com/" target="_blank">
+        <button style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 3px; background-color: white; border-radius: 50px;"
+            src="UFClogo.jpg">
+          <div
+            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            UFC</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.bestbuy.ca" target="_blank">
-      <button style="border: 1px solid white; background-color: white;">
-        <img
-          style="margin-top: 0px; margin-left: 8px; display: flex; justify-content: center; align-items: center; border: 1px solid white; background-color: white; border-radius: 95px; font-size: 12; font-weight: bold; font-family: copperplate;"
-          src="bestbuy.png">
-        <div
-          style="margin-right: 1px; cursor: pointer; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Best Buy</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.bestbuy.ca" target="_blank">
+        <button style="border: 1px solid white; background-color: white;">
+          <img
+            style="margin-top: 0px; margin-left: 8px; display: flex; justify-content: center; align-items: center; border: 1px solid white; background-color: white; border-radius: 95px; font-size: 12; font-weight: bold; font-family: copperplate;"
+            src="bestbuy.png">
+          <div
+            style="margin-right: 1px; cursor: pointer; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Best Buy</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.aliexpress.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
-          src="Aliexpress.png">
-        <div
-          style="padding-left: 2px; padding-right: 2px; cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          AliExpress</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.aliexpress.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
+            src="Aliexpress.png">
+          <div
+            style="padding-left: 2px; padding-right: 2px; cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            AliExpress</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://store.dji.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 3px; background-color: white; border-radius: 50px;"
-          src="DJI.jpg">
-        <div
-          style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          DJI</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://store.dji.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 3px; background-color: white; border-radius: 50px;"
+            src="DJI.jpg">
+          <div
+            style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            DJI</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.walmart.ca/" target="_blank"><button
-        style="padding-botton: 5px; background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
-          src="Walmart.png">
-        <div
-          style="padding-bottom: 2px; cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Walmart</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.walmart.ca/" target="_blank"><button
+          style="padding-botton: 5px; background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
+            src="Walmart.png">
+          <div
+            style="padding-bottom: 2px; cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Walmart</div>
+        </button></a>
+    </div>
 
-  <div style="background-color:white; color: white; margin-top: 0px; padding-top: 3px;">
-    <img
-      style="padding-top: 4px; color: white; background-color: white; text-decoration: none; display: flex; justify-content: center; vertical-align: middle; margin-top: 2px; font-size: 5px; height: 35px; margin-left: 22px;"
-      src="Diesel.webp">
-    <a href="https://ca.diesel.com/" target="_blank">
-      <button
-        style="text-align: center; cursor: pointer; padding-top: 5px; margin-top: 0px; margin-left: 3px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
-        class="subscribe-button">Diesel</button></a>
-  </div>
+    <div style="background-color:white; color: white; margin-top: 0px; padding-top: 3px;">
+      <img
+        style="padding-top: 4px; color: white; background-color: white; text-decoration: none; display: flex; justify-content: center; vertical-align: middle; margin-top: 2px; font-size: 5px; height: 35px; margin-left: 22px;"
+        src="Diesel.webp">
+      <a href="https://ca.diesel.com/" target="_blank">
+        <button
+          style="text-align: center; cursor: pointer; padding-top: 5px; margin-top: 0px; margin-left: 3px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
+          class="subscribe-button">Diesel</button></a>
+    </div>
 
-  <div style="margin-top: 0px; background-color:white; color: white; padding-top: 3px;">
-    <img
-      style="padding-top: 5px; color: white; background-color: white; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-left: 25px; font-size: 17px; background-color: white;"
-      src="CK.png">
-    <a href="https://www.calvinklein.us/" target="_blank">
-      <button
-        style="cursor: pointer; padding-top: 8px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 14px; border: 1px solid white; background-color: white; font-size: 12px; margin-top: 0px; margin-left: 3px; font-size: 12; font-weight: bold; font-family: copperplate; text-decoration: none;"
-        class="subscribe-button-2">Calvin</button></a>
-  </div>
+    <div style="margin-top: 0px; background-color:white; color: white; padding-top: 3px;">
+      <img
+        style="padding-top: 5px; color: white; background-color: white; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-left: 25px; font-size: 17px; background-color: white;"
+        src="CK.png">
+      <a href="https://www.calvinklein.us/" target="_blank">
+        <button
+          style="cursor: pointer; padding-top: 8px; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 14px; border: 1px solid white; background-color: white; font-size: 12px; margin-top: 0px; margin-left: 3px; font-size: 12; font-weight: bold; font-family: copperplate; text-decoration: none;"
+          class="subscribe-button-2">Calvin</button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.guess.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; padding-botton: 2px;">
-        <img
-          style="padding-top: 12px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 2px; background-color: white; border-radius: 50px; font-size: 17px;"
-          src="Guess.png">
-        <div
-          style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Guess</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.guess.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; padding-botton: 2px;">
+          <img
+            style="padding-top: 12px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 2px; background-color: white; border-radius: 50px; font-size: 17px;"
+            src="Guess.png">
+          <div
+            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Guess</div>
+        </button></a>
+    </div>
 
-  <div class="tabs">
-    <img
-      style="padding-top: 13px; display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 24px; background-color: white;"
-      src="bitcoin.png"><a href="https://coinmarketcap.com/" target="_blank">
-      <button
-        style="cursor: pointer; margin-right: 0px; display: flex; justify-content: center; align-items: center; color: black; margin-top: 0px; width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
-        class="subscribe-button">Bitcoin</button></a>
-  </div>
+    <div class="tabs">
+      <img
+        style="padding-top: 13px; display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 24px; background-color: white;"
+        src="bitcoin.png"><a href="https://coinmarketcap.com/" target="_blank">
+        <button
+          style="cursor: pointer; margin-right: 0px; display: flex; justify-content: center; align-items: center; color: black; margin-top: 0px; width: 72px; height: 24px; border: 1px solid white; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
+          class="subscribe-button">Bitcoin</button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.mercedes-benz.ca/" target="_blank"><button
-        style="padding-top: 3px; background-color: white; border: 0px solid white;">
-        <img
-          style="font-size: 14px; padding-top: 9px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 14px; background-color: white; border-radius: 50px;"
-          src="MERCEDES-BENZ.png">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Mercedes Benz</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.mercedes-benz.ca/" target="_blank"><button
+          style="padding-top: 3px; background-color: white; border: 0px solid white;">
+          <img
+            style="font-size: 14px; padding-top: 8px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 14px; background-color: white; border-radius: 50px;"
+            src="MERCEDES-BENZ.png">
+          <div
+            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Mercedes Benz</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.tesla.com/" target="_blank"><button
-        style="padding-top: 3px; background-color: white; border: 1px solid white;">
-        <img
-          style="font-size: 14px; padding-top: 11px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 1px; background-color: white; border-radius: 50px;"
-          src="TESLA.png">
-        <div
-          style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Tesla</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.tesla.com/" target="_blank"><button
+          style="padding-top: 3px; background-color: white; border: 1px solid white;">
+          <img
+            style="font-size: 14px; padding-top: 9px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 1px; background-color: white; border-radius: 50px;"
+            src="TESLA.png">
+          <div
+            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Tesla</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.ford.ca/" target="_blank">
-      <button style="background-color: white; border: 1px solid white;">
-        <img
-          style="margin-top: 11px; font-size: 15px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white; border-radius: 50px;"
-          src="Ford.jpg">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Ford</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.ford.ca/" target="_blank">
+        <button style="background-color: white; border: 1px solid white;">
+          <img
+            style="margin-top: 9px; font-size: 15px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white; border-radius: 50px;"
+            src="Ford.jpg">
+          <div
+            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Ford</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.toyota.ca" target="_blank">
-      <button style="border: 1px solid white; background-color: white;">
-        <img
-          style="margin-top: 0px; margin-left: 7px; display: flex; justify-content: center; align-items: center; border: 1px solid white; background-color: white; border-radius: 95px; font-size: 15; font-weight: bold; font-family: copperplate;"
-          src="TOYOTA.png">
-        <div
-          style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-size: 12; font-weight: bold; font-family: copperplate;">
-          Toyota</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.toyota.ca" target="_blank">
+        <button style="border: 1px solid white; background-color: white;">
+          <img
+            style="margin-top: 0px; margin-left: 7px; display: flex; justify-content: center; align-items: center; border: 1px solid white; background-color: white; border-radius: 95px; font-size: 15; font-weight: bold; font-family: copperplate;"
+            src="TOYOTA.png">
+          <div
+            style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-size: 12; font-weight: bold; font-family: copperplate;">
+            Toyota</div>
+        </button></a>
+    </div>
 
-  <div style="background-color: white; border: 1px solid white;">
-    <img
-      style="display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-left: 22px; font-size: 5px; height: 30px; background-color: white;"
-      src="GM.png">
-    <a href="https://www.gm.ca" target="_blank">
-      <button
-        style="margin-top: 5px; cursor: pointer; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; margin-right: 11px; background-color: white; font-size: 12px; font-weight: bold; font-family: copperplate; text-decoration: none;"
-        class="subscribe-button-1">GM</button></a>
-  </div>
+    <div style="background-color: white; border: 1px solid white;">
+      <img
+        style="display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-left: 22px; font-size: 5px; height: 30px; background-color: white;"
+        src="GM.png">
+      <a href="https://www.gm.ca" target="_blank">
+        <button
+          style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; margin-right: 11px; background-color: white; font-size: 12px; font-size: 12; font-weight: bold; font-family: copperplate; text-decoration: none;"
+          class="subscribe-button-1">GM</button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.porsche.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="display: flex; justify-content: center; align-items: center; margin-left: 15px; background-color: white; border-radius: 50px;"
-          src="PORSCHE.png">
-        <div
-          style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Porsche</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.porsche.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="display: flex; justify-content: center; align-items: center; margin-left: 15px; background-color: white; border-radius: 50px;"
+            src="PORSCHE.png">
+          <div
+            style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Porsche</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.bmw.ca/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white; border-radius: 50px;"
-          src="BMW.png">
-        <div
-          style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          BMW</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.bmw.ca/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white; border-radius: 50px;"
+            src="BMW.png">
+          <div
+            style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            BMW</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.ferrari.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 10px; background-color: white; border-radius: 50px;"
-          src="Ferrari.png">
-        <div
-          style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Ferrari</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.ferrari.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 10px; background-color: white; border-radius: 50px;"
+            src="Ferrari.png">
+          <div
+            style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Ferrari</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.speedtest.net/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
-          src="SpeedTest.png">
-        <div
-          style="cursor: pointer; margin-right: 2px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          SpeedTest</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.speedtest.net/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
+            src="SpeedTest.png">
+          <div
+            style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            SpeedTest</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.nvidia.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 3px; background-color: white; border-radius: 50px;"
-          src="NVIDIA.png">
-        <div
-          style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Nvidia</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.nvidia.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 3px; background-color: white; border-radius: 50px;"
+            src="NVIDIA.png">
+          <div
+            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Nvidia</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.coca-colacompany.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="padding-right: 2px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 10px; background-color: white; border-radius: 50px;"
-          src="Coca-Cola.png">
-        <div
-          style="no-wrap: none; cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          CocaCola</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.coca-colacompany.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="padding-right: 2px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 10px; background-color: white; border-radius: 50px;"
+            src="Coca-Cola.png">
+          <div
+            style="no-wrap: none; cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            CocaCola</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.pepsi.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 0px; background-color: white; border-radius: 50px;"
-          src="PEPSI.png">
-        <div
-          style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Pepsi</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.pepsi.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 0px; background-color: white; border-radius: 50px;"
+            src="PEPSI.png">
+          <div
+            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Pepsi</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://kodi.tv/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 0px; background-color: white; border-radius: 50px;"
-          src="KODI.png">
-        <div
-          style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Kodi</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://kodi.tv/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 0px; background-color: white; border-radius: 50px;"
+            src="KODI.png">
+          <div
+            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Kodi</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.bell.ca/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 1px; background-color: white; border-radius: 50px;"
-          src="Bell.png">
-        <div
-          style="cursor: pointer; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Bell</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.bell.ca/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 1px; background-color: white; border-radius: 50px;"
+            src="Bell.png">
+          <div
+            style="cursor: pointer; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Bell</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.rogers.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 9px; margin-left: 8px; background-color: white; border-radius: 50px;"
-          src="Rogers.png">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Rogers</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.rogers.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 9px; margin-left: 8px; background-color: white; border-radius: 50px;"
+            src="Rogers.png">
+          <div
+            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Rogers</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.samsung.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 11px; background-color: white; border-radius: 50px;"
-          src="SAMSUNG.png">
-        <div
-          style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Samsung</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.samsung.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 11px; background-color: white; border-radius: 50px;"
+            src="SAMSUNG.png">
+          <div
+            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Samsung</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.salesforce.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 11px; background-color: white; border-radius: 50px;"
-          src="SALESFORCE.png">
-        <div
-          style="padding-left: 2px; padding-right: 2px; cursor: pointer; margin-right: 2px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          SalesForce</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.salesforce.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 11px; background-color: white; border-radius: 50px;"
+            src="SALESFORCE.png">
+          <div
+            style="padding-left: 2px; padding-right: 2px; cursor: pointer; margin-right: 2px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            SalesForce</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.ing.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: white; border-radius: 50px;"
-          src="ING.png">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          ING</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.ing.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: white; border-radius: 50px;"
+            src="ING.png">
+          <div
+            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            ING</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.comcast.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="max-width: 85px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 9px; background-color: white; border-radius: 50px;"
-          src="COMCAST.png">
-        <div
-          style="cursor: pointer; max-width: 85px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Comcast</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.comcast.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="max-width: 85px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 9px; background-color: white; border-radius: 50px;"
+            src="COMCAST.png">
+          <div
+            style="cursor: pointer; max-width: 85px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Comcast</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.canadiantire.ca" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="padding-right: 3px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
-          src="CanadianTire.png">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Canadian Tire</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.canadiantire.ca" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="padding-right: 2px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
+            src="CanadianTire.png">
+          <div
+            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Canadian Tire</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.ubereats.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
-          src="UBER.png">
-        <div
-          style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          UberEats</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.ubereats.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: white; border-radius: 50px;"
+            src="UBER.png">
+          <div
+            style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            UberEats</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.3mcanada.ca/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white;"
-          src="MMM.png">
-        <div
-          style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          3M</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.3mcanada.ca/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white;"
+            src="MMM.png">
+          <div
+            style="cursor: pointer; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            3M</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://us.glock.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 1px; background-color: white; border-radius: 50px;"
-          src="Glock.png">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Glock</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://us.glock.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 1px; background-color: white; border-radius: 50px;"
+            src="Glock.png">
+          <div
+            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Glock</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.target.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 5px; background-color: white; border-radius: 50px;"
-          src="TARGET.png">
-        <div
-          style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Target</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.target.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 5px; background-color: white; border-radius: 50px;"
+            src="TARGET.png">
+          <div
+            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Target</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.verizon.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 9px; background-color: white; border-radius: 50px;"
-          src="VERIZON.png">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Verizon</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.verizon.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 9px; background-color: white; border-radius: 50px;"
+            src="VERIZON.png">
+          <div
+            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Verizon</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.visa.ca/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white; border-radius: 50px;"
-          src="VISA.png">
-        <div
-          style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Visa</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.visa.ca/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white; border-radius: 50px;"
+            src="VISA.png">
+          <div
+            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Visa</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.mastercard.ca/" target="_blank"><button
-        style="background-color: white; border: 1px solid white; max-width: 80px;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 13px; background-color: white; border-radius: 50px;"
-          src="MasterCard.png">
-        <div
-          style="padding-left: 2px; padding-right: 2px; cursor: pointer; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          MasterCard</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.mastercard.ca/" target="_blank"><button
+          style="background-color: white; border: 1px solid white; max-width: 80px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 13px; background-color: white; border-radius: 50px;"
+            src="MasterCard.png">
+          <div
+            style="padding-left: 2px; padding-right: 2px; cursor: pointer; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            MasterCard</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.tmz.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white; border-radius: 50px;"
-          src="TMZlogo.jpg">
-        <div
-          style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          TMZ</div>
-      </button></a>
-  </div>
+    <div class="sidebar-link"><a href="https://www.tmz.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white; border-radius: 50px;"
+            src="TMZlogo.jpg">
+          <div
+            style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            TMZ</div>
+        </button></a>
+    </div>
 
-  <div <a href="https://www.playstation.com/" target="_blank"><button
+    <div <a href="https://www.playstation.com/" target="_blank"><button
         style="width: 80px; height: 74px; background-color: white; border: 0px solid white;">
         <img
-          style="padding-bottom: 3px; font-size: 15px; display: flex; justify-content: center; align-items: center; margin-left: 17px; background-color: white; border-radius: 50px;"
+          style="padding-bottom: 3px; font-size: 15px; display: flex; justify-content: center; align-items: center; margin-left: 16px; background-color: white; border-radius: 50px;"
           src="PlayStation.png">
         <div
-          style="padding-left: 2px; padding-right: 2px; padding-bottom: 5px; cursor: pointer; margin-left: 2px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate; no-wrap: none;">
+          style="padding-left: 2px; padding-right: 2px; padding-bottom: 5px; cursor: pointer; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate; no-wrap: none;">
           PlayStation</div>
       </button></a>
-  </div>
-    
-  <div style="width: 80px;" class="sidebar-link"><a href="Tableperiodic.html" target="_blank">
-      <button
-        style="border: solid 1px white; width: 60px; border: 0px; width: 79px; background-color: white; margin-bottom: 10px; margin-top: 1px; margin-left: 6px;">
-        <img
-          style="padding-right: 3px; margin-left: 6px; display: flex; justify-content: center; align-items: center; color: black; height: 29px; border-radius: 50px; font-size: 11; font-weight: bold; font-family: copperplate;"
-          src="periodictable.png">
-        <div
-          style="color: black; cursor: pointer; display: flex; justify-content: center; align-items: center; font-size: 12px; font-weight: bold; font-family: copperplate; margin-right: 11px;">
-          Periodic Table</div>
-      </button></a>
-  </div>
+    </div>
 
-  <div style="background-color: white; border: 0px solid white;">
-    <img
-      style="display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 31px; font-size: 5px; height: 30px; background-color: white;"
-      src="bfpic.png">
-    <a href="https://www.msn.com/en-ca" target="_blank">
-      <button
-        style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; margin-right: 12px; background-color: white; font-size: 12px; font-size: 12; font-weight: bold; font-family: copperplate; text-decoration: none;"
-        class="subscribe-button-1">MSN</button></a>
-  </div>
+    <div style="width: 80px;" class="sidebar-link"><a href="Tableperiodic.html" target="_blank">
+        <button
+          style="border: solid 1px white; width: 60px; border: 0px; width: 79px; background-color: white; margin-bottom: 10px; margin-top: 1px; margin-left: 6px;">
+          <img
+            style="padding-right: 2px; margin-left: 12px; display: flex; justify-content: center; align-items: center; color: black; height: 30px; border-radius: 20px; font-size: 12; font-weight: bold; font-family: copperplate;"
+            src="PeriodicTable.webp">
+          <div
+            style="color: black; cursor: pointer; display: flex; justify-content: center; align-items: center; font-size: 12px; font-weight: bold; font-family: copperplate; margin-right: 9px;">
+            Periodic Table</div>
+        </button></a>
+    </div>
 
-  <div class="sidebar-link"><a href="https://www.stremio.com/" target="_blank"><button
-        style="background-color: white; border: 1px solid white;">
-        <img
-          style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 9px; background-color: white; border-radius: 50px;"
-          src="stremio.png">
-        <div
-          style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
-          Stremio</div>
-      </button></a>
-  </div> 
-</nav>
+    <div style="background-color: white; border: 0px solid white;">
+      <img
+        style="display: flex; justify-content: center; align-items: center; margin-top: 0px; margin-left: 30px; font-size: 5px; height: 30px; background-color: white;"
+        src="bfpic.png">
+      <a href="https://www.msn.com/en-ca" target="_blank">
+        <button
+          style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: black; width: 72px; height: 24px; border: 1px solid white; margin-right: 12px; background-color: white; font-size: 12px; font-size: 12; font-weight: bold; font-family: copperplate; text-decoration: none;"
+          class="subscribe-button-1">MSN</button></a>
+    </div>
+
+    <div class="sidebar-link"><a href="https://www.stremio.com/" target="_blank"><button
+          style="background-color: white; border: 1px solid white;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 9px; background-color: white; border-radius: 50px;"
+            src="stremio.png">
+          <div
+            style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: black; font-size: 12px; font-weight: bold; font-family: copperplate;">
+            Stremio</div>
+        </button></a>
+    </div>
+  </nav>
 
   <main>
     <section class="video-grid">
@@ -904,8 +910,8 @@
 
       <div style="height: 320px;" class="video-preview">
         <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Myke Towers & benny blanco - Degenre.mp4" controls width="285"
-            height="155"></video>
+          <video style="margin-top: 25px; background-color: black;" src="Myke Towers & benny blanco - Degenre.mp4"
+            controls width="285" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
