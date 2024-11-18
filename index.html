@@ -65,7 +65,22 @@
       padding-left: 5px;
       color: rgb(211, 211, 211);
     }
-
+    .video-title:hover {
+      display: flex;
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-bottom: 10px;
+      width: 220px;
+      background-color: rgb(42, 140, 245);
+      font-family: Roboto, Helvetica;
+      border: 1px solid rgb(74, 157, 248);
+      box-shadow: 1px 5px 5px 10px white;
+      border-radius: 5px;
+      padding-left: 5px;
+      color: rgb(211, 211, 211);
+    }
     .video-info-grid {
       display: grid;
       grid-template-columns: 50px 1fr;
@@ -125,7 +140,17 @@
       font-family: Roboto, Helvetica;
       padding-left: 5px;
     }
-
+    .video-author:hover {
+      color: rgb(211, 211, 211);
+      margin-bottom: 4px;
+      width: 150px;
+      font-weight: bold;
+      background-color: red;
+      box-shadow: 1px 5px 5px 10px white;
+      border-radius: 5px;
+      font-family: Roboto, Helvetica;
+      padding-left: 5px;
+    }
     .video-grid {
       color: rgb(59, 59, 255);
       border-color: black;
@@ -344,11 +369,13 @@
       font-weight: bold;
       margin-top: 0px;
       padding-left: 5px;
-      z-index: 1;      
+      z-index: 1;
+      transition: 4s;
     }
 
     .utubeheader:hover {
       color: rgb(144, 238, 144);
+      transition: 3s;
     }
       
   </style>
