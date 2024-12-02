@@ -333,6 +333,56 @@
       color: white;
       transition: 3s;
     }
+
+    .header {
+      height: 55px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      text-decoration: none;
+      margin-top: 54px;
+      font-family: copperplate;
+      font-weight: bold;
+      font-size: 17px;
+      background-color: red;
+    }
+
+    .left {
+      width: 150px;
+      padding-top: 20px;
+    }
+
+    .leftleft {
+      width: 150px;
+      padding-top: 20px;
+    }
+
+    .leftleftleft {
+      width: 150px;
+      padding-top: 20px;
+    }
+
+    .middle {
+      flex: 1;
+      max-width: 300px;
+      padding-top: 20px;
+
+    }
+
+    .rightrightright {
+      width: 150px;
+      padding-top: 20px;
+    }
+
+    .rightright {
+      width: 150px;
+      padding-top: 20px;
+    }
+
+    .right {
+      width: 150px;
+      padding-top: 20px;
+    }
   </style>
 </head>
 
@@ -343,57 +393,40 @@
     </p>
   </div>
 
-  <div
-    style="background-color: red; border-bottom: solid 2px black; border-color: black; display: flex; flex-direction: row; position: fixed; top: 45px; cursor: pointer; z-index: 1; width: 1354px; font-family: copperplate; font-weight: bold;">
-    <div style="border-color: red; width: 140px; height: 57px;">
-      <button style="border: 1px; color: red; border-color: red; background-color: red; height: 57px; width: 140px;">
-        <a style="font-size: 15px; border-color: red; color: white; font-family: copperplate; font-weight: bold; align-items: center; justify-content: center; border-radius: 20px; white-space: nowrap; text-decoration: none; cursor: pointer;"
-          href="https://www.nike.com" target="_blank">Nike</a>
-      </button>
+  <div class="header">
+
+    <div style="background-color: red;" class="left">
+      <a style="margin-left: 50px; color: white; text-decoration: none;" href="https://www.nike.com/"
+        target="_blank">Nike</a>
     </div>
 
-    <div style="border-left: 2px red; border-color: red; background-color: lightpink; width: 140px; height: 57px;">
-      <button style="height: 57px; width: 140px; border: 1px; color: red; background-color: red; border-color: red;">
-        <a style="font-size: 15px; padding-right: 3px; border-color: red; color: white; font-family: copperplate; font-weight: bold; cursor: pointer; align-items: center; justify-content: center; border-radius: 20px; white-space: nowrap; text-decoration: none;"
-          href="https://www.underarmour.com" target="_blank">Underarmour</a>
-      </button>
+    <div style="background-color: red;" class="leftleft"><a
+        style="margin-left: 20px; color: white; text-decoration: none;" href="https://www.underarmour.ca/"
+        target="_blank">UnderArmour</a>
     </div>
 
-    <div style="border-color: red; background-color: lightyellow; width: 190px; height: 57px;">
-      <button style="border: 1px; color: red; border-color: red; height: 57px; width: 190px; background-color: red;">
-        <a style="font-size: 15px; border: red; color: white; font-family: copperplate; font-weight: bold; cursor: pointer; align-items: center; justify-content: center; border-radius: 20px; white-space: nowrap; text-decoration: none;"
-          href="https://www.sportchek.ca" target="_blank">SportChek</a>
-      </button>
+    <div style="background-color: red;" class="leftleftleft"><a
+        style="margin-left: 30px; color: white; text-decoration: none;" href="https://www.sportchek.ca/"
+        target="_blank">SportChek</a>
     </div>
 
-    <div style="background-color: red; width: 400px;">
+    <div style="background-color: red;" class="middle">
       <form action="https://www.google.com/search" target="_blank" method="get">
-        <input type="text" style=" height: 15px; font-family: copperplate; border: 1px solid black; border-radius: 3px; border-color: black; color: rgb(0, 0, 0); background-color: white;
-          margin-top: 20px; width: 400px; align-items: center; justify-content: center;"
-          placeholder="               What would you like to find?" name="q">
+        <input style="margin-top: -10px; height: 25px; flex: 1; width: 300px; margin-left: 5px;" type="text"
+          placeholder="Search..." name="q">
       </form>
     </div>
 
-    <div style="display: flex; background-color: red; width: 160px; height: 57px;">
-      <button style="border: 1px; border-color: red; color: red; height: 57px; width: 160px; background-color: red;">
-        <a style="font-size: 15px; align-items: center; justify-content: center; border-radius: 20px; font-family: copperplate; font-weight: bold; cursor: pointer; color: white; text-decoration: none;"
-          href="https://www.amazon.com" target="_blank">Amazon</a>
-      </button>
-    </div>
+    <div style="background-color: red;" class="rightrightright"><a
+        style="margin-left: 50px; color: white; text-decoration: none;" href="https://www.amazon.ca/"
+        target="_blank">Amazon</a></div>
 
-    <div style="border-color: red; display: flex; background-color: lightpink; width: 160px; height: 57px;">
-      <button style="border: 1px; color: red; border-color: red; height: 57px; width: 160px; background-color: red;">
-        <a style="font-size: 15px; align-items: center; justify-content: center; border-radius: 20px; font-family: copperplate; font-weight: bold; cursor: pointer; color: white; text-decoration: none;"
-          href="https://www.rabbit.tech" target="_blank">Rabbit</a>
-      </button>
-    </div>
+    <div style="background-color: red" class="rightright"><a
+        style="margin-left: 50px; color: white; text-decoration: none;" href="https://www.rabbit.com/"
+        target="_blank">Rabbit</a></div>
 
-    <div style="display: flex; background-color: red; width: 160px; height: 57px;">
-      <button
-        style="z-index: 1; flex-shrink: 0; border: 1px; color: red; border-color: red; height: 57px; width: 160px; background-color: red;">
-        <a style="font-size: 15px; display: flex; align-items: center; justify-content: center; border-radius: 20px; font-family: copperplate; font-weight: bold; cursor: pointer; color: white; text-decoration: none;"
-          href="https://www.openai.com" target="_blank">Openai</a>
-      </button>
+    <div style="background-color: red" class="right"><a style="margin-left: 50px; color: white; text-decoration: none;"
+        href="https://www.openai.com/" target="_blank">OpenAi</a>
     </div>
 
   </div>
