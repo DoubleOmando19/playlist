@@ -93,10 +93,9 @@ function playGame(playerMove) {
 
   document.querySelector('.js-result').innerHTML = result;
 
-  document.querySelector('.js-moves').innerHTML = `<span style="height: 30px; color: red;">Tu</span><img src="${playerMove}-emoji.png" class="move-icon">
-  <img src="${computerMove}-emoji.png" class="move-icon"><span style="color: blue;">Computadora</span>`;
+  document.querySelector('.js-moves').innerHTML = `<span style="height: 30px; color: red;">Tu</span><img style="font-size: 15px; height: 55px; width: 55px;" src="${playerMove}-emoji.png" class="move-icon">
+  <img style="font-size: 15px; height: 55px; width: 55px;" src="${computerMove}-emoji.png" class="move-icon"><span style="color: blue;">Computadora</span>`;
 }
-
 
 function updateScoreElement() {
   document.querySelector('.js-score').innerHTML = `Triunfos: ${score.wins} Perdidas: ${score.losses} Empates: ${score.ties} `;
