@@ -8,6 +8,7 @@
   font-weight: bold;
   font-size: 14px;
   margin-top: 1px;
+  margin-left: 3px;
 }
 
 .but2 {
@@ -61,12 +62,12 @@
 
 .title {
   font-size: 65px;
-  font-family: comic sans;
+  font-family: comic sans, copperplate;
   font-weight: bold;
   color: rgb(228, 228, 228);
   background-color: black;
   margin-top: 1px;
-  margin-left: 5px;
+  margin-left: 1px;
 }
 
 body {
@@ -88,7 +89,7 @@ body {
 }
 
 .result {
-  font-family: comic sans;
+  font-family: comic sans, copperplate;
   font-size: 30px;
   font-weight: bold;
   margin-top: 50px;
