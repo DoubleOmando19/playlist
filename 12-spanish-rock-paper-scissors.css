@@ -1,6 +1,6 @@
 .but {
-  height: 110px;
-  width: 110px;
+  height: 100px;
+  width: 100px;
   background-color: red;
   color: white;
   border-radius: 50px;
@@ -11,26 +11,26 @@
 }
 
 .but2 {
-  height: 110px;
-  width: 110px;
+  height: 100px;
+  width: 100px;
   background-color: rgb(1, 211, 1);
   color: white;
   border-radius: 50px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
   font-weight: bold;
   font-size: 14px;
   margin-top: 3px;
 }
 
 .but3 {
-  height: 110px;
-  width: 110px;
+  height: 100px;
+  width: 100px;
   background-color: rgb(37, 37, 255);
   color: white;
   border-radius: 50px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
   font-weight: bold;
 }
 
@@ -66,7 +66,7 @@
   color: rgb(228, 228, 228);
   background-color: black;
   margin-top: 1px;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 body {
@@ -98,7 +98,7 @@ body {
 
 .score {
   margin-top: 50px;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: bold;
   font-family: "Gill Sans", "Gill Sans MT";
   margin-right: 10px;
