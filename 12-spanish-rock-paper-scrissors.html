@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Game</title>
+  <link rel="stylesheet" href="/html/12-rock-paper-scissors.css">
+</head>
+
+<body>
+  <p style="font-size: 55px; color: white; margin-left: 80px;" class="title">CACHIPUN</p>
+
+  <button class="but js-rock-button"><img src="rock-emoji.png" class="move-icon">PIEDRA</button>
+
+  <button class="but2 js-paper-button">
+    <img src="paper-emoji.png" class="move-icon">PAPEL</button>
+
+  <button class="but3 js-scissors-button">
+    <img src="scissors-emoji.png" class="move-icon">TIJARAS</button>
+
+  <p style="margin-left: 130px;" class="js-moves moves"></p>
+
+  <p class="js-result result"></p>
+
+  <p style="margin-left: 0px;" class="js-score score"></p>
+
+  <button class="but4" onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();" class="but4">REINICIAR PUNTAJE</button>
+
+  <button onclick="autoPlay();" class="auto-play-button">AUTO-JUGAR</button>
+
+  <script src="/html/12-spanish-rock-paper-scissors.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+.but {
+  height: 110px;
+  width: 110px;
+  background-color: red;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.but2 {
+  height: 110px;
+  width: 110px;
+  background-color: rgb(1, 211, 1);
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.but3 {
+  height: 110px;
+  width: 110px;
+  background-color: rgb(37, 37, 255);
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 50px;
+  font-weight: bold;
+}
+
+.but4 {
+  margin-left: 70px;
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  color: rgb(52, 52, 52);
+  border-radius: 80px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.auto-play-button {
+  margin-left: 70px;
+  height: 100px;
+  width: 100px;
+  background-color: rgb(205, 42, 205);
+  color: white;
+  border-radius: 80px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.title {
+  font-size: 65px;
+  font-family: comic sans;
+  font-weight: bold;
+  color: rgb(228, 228, 228);
+  background-color: black;
+  margin-top: 1px;
+  margin-left: 200px;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-family: "Gill Sans";
+  font-size: 17px;
+  margin-top: 1px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.move-icon {
+  font-size: 15px;
+  height: 55px;
+  width: 55px;
+  margin-top: 0px;
+}
+
+.result {
+  font-family: comic sans;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 50px;
+  color: red;
+  margin-left: 130px;
+}
+
+.score {
+  margin-top: 50px;
+  font-size: 23px;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT";
+  margin-right: 10px;
+  margin-left: 0px;
+}
+
+.moves {
+  margin-left: 125px;
+  margin-top: 30px;
+}
