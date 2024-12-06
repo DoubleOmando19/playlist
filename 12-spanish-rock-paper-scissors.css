@@ -36,7 +36,7 @@
 }
 
 .but4 {
-  margin-left: 70px;
+  margin-left: 20px;
   height: 100px;
   width: 100px;
   background-color: yellow;
@@ -62,7 +62,7 @@
 
 .title {
   font-size: 65px;
-  font-family: comic sans, copperplate;
+  font-family: comic sans;
   font-weight: bold;
   color: rgb(228, 228, 228);
   background-color: black;
