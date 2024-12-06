@@ -94,7 +94,7 @@ function playGame(playerMove) {
   document.querySelector('.js-result').innerHTML = result;
 
   document.querySelector('.js-moves').innerHTML = `<span style="height: 30px; color: red;">Tu</span><img style="font-size: 10px; height: 55px; width: 55px;" src="${playerMove}-emoji.png" class="move-icon">
-  <img style="font-size: 10px; height: 55px; width: 55px;" src="${computerMove}-emoji.png" class="move-icon"><span style="color: blue;">Computadora</span>`;
+  <img style="font-size: 10px; height: 55px; width: 55px;" src="${computerMove}" class="move-icon"><span style="color: blue;">Computadora</span>`;
 }
 
 function updateScoreElement() {
