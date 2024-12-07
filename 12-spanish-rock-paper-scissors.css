@@ -52,11 +52,11 @@
   font-size: 12px;
   border: 2px solid white;  
   padding-right: 5px;
-  margin-left: 10px;
+  margin-left: 12px;
 }
 
 .auto-play-button {
-  margin-left: 20px;
+  margin-left: 10px;
   height: 90px;
   width: 90px;
   background-color: rgb(205, 42, 205);
