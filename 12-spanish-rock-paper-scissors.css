@@ -9,12 +9,13 @@
   font-size: 14px;
   margin-top: 1px;
   margin-left: 3px;
+  border: 2px solid white;
 }
 
 .but2 {
   height: 100px;
   width: 100px;
-  background-color: rgb(1, 211, 1);
+  background-color: rgb(255, 87, 54);
   color: white;
   border-radius: 50px;
   cursor: pointer;
@@ -22,6 +23,7 @@
   font-weight: bold;
   font-size: 14px;
   margin-top: 3px;
+  border: 2px solid white;
 }
 
 .but3 {
@@ -33,10 +35,11 @@
   cursor: pointer;
   margin-left: 5px;
   font-weight: bold;
+  border: 2px solid white;  
 }
 
 .but4 {
-  margin-left: -3px;
+  padding-right: 5px;
   height: 90px;
   width: 90px;
   background-color: orange;
@@ -46,8 +49,9 @@
   font-weight: bold;
   margin-top: 20px;
   font-size: 14px;
-  margin-right: 3px;
+  border: 2px solid white;  
 }
+
 .auto-play-button {
   margin-left: 20px;
   height: 90px;
@@ -59,13 +63,14 @@
   font-weight: bold;
   margin-top: 20px;
   font-size: 14px;
+  border: 2px solid white;  
 }
 
 .title {
   font-size: 65px;
   font-family: comic sans;
   font-weight: bold;
-  color: rgb(228, 228, 228);
+  color: rgb(255, 255, 255);
   background-color: black;
   margin-top: 1px;
   margin-left: 1px;
