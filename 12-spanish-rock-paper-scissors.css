@@ -15,7 +15,7 @@
 .but2 {
   height: 100px;
   width: 100px;
-  background-color: rgb(255, 87, 54);
+  background-color: rgb(1, 211, 1);
   color: white;
   border-radius: 50px;
   cursor: pointer;
@@ -39,6 +39,7 @@
 }
 
 .but4 {
+  margnin-right: 10px;
   padding-right: 5px;
   height: 90px;
   width: 90px;
