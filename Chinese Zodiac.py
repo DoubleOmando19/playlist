@@ -74,5 +74,5 @@ try:
     for x in Zodiac_Pig:
         if x == user_input:
             print('Your Chinese Zodiac is Pig', x, '🐖')
-except ValueError:
-    print("Invalid text try again.")
+except ValueError as ex:
+    print(ex)
