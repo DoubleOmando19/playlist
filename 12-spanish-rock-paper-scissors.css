@@ -9,7 +9,7 @@
   font-size: 13px;
   margin-top: 1px;
   margin-left: 3px;
-  border: 2px solid white;
+  border: 3px solid white;
 }
 
 .but2 {
@@ -23,7 +23,7 @@
   font-weight: bold;
   font-size: 13px;
   margin-top: 3px;
-  border: 2px solid white;
+  border: 3px solid white;
 }
 
 .but3 {
@@ -36,7 +36,7 @@
   margin-left: 7px;
   font-weight: bold;
   font-size: 13px;
-  border: 2px solid white;  
+  border: 3px solid white;  
 }
 
 .but4 {
@@ -50,7 +50,7 @@
   font-weight: bold;
   margin-top: 20px;
   font-size: 12px;
-  border: 2px solid white;  
+  border: 3px solid white;  
   padding-right: 10px;
   margin-left: 20px;
 }
@@ -66,7 +66,7 @@
   font-weight: bold;
   margin-top: 20px;
   font-size: 13px;
-  border: 2px solid white;  
+  border: 3px solid white;  
 }
 
 .title {
