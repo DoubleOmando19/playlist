@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utubeplaylist Autoplay</title>
+  <style>
+    .title {
+      color: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 40px;
+      font-weight: 600;
+
+    }
+
+    .playlist {
+      background-color: rgb(57, 255, 20);
+      color: black;
+      font-weight: 700;
+      height: 50px;
+      width: 60px;
+      clip-path: 50%;
+      border-radius: 25%;
+      border-color: white;
+    }
+
+    @media(max-width: 525px) {
+      .videoPlayer {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">Utubeplaylist.com</h1>
+  <h2>AutoPlaylist</h2>
+  <video class="videoPlayer" id="videoPlayer" width="480" height="360" controls>
+    <!-- Initial video source will be set by JavaScript -->
+  </video>
+  <br>
+  <button class="playlist" id="autoplayButton">Auto-Playlist</button>
+
+  <script>
+    // Video sources array
+    const videoSources = [
+      "blessd.mp4",
+      "Myke Towers & L-Gante - Los Depuro.mp4",
+      "La Bebe.mp4",
+      "Teka.mp4",
+      "Gata Only.mp4",
+      "CRAZYZ1.mp4",
+      "One of wun.mp4",
+      "Dumb and dumber.mp4",
+      "ALL RED.mp4",
+      "Talibans.mp4",
+      "Asake wave.mp4",
+      "BAND4BAND.mp4",
+      "Like That.mp4",
+      "Gunna-Him all along.mp4",
+      "Monitoring Me.mp4",
+      "FE!N",
+      "tv off.mp4",
+      "ACTIVE.mp4",
+      "Myke Towers & benny blanco - Degenre.mp4",
+      "TU NAME.mp4",
+      "Que Onda.mp4",
+      "Razones.mp4",
+      "MESITA.mp4",
+      "QUEMA.mp4",
+      "It Is What It Is.mp4",
+      "Kendrick Lamar - squabble up.mp4",
+      "Bad Bunny - BAILE INoLVIDABLE.mp4",
+      "Lil Baby - Touchdown.mp4",
+      "Tailor Swif1.mp4",
+      "Metro-Walk Em Down.mp4"
+    ];
+    const videoPlayer = document.getElementById('videoPlayer');
+    const autoplayButton = document.getElementById('autoplayButton');
+    let currentVideoIndex = 0;
+
+    // Function to play the next video in the playlist
+    function playNextVideo() {
+      if (currentVideoIndex < videoSources.length) {
+        videoPlayer.src = videoSources[currentVideoIndex];
+        videoPlayer.play();
+        currentVideoIndex++;
+      } else {
+        // Reset to the first video if the playlist is finished
+        currentVideoIndex = 0;
+      }
+    }
+
+    // Event listener to play the next video when the current one ends
+    videoPlayer.addEventListener('ended', playNextVideo);
+
+    // Event listener for the autoplay button
+    autoplayButton.addEventListener('click', playNextVideo);
+  </script>
+</body>
+
+</html>
