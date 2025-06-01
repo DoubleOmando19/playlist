@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Utubeplaylist Autoplay</title>
   <style>
+    body {
+      background-color: black;
+    }
     .title {
-      color: black;
+      color: rgb(57, 255, 20);
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-size: 40px;
       font-weight: 600;
@@ -16,6 +19,7 @@
 
     .AutoPlaylist {
       color: rgb(57, 255, 20);
+      margin-top: 0px;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-weight: 600;
       font-size: 30px;
@@ -23,8 +27,7 @@
 
     .playlist {
       background-color: rgb(57, 255, 20);
-      padding-right: 10px;
-      color: black;
+      color: white;
       font-weight: 700;
       height: 50px;
       width: 60px;
@@ -42,7 +45,7 @@
     <!-- Initial video source will be set by JavaScript -->
   </video>
   <br>
-  <button class="playlist" id="autoplayButton">Auto-Playlist</button>
+  <button class="playlist" id="autoplayButton">Auto-Play</button>
 
   <script>
     // Video sources array
