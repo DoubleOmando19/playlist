@@ -7,7 +7,10 @@
   <title>Utubeplaylist Autoplay</title>
   <style>
     body {
+      height: 700px;
+      width: 500px;
       background-color: black;
+      
     }
 
     .title {
@@ -22,6 +25,7 @@
     }
 
     .playlist {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       background-color: red;
       color: black;
       font-weight: 700;
@@ -32,17 +36,12 @@
       border-color: white;
     }
 
-    @media(max-width: 525px) {
-      .videoPlayer {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 
 <body>
   <h1 class="title">Utubeplaylist.com</h1>
-  <h2 style="color: rgb(57, 255, 20);">AutoPlaylist</h2>
+  <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: white;">AutoPlaylist</h2>
   <video class="videoPlayer" id="videoPlayer" width="360" height="360" controls>
     <!-- Initial video source will be set by JavaScript -->
   </video>
