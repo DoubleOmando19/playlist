@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utubeplaylist Autoplay</title>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    .title {
+      height: 50px;
+      margin-bottom: 0%;
+      margin-top: 0%;
+      color: rgb(57, 255, 20);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 40px;
+      font-weight: 600;
+
+    }
+
+    .playlist {
+      background-color: rgb(57, 255, 20);
+      color: black;
+      font-weight: 700;
+      height: 50px;
+      width: 60px;
+      clip-path: 50%;
+      border-radius: 25%;
+      border-color: white;
+    }
+
+    @media(max-width: 525px) {
+      .videoPlayer {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">Utubeplaylist.com</h1>
+  <h2 style="color: rgb(57, 255, 20);">AutoPlaylist</h2>
+  <video class="videoPlayer" id="videoPlayer" width="360" height="360" controls>
+    <!-- Initial video source will be set by JavaScript -->
+  </video>
+  <br>
+  <button class="playlist" id="autoplayButton">Auto-Play</button>
+
+  <script>
+    // Video sources array
+    const videoSources = [
+      "Burna Boy - TaTaTa ft. Travis Scott.mp4",
+      "Gunna - GOT DAMN.mp4",
+      "Rich The Kid, Kodak Black - Rain Snow.mp4",
+      "Rio Da Yung OG - 4 Minutes Of Hell.mp4",
+      "BossMan Dlow - Shake Dat Ass.mp4",
+      "Quavo, Lil Baby - Legends.mp4",
+      "Lil Durk - Vanish Mode.mp4",
+      "PLUTO, Sexyy Red - WHIM WHAMIEE.mp4",
+      "1900Rugrat - One Take ft. Kodak Black.mp4",
+      "Drake - NOKIA .mp4",
+      "Ot7QUANNY FT. Bossman Dlow -  Bout My Money .mp4",
+      "Hurricane Wisdom - Drugs Callin.mp4",
+      "Travis Scott - 4X4.mp4",
+      "Kendrick Lamar & SZA - luther.mp4",
+      "Central Cee - Truth in lies.mp4",
+      "Burna Boy - Update.mp4",
+      "Kendrick Lamar - Not Like Us.mp4",
+      "NLE Choppa - Gang Baby.mp4",
+      "Tommy Richman - ACTIN UP WITH SEXYY RED.mp4",
+      "SZA - 30 For 30 feat. Kendrick Lamar.mp4",
+      "The Weeknd, Playboi Carti - Timeless.mp4",
+      "One of wun.mp4",
+      "Dumb and dumber.mp4",
+      "ALL RED.mp4",
+      "Talibans.mp4",
+      "Asake wave.mp4",
+      "BAND4BAND.mp4",
+      "Like That.mp4",
+      "Gunna-Him all along.mp4",
+      "Monitoring Me.mp4",
+      "FE!N",
+      "tv off.mp4",
+      "ACTIVE.mp4",
+      "It Is What It Is.mp4",
+      "Lil Baby - Touchdown.mp4",
+      "Tailor Swif1.mp4",
+      "Metro-Walk Em Down.mp4",
+      "Kendrick Lamar - squabble up.mp4",
+      "J Balvin, Omega - KLK.mp4",
+      "Myke Towers & Quevedo - SOLEAO.mp4",
+      "Manuel Turizo - MENOS EL CORA.mp4",
+      "blessd.mp4",
+      "Myke Towers & L-Gante - Los Depuro.mp4",
+      "La Bebe.mp4",
+      "Teka.mp4",
+      "Gata Only.mp4",
+      "Que Onda.mp4",
+      "Myke Towers & benny blanco - Degenre.mp4",
+      "TU NAME.mp4",
+      "MESITA.mp4",
+      "CRAZYZ1.mp4",
+    ];
+    const videoPlayer = document.getElementById('videoPlayer');
+    const autoplayButton = document.getElementById('autoplayButton');
+    let currentVideoIndex = 0;
+
+    // Function to play the next video in the playlist
+    function playNextVideo() {
+      if (currentVideoIndex < videoSources.length) {
+        videoPlayer.src = videoSources[currentVideoIndex];
+        videoPlayer.play();
+        currentVideoIndex++;
+      } else {
+        // Reset to the first video if the playlist is finished
+        currentVideoIndex = 0;
+      }
+    }
+
+    // Event listener to play the next video when the current one ends
+    videoPlayer.addEventListener('ended', playNextVideo);
+
+    // Event listener for the autoplay button
+    autoplayButton.addEventListener('click', playNextVideo);
+  </script>
+</body>
+
+</html>
