@@ -7,10 +7,7 @@
   <title>Utubeplaylist Autoplay</title>
   <style>
     body {
-      height: 700px;
-      width: 500px;
       background-color: black;
-      
     }
 
     .title {
@@ -19,34 +16,33 @@
       margin-top: 0%;
       color: rgb(57, 255, 20);
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: 38px;
-      font-weight: 700;
+      font-size: 40px;
+      font-weight: 600;
 
     }
 
     .playlist {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      background-color: red;
-      color: white;
+      background-color: rgb(57, 255, 20);
+      color: black;
       font-weight: 700;
       height: 50px;
       width: 60px;
       clip-path: 50%;
       border-radius: 25%;
       border-color: white;
-      margin-top: 0px;
     }
 
-    .videoPlayer {
-      margin-top: 0px;
+    @media(max-width: 525px) {
+      .videoPlayer {
+        grid-template-columns: 1fr;
+      }
     }
-
   </style>
 </head>
 
 <body>
   <h1 class="title">Utubeplaylist.com</h1>
-  <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: white;">AutoPlaylist</h2>
+  <h2 style="color: rgb(57, 255, 20);">AutoPlaylist</h2>
   <video class="videoPlayer" id="videoPlayer" width="360" height="360" controls>
     <!-- Initial video source will be set by JavaScript -->
   </video>
@@ -56,6 +52,13 @@
   <script>
     // Video sources array
     const videoSources = [
+      "French, Lil Durk - Big Bag.mp4",
+      "YoungBoy - Kickboxer.mp4",
+      "Travis Scott - Dumbo.mp4",
+      "Kodak Black - By Myself.mp4",
+      "Dee Mula - Blow My High.mp4",
+      "Rick Ross, Pharrell- For The Money.mp4",
+      "Travis Scott, GloRilla - SHYNE.mp4",
       "Burna Boy - TaTaTa ft. Travis Scott.mp4",
       "Gunna - GOT DAMN.mp4",
       "Rich The Kid, Kodak Black - Rain Snow.mp4",
