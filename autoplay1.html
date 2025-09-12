@@ -20,7 +20,33 @@
       font-weight: 600;
 
     }
+    
+    .Auto-Play {
+      background-color: red;
+      border-color: red;
+      border-style: solid;
+      border-width: 1px;
+      color: white;
+      height: 36px;
+      width: 75px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 15;
+      cursor: pointer;
+      transition: 1s;
+    }
 
+    .Auto-Play:hover {
+      background-color: rgb(15, 206, 15);
+      border-color: rgb(15, 206, 15);
+      box-shadow: 10px 10px 10px black;
+      opacity: 0.7;
+    }
+
+    .Auto-Play:active {
+      background-color: rgb(19, 248, 19);
+      opacity: 0.3;
+    }
     .playlist {
       background-color: rgb(57, 255, 20);
       color: black;
@@ -47,7 +73,7 @@
     <!-- Initial video source will be set by JavaScript -->
   </video>
   <br>
-  <button class="playlist" id="autoplayButton">Auto-Play</button>
+  <button class="Auto-Play" id="autoplayButton">Auto-Play</button>
 
   <script>
     // Video sources array
