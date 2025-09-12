@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click & Play Satellite Radio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(34, 34, 34);
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .equalizer {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 40px;
+        }
+
+        .bar {
+            width: 6px;
+            background-color: white;
+            border-radius: 3px;
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        .bar:nth-child(1) {
+            background-color: #ff0000;
+            animation-delay: 0s;
+        }
+
+        .bar:nth-child(2) {
+            background-color: #ff0000;
+            animation-delay: 0.1s;
+        }
+
+        .bar:nth-child(3) {
+            background-color: gold;
+            animation-delay: 0.2s;
+        }
+
+        .bar:nth-child(4) {
+            background-color: #ff0000;
+            animation-delay: 0.3s;
+        }
+
+        .bar:nth-child(5) {
+            background-color: #ff0000;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                height: 10px;
+            }
+
+            50% {
+                height: 35px;
+            }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Impact;
+            font-size: 17px;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .control-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .current-station {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid white;
+            border-radius: 5px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: Impact;
+            font-size: 21px;
+        }
+
+        .stations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .station-btn {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .station-btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .station-btn.active {
+            background-color: #333;
+            color: white;
+        }
+
+        .station-name {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .station-info {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .add-station {
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .add-station h3 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .input-group input::placeholder {
+            color: #ccc;
+        }
+
+        .add-btn {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .add-btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .error-message {
+            color: #ff6666;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px solid #ff6666;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .success-message {
+            color: #66ff66;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px solid #66ff66;
+            border-radius: 5px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 1.8em;
+            }
+
+            .title-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .controls {
+                flex-wrap: wrap;
+            }
+
+            .stations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title-container">
+                <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="title">🇨🇦
+                    Click & Play Satellite Radio</h1>
+                <div class="equalizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn" id="playBtn">Play</button>
+                <button class="control-btn" id="pauseBtn" disabled>Pause</button>
+                <button class="control-btn" id="stopBtn" disabled>Stop</button>
+            </div>
+        </div>
+
+        <div class="current-station" id="currentStation">
+            Select a station to start listening
+        </div>
+
+        <div class="stations-grid" id="stationsGrid">
+            <!-- Stations will be loaded here -->
+        </div>
+
+        <div class="add-station">
+            <h3>Add Custom Station</h3>
+            <div class="input-group">
+                <input type="text" id="stationName" placeholder="Station Name">
+                <input type="url" id="stationUrl" placeholder="Stream URL (http:// or https://)">
+            </div>
+            <button class="add-btn" id="addStationBtn">Add Station</button>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer" preload="none"></audio>
+
+    <script>
+        // Station data from research
+        const defaultStations = [
+            {
+                "name": "Rap Radio",
+                "country": "<span style='font-size: 21px;'>🇺🇸</span> United States",
+                "genre": "Rap",
+                "url": "https://trapradio.streamingmedia.it/play",
+                "description": "Trap - English"
+            },
+            {
+                "name": "Rap Music",
+                "country": "<span style='font-size: 21px;'>🇺🇸</span> United States",
+                "genre": "Rap",
+                "url": "http://gfc.rocks/rap",
+                "description": "Rap - English"
+            },
+            {
+                "name": "LAX Radio",
+                "country": "<span style='font-size: 21px;'>🇺🇸</span> United States",
+                "genre": "Rap",
+                "url": "https://streaming.live365.com/a72952",
+                "description": " - "
+            },
+            {
+                "name": "MegaStar Radio",
+                "country": "<span style='font-size: 21px;'>🇪🇸</span> Spain",
+                "genre": "Pop",
+                "url": "http://megastar-cope-rrcast.flumotion.com/cope/megastar-low.mp3",
+                "description": " - Spanish - Madrid"
+            },
+            {
+                "name": "Pop Music Station",
+                "country": "<span style='font-size: 21px;'>🇪🇸/🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> Spain",
+                "genre": "Pop",
+                "url": "https://stream.vyshka24.ru/radio24",
+                "description": "pop - english/ españa/ russian /francia /italia"
+            },
+            {
+                "name": "Radio Company Global House",
+                "country": "<span style='font-size: 21px;'>🇮🇹</span> Italy",
+                "genre": "Electronic",
+                "url": "https://sphera.fluidstream.eu/companyhouse.mp3",
+                "description": "electronic, house - italian"
+            },
+            {
+                "name": "House Station Radio",
+                "country": "<span style='font-size: 21px;'>🇮🇹</span> Italy",
+                "genre": "Electronic",
+                "url": "http://sr4.inmystream.info:8178/;",
+                "description": " - italian"
+            },
+            {
+                "name": "Radio 105 - Dance ",
+                "country": "<span style='font-size: 21px;'>🇮🇹</span> Italy",
+                "genre": "Electronic",
+                "url": "http://icy.unitedradio.it/105Dance90.mp3",
+                "description": "eurodance, mediaset - italian"
+            },
+            {
+                "name": "Maxima FM Spain",
+                "country": "<span style='font-size: 21px;'>🇪🇸</span> Spain",
+                "genre": "Electronic",
+                "url": "http://stream.zeno.fm/nrwv1923czzuv",
+                "description": "dance, electronica, power pop"
+            },
+            {
+                "name": "Rise FM Hit House",
+                "country": "<span style='font-size: 21px;'>🇭🇺</span> Hungary",
+                "genre": "Electronic",
+                "url": "https://oxygenmusic.hu:8443/RISE_HITHOUSE_128",
+                "description": "dance, house - hungarian"
+            },
+            {
+                "name": "Dance Wave!",
+                "country": "<span style='font-size: 21px;'>🇭🇺</span> Hungary",
+                "genre": "Electronic",
+                "url": "https://dancewave.online/dance.mp3",
+                "description": "club dance electronic house trance - english"
+            },
+            {
+                "name": "Dance Wave Retro!",
+                "country": "<span style='font-size: 21px;'>🇭🇺</span> Hungary",
+                "genre": "Electronic",
+                "url": "https://retro.dancewave.online/retrodance.mp3",
+                "description": "90s dance - english"
+            },
+            {
+                "name": "WJLB Detriot",
+                "country": "<span style='font-size: 21px;'>🇺🇸</span> USA",
+                "genre": "Rap, Pop",
+                "url": "https://stream.revma.ihrhls.com/zc1141",
+                "description": "97.9 FM"
+            },
+            {
+                "name": "Z103.5 Toronto",
+                "country": "<span style='font-size: 21px;'>🇨🇦</span> Canada",
+                "genre": "Rap, Pop",
+                "url": "https://evanov.leanstream.co/CIDCFM",
+                "description": "103.5 FM"
+            },
+            {
+                "name": "Hot 97 New York",
+                "country": "<span style='font-size: 21px;'>🇺🇸</span> USA",
+                "genre": "Rap, Pop",
+                "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WQHTFM.mp3",
+                "description": "HOT 97 FM"
+            }
+        ];
+
+        // Application state
+        let currentStation = null;
+        let isPlaying = false;
+        let stations = [];
+
+        // DOM elements
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const currentStationDiv = document.getElementById('currentStation');
+        const stationsGrid = document.getElementById('stationsGrid');
+        const stationNameInput = document.getElementById('stationName');
+        const stationUrlInput = document.getElementById('stationUrl');
+        const addStationBtn = document.getElementById('addStationBtn');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+
+        // Initialize application
+        function init() {
+            loadStations();
+            renderStations();
+            setupEventListeners();
+        }
+
+        // Load stations from localStorage or use defaults
+        function loadStations() {
+            const savedStations = localStorage.getItem('customStations');
+            const customStations = savedStations ? JSON.parse(savedStations) : [];
+            stations = [...defaultStations, ...customStations];
+        }
+
+        // Save custom stations to localStorage
+        function saveCustomStations() {
+            const customStations = stations.filter(station => !defaultStations.includes(station));
+            localStorage.setItem('customStations', JSON.stringify(customStations));
+        }
+
+        // Render stations grid
+        function renderStations() {
+            stationsGrid.innerHTML = '';
+            stations.forEach((station, index) => {
+                const stationBtn = document.createElement('button');
+                stationBtn.className = 'station-btn';
+                stationBtn.innerHTML = `
+                    <div class="station-name">${station.name}</div>
+                    <div class="station-info">${station.country} • ${station.genre} • ${station.description}</div>
+                `;
+                stationBtn.addEventListener('click', () => selectStation(index));
+                stationsGrid.appendChild(stationBtn);
+            });
+        }
+
+        // Select and load a station
+        function selectStation(index) {
+            currentStation = stations[index];
+
+            // Update UI
+            document.querySelectorAll('.station-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.station-btn')[index].classList.add('active');
+
+            currentStationDiv.innerHTML = `
+                <strong>Selected:</strong> ${currentStation.name}<br>
+                <small>${currentStation.country} • ${currentStation.genre}</small>
+            `;
+
+            // Load audio
+            audioPlayer.src = currentStation.url;
+
+            // Enable controls
+            playBtn.disabled = false;
+
+            // Auto-play if currently playing
+            if (isPlaying) {
+                playStation();
+            }
+        }
+
+        // Play current station
+        function playStation() {
+            if (!currentStation) {
+                showError('Please select a station first');
+                return;
+            }
+
+            audioPlayer.play().then(() => {
+                isPlaying = true;
+                playBtn.disabled = true;
+                pauseBtn.disabled = false;
+                stopBtn.disabled = false;
+
+                currentStationDiv.innerHTML = `
+                    <strong>Now Playing:</strong> ${currentStation.name}<br>
+                    <small>${currentStation.country} • ${currentStation.genre}</small>
+                `;
+            }).catch(error => {
+                console.error('Playback failed:', error);
+                showError('Failed to play station. The stream may be unavailable.');
+            });
+        }
+
+        // Pause playback
+        function pauseStation() {
+            audioPlayer.pause();
+            isPlaying = false;
+            playBtn.disabled = false;
+            pauseBtn.disabled = true;
+
+            currentStationDiv.innerHTML = `
+                <strong>Paused:</strong> ${currentStation.name}<br>
+                <small>${currentStation.country} • ${currentStation.genre}</small>
+            `;
+        }
+
+        // Stop playback
+        function stopStation() {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            isPlaying = false;
+            playBtn.disabled = false;
+            pauseBtn.disabled = true;
+            stopBtn.disabled = true;
+
+            currentStationDiv.innerHTML = `
+                <strong>Stopped:</strong> ${currentStation.name}<br>
+                <small>${currentStation.country} • ${currentStation.genre}</small>
+            `;
+        }
+
+        // Add custom station
+        function addCustomStation() {
+            const name = stationNameInput.value.trim();
+            const url = stationUrlInput.value.trim();
+
+            // Validation
+            if (!name || !url) {
+                showError('Please enter both station name and URL');
+                return;
+            }
+
+            if (!isValidUrl(url)) {
+                showError('Please enter a valid URL starting with http:// or https://');
+                return;
+            }
+
+            // Check for duplicates
+            if (stations.some(station => station.url === url)) {
+                showError('This station URL already exists');
+                return;
+            }
+
+            // Add station
+            const newStation = {
+                name: name,
+                country: 'Custom',
+                genre: 'custom',
+                url: url,
+                description: 'user added'
+            };
+
+            stations.push(newStation);
+            saveCustomStations();
+            renderStations();
+
+            // Clear inputs
+            stationNameInput.value = '';
+            stationUrlInput.value = '';
+
+            showSuccess('Station added successfully!');
+        }
+
+        // Validate URL
+        function isValidUrl(string) {
+            try {
+                const url = new URL(string);
+                return url.protocol === 'http:' || url.protocol === 'https:';
+            } catch (_) {
+                return false;
+            }
+        }
+
+        // Show error message
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            successMessage.style.display = 'none';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Show success message
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            playBtn.addEventListener('click', playStation);
+            pauseBtn.addEventListener('click', pauseStation);
+            stopBtn.addEventListener('click', stopStation);
+            addStationBtn.addEventListener('click', addCustomStation);
+
+            // Audio event listeners
+            audioPlayer.addEventListener('error', (e) => {
+                console.error('Audio error:', e);
+                showError('Stream error. The station may be temporarily unavailable.');
+                isPlaying = false;
+                playBtn.disabled = false;
+                pauseBtn.disabled = true;
+                stopBtn.disabled = true;
+            });
+
+            audioPlayer.addEventListener('loadstart', () => {
+                currentStationDiv.innerHTML = `
+                    <strong>Loading:</strong> ${currentStation.name}<br>
+                    <small>Connecting to stream...</small>
+                `;
+            });
+
+            // Enter key support for adding stations
+            stationNameInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    stationUrlInput.focus();
+                }
+            });
+
+            stationUrlInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    addCustomStation();
+                }
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+
+
+        (function () {
+            'use strict';
+
+            // Store reference to original renderStations function
+            const originalRenderStations = window.renderStations;
+
+            // Enhanced renderStations function with delete functionality
+            window.renderStations = function () {
+                stationsGrid.innerHTML = '';
+                stations.forEach((station, index) => {
+                    const stationBtn = document.createElement('button');
+                    stationBtn.className = 'station-btn';
+
+                    // Check if this is a custom station (not in defaultStations array)
+                    const isCustomStation = !defaultStations.includes(station);
+
+                    // Create station content with optional delete button
+                    let stationContent = `
+                <div class="station-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <div class="station-details" style="flex: 1; text-align: left;">
+                        <div class="station-name">${station.name}</div>
+                        <div class="station-info">${station.country} • ${station.genre} • ${station.description}</div>
+                    </div>
+            `;
+
+                    // Add delete button only for custom stations
+                    if (isCustomStation) {
+                        stationContent += `
+                    <div class="station-actions" style="margin-left: 10px;">
+                        <button class="delete-btn" data-station-index="${index}" 
+                                style="background-color: #ff4444; color: white; border: none; 
+                                       padding: 8px 12px; border-radius: 4px; cursor: pointer; 
+                                       font-size: 12px; font-weight: bold; transition: all 0.3s ease;"
+                                onmouseover="this.style.backgroundColor='#cc0000'" 
+                                onmouseout="this.style.backgroundColor='#ff4444'"
+                                title="Delete this custom station">
+                            ✕ Delete
+                        </button>
+                    </div>
+                `;
+                    }
+
+                    stationContent += `</div>`;
+                    stationBtn.innerHTML = stationContent;
+
+                    // Add click listener for station selection (only on station details area)
+                    const stationDetails = stationBtn.querySelector('.station-details');
+                    stationDetails.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        selectStation(index);
+                    });
+
+                    // Add click listener for delete button if it exists
+                    const deleteBtn = stationBtn.querySelector('.delete-btn');
+                    if (deleteBtn) {
+                        deleteBtn.addEventListener('click', (e) => {
+                            e.stopPropagation(); // Prevent station selection
+                            deleteCustomStation(index);
+                        });
+                    }
+
+                    stationsGrid.appendChild(stationBtn);
+                });
+            };
+
+            /**
+             * Delete a custom station with confirmation
+             * @param {number} stationIndex - Index of the station to delete
+             */
+            window.deleteCustomStation = function (stationIndex) {
+                const station = stations[stationIndex];
+
+                // Confirm deletion
+                const confirmDelete = confirm(
+                    `Are you sure you want to delete the station "${station.name}"?\n\n` +
+                    `This action cannot be undone.`
+                );
+
+                if (!confirmDelete) {
+                    return;
+                }
+
+                // Check if we're deleting the currently selected/playing station
+                const isDeletingCurrentStation = currentStation && currentStation === station;
+
+                // Stop playback if deleting current station
+                if (isDeletingCurrentStation && isPlaying) {
+                    stopStation();
+                }
+
+                // Remove station from array
+                stations.splice(stationIndex, 1);
+
+                // Update localStorage with remaining custom stations
+                saveCustomStations();
+
+                // Re-render stations grid
+                renderStations();
+
+                // Clear current station if it was deleted
+                if (isDeletingCurrentStation) {
+                    currentStation = null;
+                    currentStationDiv.innerHTML = 'Select a station to start listening';
+
+                    // Disable controls
+                    playBtn.disabled = true;
+                    pauseBtn.disabled = true;
+                    stopBtn.disabled = true;
+
+                    // Clear audio source
+                    audioPlayer.src = '';
+                }
+
+                // Show success message
+                showSuccess(`Station "${station.name}" has been deleted successfully.`);
+
+                console.log(`Custom station "${station.name}" deleted successfully`);
+            };
+
+            /**
+             * Enhanced saveCustomStations function to ensure proper localStorage management
+             */
+            const originalSaveCustomStations = window.saveCustomStations;
+            window.saveCustomStations = function () {
+                try {
+                    const customStations = stations.filter(station => !defaultStations.includes(station));
+                    localStorage.setItem('customStations', JSON.stringify(customStations));
+                    console.log(`Saved ${customStations.length} custom stations to localStorage`);
+                } catch (error) {
+                    console.error('Failed to save custom stations:', error);
+                    showError('Failed to save changes. Please try again.');
+                }
+            };
+
+            /**
+             * Utility function to get count of custom stations
+             * @returns {number} Number of custom stations
+             */
+            window.getCustomStationsCount = function () {
+                return stations.filter(station => !defaultStations.includes(station)).length;
+            };
+
+            /**
+             * Utility function to export custom stations (for backup)
+             * @returns {string} JSON string of custom stations
+             */
+            window.exportCustomStations = function () {
+                const customStations = stations.filter(station => !defaultStations.includes(station));
+                return JSON.stringify(customStations, null, 2);
+            };
+
+            /**
+             * Utility function to import custom stations (for restore)
+             * @param {string} jsonString - JSON string of stations to import
+             * @returns {boolean} Success status
+             */
+            window.importCustomStations = function (jsonString) {
+                try {
+                    const importedStations = JSON.parse(jsonString);
+
+                    if (!Array.isArray(importedStations)) {
+                        throw new Error('Invalid format: expected array of stations');
+                    }
+
+                    // Validate each station has required properties
+                    for (const station of importedStations) {
+                        if (!station.name || !station.url) {
+                            throw new Error('Invalid station format: missing name or url');
+                        }
+                    }
+
+                    // Add imported stations to current stations (avoiding duplicates)
+                    let addedCount = 0;
+                    for (const station of importedStations) {
+                        if (!stations.some(existing => existing.url === station.url)) {
+                            stations.push(station);
+                            addedCount++;
+                        }
+                    }
+
+                    if (addedCount > 0) {
+                        saveCustomStations();
+                        renderStations();
+                        showSuccess(`Successfully imported ${addedCount} custom stations.`);
+                    } else {
+                        showError('No new stations to import (all stations already exist).');
+                    }
+
+                    return true;
+                } catch (error) {
+                    console.error('Import failed:', error);
+                    showError(`Import failed: ${error.message}`);
+                    return false;
+                }
+            };
+
+            // Add CSS styles for delete button hover effects and responsive design
+            const deleteButtonStyles = document.createElement('style');
+            deleteButtonStyles.textContent = `
+        .station-btn .delete-btn:hover {
+            background-color: #cc0000 !important;
+            transform: scale(1.05);
+        }
+        
+        .station-btn .delete-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Responsive design for mobile devices */
+        @media (max-width: 768px) {
+            .station-content {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            
+            .station-actions {
+                margin-left: 0 !important;
+                margin-top: 10px !important;
+                align-self: flex-end;
+            }
+            
+            .delete-btn {
+                font-size: 11px !important;
+                padding: 6px 10px !important;
+            }
+        }
+        
+        /* Ensure station buttons maintain proper layout */
+        .station-btn {
+            padding: 15px !important;
+        }
+        
+        .station-details {
+            cursor: pointer;
+        }
+        
+        .station-details:hover {
+            opacity: 0.8;
+        }
+    `;
+
+            // Add styles to document head
+            document.head.appendChild(deleteButtonStyles);
+
+            // Re-render stations when script loads to apply delete functionality
+            if (typeof renderStations === 'function') {
+                renderStations();
+            }
+
+            console.log('Delete functionality for custom radio stations loaded successfully');
+
+        })();
+
+    </script>
+</body>
+
+</html>
