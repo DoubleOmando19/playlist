@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background: lightgreen;
+}
+.bubble {
+  content: "";
+  position: absolute;
+  top: 80px;
+  right: 1050px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.25);
+  animation: animate 5s ease-in-out infinite;
+}
+.bubble:nth-child(2) {
+  position: relative;
+  zoom: 0.45;
+  right: -200px;
+  top: -250px;
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(3) {
+  position: relative;
+  zoom: 0.25;
+  right: -300px;
+  top: -100px;
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(4) {
+  position: relative;
+  zoom: 0.25;
+  right: -200px;
+  top: -450px;
+  animation-delay: -5s;
+}
+
+.bubble:nth-child(5) {
+  position: relative;
+  zoom: 0.25;
+  right: -300px;
+  top: -250px;
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(6) {
+  position: relative;
+  zoom: 0.25;
+  right: -300px;
+  top: -450px;
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(7) {
+  position: relative;
+  zoom: 0.25;
+  right: -300px;
+  top: -250px;
+  animation-delay: -5s;
+}
+
+.bubble:nth-child(8) {
+  position: relative;
+  zoom: 0.25;
+  right: -200px;
+  top: -500px;
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(9) {
+  position: relative;
+  zoom: 0.25;
+  right: 100px;
+  top: -550px;
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(10) {
+  position: relative;
+  zoom: 0.25;
+  right: -300px;
+  top: -500px;
+  animation-delay: -5s;
+}
+
+.bubble:nth-child(11) {
+  position: relative;
+  zoom: 0.35;
+  left: -200px;
+  top: -200px;
+  bottom: -100px;
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(12) {
+  position: relative;
+  zoom: 0.35;
+  left: -200px;
+  top: -150px;
+  bottom: -100px;
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(13) {
+  position: relative;
+  zoom: 0.35;
+  left: -150px;
+  top: -400px;
+  bottom: -100px;
+  animation-delay: -5s;
+}
+.bubble:nth-child(14) {
+  position: relative;
+  zoom: 0.35;
+  left: -160px;
+  top: -170px;
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(15) {
+  position: relative;
+  zoom: 0.35;
+  left: -200px;
+  top: -90px;
+  animation-delay: -4s;
+}
+.bubble:nth-child(16) {
+  position: relative;
+  zoom: 0.35;
+  left: -400px;
+  top: -70px;
+  animation-delay: -5s;
+}
+.bubble:nth-child(17) {
+  position: relative;
+  zoom: 0.35;
+  left: -700px;
+  top: -110px;
+  animation-delay: -3s;
+}
+.bubble:nth-child(18) {
+  position: relative;
+  zoom: 0.35;
+  left: -680px;
+  top: -90px;
+  animation-delay: -4s;
+}
+.bubble:nth-child(19) {
+  position: relative;
+  zoom: 0.35;
+  left: -500px;
+  top: -290px;
+  animation-delay: -5s;
+}
+.bubble:nth-child(20) {
+  position: relative;
+  zoom: 0.35;
+  left: -650px;
+  top: -190px;
+  animation-delay: -3s;
+}
+.bubble:nth-child(21) {
+  position: relative;
+  zoom: 0.35;
+  left: -1200px;
+  top: 10px;
+  animation-delay: -4s;
+}
+.bubble:nth-child(22) {
+  position: relative;
+  zoom: 0.35;
+  left: -1200px;
+  top: 10px;
+  animation-delay: -5s;
+}
+.bubble:nth-child(23) {
+  position: relative;
+  zoom: 0.35;
+  left: -1600px;
+  top: 150px;
+  animation-delay: -3s;
+}
+.bubble:nth-child(24) {
+  position: relative;
+  zoom: 0.35;
+  left: -1250px;
+  top: 100px;
+  animation-delay: -4s;
+}
+.bubble:nth-child(25) {
+  position: relative;
+  zoom: 0.35;
+  left: -1500px;
+  top: 100px;
+  animation-delay: -5s;
+}
+.bubble:nth-child(26) {
+  position: relative;
+  zoom: 0.35;
+  left: -1200px;
+  top: 100px;
+  animation-delay: -3s;
+}
+.bubble:nth-child(27) {
+  position: relative;
+  zoom: 0.35;
+  left: -1800px;
+  top: 100px;
+  animation-delay: -4s;
+}
+.bubble:nth-child(28) {
+  position: relative;
+  zoom: 0.35;
+  left: -2000px;
+  top: 500px;
+  animation-delay: -5s;
+}
+.bubble:nth-child(29) {
+  position: relative;
+  zoom: 0.35;
+  left: -2000px;
+  top: 490px;
+  animation-delay: -3s;
+}
+.bubble:nth-child(30) {
+  position: relative;
+  zoom: 0.35;
+  left: -2000px;
+  top: 400px;
+  animation-delay: -4s;
+}
+.bubble:nth-child(31) {
+  position: relative;
+  zoom: 0.35;
+  left: -2000px;
+  top: 550px;
+  animation-delay: -5s;
+}
+.bubble:nth-child(32) {
+  position: relative;
+  zoom: 0.35;
+  left: -2000px;
+  top: 420px;
+  animation-delay: -3s;
+}
+.bubble:nth-child(33) {
+  position: relative;
+  zoom: 0.35;
+  left: -2000px;
+  top: 350px;
+  animation-delay: -4s;
+}
+.bubble:nth-child(34) {
+  position: relative;
+  zoom: 0.35;
+  left: -2000px;
+  top: 300px;
+  animation-delay: -5s;
+}
+.bubble:nth-child(35) {
+  position: relative;
+  zoom: 0.35;
+  left: -2200px;
+  top: 500px;
+  animation-delay: -3s;
+}
+.bubble:nth-child(36) {
+  position: relative;
+  zoom: 0.35;
+  left: -2400px;
+  top: 500px;
+  animation-delay: -4s;
+}
+.bubble:nth-child(37) {
+  position: relative;
+  zoom: 0.35;
+  left: -2700px;
+  top: 500px;
+  animation-delay: -5s;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(550px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+.bubble::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(0px);
+}
+.bubble::after {
+  content: "🎶";
+  font-size: 50px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(0px);
+}
+
+.bubble span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bubble span:nth-child(1) {
+  inset: 10px;
+  border-left: 15px solid white;
+  filter: blur(5px);
+}
+
+.bubble span:nth-child(2) {
+  inset: 10px;
+  border-right: 15px solid white;
+  filter: blur(5px);
+}
+
+.bubble span:nth-child(3) {
+  inset: 20px;
+  border-top: 15px solid white;
+  filter: blur(5px);
+}
+
+.bubble span:nth-child(4) {
+  inset: 30px;
+  border-left: 15px solid white;
+  filter: blur(5px);
+}
+
+.bubble span:nth-child(5) {
+  inset: 50px;
+  border-bottom: 15px solid #fff;
+  filter: blur(5px);
+  transform: rotate(330deg);
+}
