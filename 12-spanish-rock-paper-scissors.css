@@ -72,6 +72,7 @@
 .title {
   font-size: 65px;
   font-family: impact;
+  letter-spacing: .5px;
   font-weight: bold;
   color: rgb(255, 255, 255);
   background-color: black;
