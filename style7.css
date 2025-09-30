@@ -9,27 +9,36 @@ h1 {
   display: block;
   font-size: 40px;
   color: white;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 input {
-  margin-left: 5px;
+  width: 160px;
+  display: block;
+  margin-left: 10px;
   border: 2px solid grey;
 }
 
 #generate {
+  width: 70px;
+  display: inline-block;
   padding: 3px;
   font-family: Arial;
   color: white;
   background-color: rgb(18, 18, 255);
   border-color: white;
-  margin-left: 5px;
+  margin-left: 10px;
+  margin-top: 15px;
 }
 
 #download {
   padding: 3px;
   font-family: Arial;
+  display: inline-block;
+  width: 70px;
   color: white;
   background-color: rgb(18, 18, 255);
   border-color: white;
+  margin-left: 20px;
+  margin-top: 15px;
 }
