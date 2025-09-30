@@ -3,6 +3,11 @@ body {
   height: 700px;
   background-color: black;
 }
+
+img {
+  margin-left: 15px;
+}
+
 h1 {
   width: 300px;
   font-family: Impact;
