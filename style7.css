@@ -9,9 +9,11 @@ h1 {
   display: block;
   font-size: 40px;
   color: white;
+  margin-left: 5px;
 }
 
 input {
+  margin-left: 5px;
   border: 2px solid grey;
 }
 
@@ -21,6 +23,7 @@ input {
   color: white;
   background-color: rgb(18, 18, 255);
   border-color: white;
+  margin-left: 5px;
 }
 
 #download {
