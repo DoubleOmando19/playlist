@@ -4,7 +4,7 @@ const generateBtn = document.querySelector("#generate");
 const downloadBtn = document.querySelector("#download");
 
 generateBtn.addEventListener("click", () => {
-  const qrCode = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${input.value}`;
+  const qrCode = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}`;
   qrImage.src = qrCode;
 });
 
