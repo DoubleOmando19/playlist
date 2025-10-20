@@ -1,0 +1,437 @@
+/* Custom Properties */
+:root {
+  --neon-cyan: 0 255 255;
+  --neon-purple: 168 85 247;
+  --neon-pink: 236 72 153;
+  --neon-green: 34 197 94;
+  --neon-blue: 59 130 246;
+  --neon-yellow: 234 179 8;
+  --neon-orange: 249 115 22;
+  --neon-amber: 245 158 11;
+  --neon-indigo: 99 102 241;
+}
+
+/* Font Families */
+.font-orbitron {
+  font-family: "Orbitron", sans-serif;
+}
+
+.font-rajdhani {
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rajdhani", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  background: rgba(17, 25, 40, 0.85);
+}
+
+/* Neon Glow Effects */
+.shadow-neon-cyan {
+  box-shadow: 0 0 20px rgba(var(--neon-cyan), 0.3),
+    0 0 40px rgba(var(--neon-cyan), 0.2), 0 0 60px rgba(var(--neon-cyan), 0.1);
+}
+
+.shadow-neon-purple {
+  box-shadow: 0 0 20px rgba(var(--neon-purple), 0.3),
+    0 0 40px rgba(var(--neon-purple), 0.2),
+    0 0 60px rgba(var(--neon-purple), 0.1);
+}
+
+.shadow-neon-pink {
+  box-shadow: 0 0 20px rgba(var(--neon-pink), 0.3),
+    0 0 40px rgba(var(--neon-pink), 0.2), 0 0 60px rgba(var(--neon-pink), 0.1);
+}
+
+.shadow-neon-green {
+  box-shadow: 0 0 20px rgba(var(--neon-green), 0.3),
+    0 0 40px rgba(var(--neon-green), 0.2), 0 0 60px rgba(var(--neon-green), 0.1);
+}
+
+.shadow-neon-blue {
+  box-shadow: 0 0 20px rgba(var(--neon-blue), 0.3),
+    0 0 40px rgba(var(--neon-blue), 0.2), 0 0 60px rgba(var(--neon-blue), 0.1);
+}
+
+.shadow-neon-yellow {
+  box-shadow: 0 0 20px rgba(var(--neon-yellow), 0.3),
+    0 0 40px rgba(var(--neon-yellow), 0.2),
+    0 0 60px rgba(var(--neon-yellow), 0.1);
+}
+
+.shadow-neon-orange {
+  box-shadow: 0 0 20px rgba(var(--neon-orange), 0.3),
+    0 0 40px rgba(var(--neon-orange), 0.2);
+}
+
+.shadow-neon-amber {
+  box-shadow: 0 0 20px rgba(var(--neon-amber), 0.3),
+    0 0 40px rgba(var(--neon-amber), 0.2);
+}
+
+.shadow-neon-indigo {
+  box-shadow: 0 0 20px rgba(var(--neon-indigo), 0.3),
+    0 0 40px rgba(var(--neon-indigo), 0.2);
+}
+
+/* Animations */
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(var(--neon-cyan), 0.8),
+      0 0 20px rgba(var(--neon-cyan), 0.6), 0 0 30px rgba(var(--neon-cyan), 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(var(--neon-purple), 0.8),
+      0 0 30px rgba(var(--neon-purple), 0.6),
+      0 0 40px rgba(var(--neon-purple), 0.4);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Search Results Dropdown */
+#searchResults {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--neon-cyan), 0.5) rgba(17, 25, 40, 0.5);
+}
+
+#searchResults::-webkit-scrollbar {
+  width: 8px;
+}
+
+#searchResults::-webkit-scrollbar-track {
+  background: rgba(17, 25, 40, 0.5);
+  border-radius: 10px;
+}
+
+#searchResults::-webkit-scrollbar-thumb {
+  background: rgba(var(--neon-cyan), 0.5);
+  border-radius: 10px;
+}
+
+#searchResults::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--neon-cyan), 0.8);
+}
+
+.search-result-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-result-item:hover {
+  background: rgba(var(--neon-cyan), 0.1);
+  padding-left: 24px;
+  border-left: 3px solid rgb(var(--neon-cyan));
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+/* Crypto Cards */
+.crypto-card {
+  background: rgba(17, 25, 40, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--neon-green), 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.crypto-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--neon-green), 0.6);
+  box-shadow: 0 0 20px rgba(var(--neon-green), 0.3);
+}
+
+.crypto-loading {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+}
+
+.crypto-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(var(--neon-green));
+  margin-bottom: 8px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.crypto-price {
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.crypto-change {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.crypto-change.positive {
+  color: rgb(var(--neon-green));
+  background: rgba(var(--neon-green), 0.1);
+}
+
+.crypto-change.negative {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Country Flag */
+#countryFlag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Map Container */
+#countryMap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  color: black;
+  background-color: black;
+}
+
+/* Loading States */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(var(--neon-cyan), 0.3);
+  border-radius: 50%;
+  border-top-color: rgb(var(--neon-cyan));
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .text-5xl {
+    font-size: 2rem;
+  }
+
+  .text-4xl {
+    font-size: 1.75rem;
+  }
+
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+
+  .glass-card {
+    padding: 16px !important;
+  }
+
+  #countryMap {
+    height: 250px !important;
+    color: black;
+    background-color: black;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Smooth Transitions */
+* {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus States */
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none !important;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Hover Effects for Cards */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  color: rgb(var(--neon-cyan));
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 220%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.glass-card:hover::before {
+  left: 100%;
+}
+
+/* Error State */
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* Success State */
+.success-message {
+  background: rgba(var(--neon-green), 0.1);
+  border: 1px solid rgba(var(--neon-green), 0.3);
+  color: rgb(var(--neon-green));
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(17, 25, 40, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--neon-purple), 0.5);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--neon-purple), 0.8);
+}
+
+/* Selection Color */
+::selection {
+  background: rgba(var(--neon-cyan), 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(var(--neon-cyan), 0.3);
+  color: white;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .glass-card {
+    background: white;
+    border: 1px solid #ccc;
+  }
+
+  header,
+  footer,
+  #cryptoRates {
+    display: none;
+  }
+}

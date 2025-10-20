@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Modern country information app with real-time cryptocurrency rates and interactive maps">
+    <title>World Almanac - High-Tech Information Hub</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="stylesAlm.css">
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 min-h-screen text-white font-rajdhani">
+
+    <!-- Header -->
+    <header class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 animate-pulse">
+        </div>
+        <div class="container mx-auto px-4 py-8 relative z-10">
+            <h1
+                class="text-5xl md:text-7xl font-orbitron font-black text-center bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4 animate-glow">
+                WORLD ALMANAC
+            </h1>
+            <p class="text-center text-xl text-cyan-300 font-light tracking-wider">
+                Discover 195 Countries • Real-Time Data • Maps
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- Search Section -->
+        <section class="mb-8">
+            <div class="glass-card p-6 rounded-2xl border border-cyan-500/30 shadow-neon-cyan">
+                <label for="countrySearch" class="block text-2xl font-orbitron font-bold mb-4 text-cyan-300">
+                    🔍 Search Country
+                </label>
+                <div class="relative">
+                    <input type="text" id="countrySearch" placeholder="Type country name..."
+                        class="w-full px-6 py-4 bg-gray-900/50 border-2 border-purple-500/50 rounded-xl text-white text-lg focus:outline-none focus:border-cyan-400 focus:shadow-neon-cyan transition-all duration-300 placeholder-gray-500"
+                        autocomplete="off">
+                    <div id="searchResults"
+                        class="absolute w-full mt-2 bg-gray-900/95 border border-cyan-500/50 rounded-xl max-h-96 overflow-y-auto hidden backdrop-blur-lg z-50 shadow-2xl">
+                    </div>
+                </div>
+                <p class="mt-3 text-sm text-gray-400">
+                    Start typing to see suggestions from 195 countries
+                </p>
+            </div>
+        </section>
+
+        <!-- Cryptocurrency Widget -->
+        <section class="mb-8">
+            <div class="glass-card p-6 rounded-2xl border border-green-500/30 shadow-neon-green">
+                <h2 class="text-3xl font-orbitron font-bold mb-6 text-green-300 flex items-center gap-3">
+                    <span class="text-4xl">₿</span> Live Cryptocurrency Rates
+                </h2>
+                <div id="cryptoRates" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="crypto-loading">Loading crypto data...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Country Information Display -->
+        <section id="countryInfo" class="hidden">
+
+            <!-- Country Header -->
+            <div class="glass-card p-8 rounded-2xl border border-pink-500/30 shadow-neon-pink mb-8">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div id="countryFlag"
+                        class="w-full md:w-48 h-32 rounded-xl overflow-hidden border-4 border-pink-500/50 shadow-2xl flex-shrink-0">
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h2 id="countryName"
+                            class="text-5xl font-orbitron font-black text-transparent bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text mb-2">
+                        </h2>
+                        <p id="countryCapital" class="text-2xl text-cyan-300 font-light"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Population Counter (Auto-updating) -->
+            <div class="glass-card p-6 rounded-2xl border border-yellow-500/30 shadow-neon-yellow mb-8">
+                <h3 class="text-2xl font-orbitron font-bold mb-4 text-yellow-300">👥 Live Population Counter</h3>
+                <div class="text-center">
+                    <div id="populationCounter"
+                        class="text-6xl font-orbitron font-black text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text mb-2">
+                    </div>
+                    <p class="text-sm text-gray-400">Updates every second (estimated growth rate: 1.05% annually)</p>
+                </div>
+            </div>
+
+            <!-- Country Details Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+
+                <!-- GDP -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-green-500/30 hover:border-green-400 transition-all duration-300 hover:shadow-neon-green">
+                    <div class="text-green-400 text-3xl mb-2">💰</div>
+                    <h4 class="text-lg font-orbitron font-bold text-green-300 mb-2">GDP</h4>
+                    <p id="countryGDP" class="text-2xl font-bold text-white"></p>
+                </div>
+
+                <!-- Area -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-blue-500/30 hover:border-blue-400 transition-all duration-300 hover:shadow-neon-blue">
+                    <div class="text-blue-400 text-3xl mb-2">🌍</div>
+                    <h4 class="text-lg font-orbitron font-bold text-blue-300 mb-2">Area</h4>
+                    <p id="countryArea" class="text-2xl font-bold text-white"></p>
+                </div>
+
+                <!-- Coordinates -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-purple-500/30 hover:border-purple-400 transition-all duration-300 hover:shadow-neon-purple">
+                    <div class="text-purple-400 text-3xl mb-2">📍</div>
+                    <h4 class="text-lg font-orbitron font-bold text-purple-300 mb-2">Coordinates</h4>
+                    <p id="countryCoordinates" class="text-xl font-bold text-white"></p>
+                </div>
+
+                <!-- Languages -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 hover:shadow-neon-cyan">
+                    <div class="text-cyan-400 text-3xl mb-2">🗣️</div>
+                    <h4 class="text-lg font-orbitron font-bold text-cyan-300 mb-2">Official Languages</h4>
+                    <p id="countryLanguages" class="text-xl font-bold text-white"></p>
+                </div>
+
+                <!-- Currency -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-yellow-500/30 hover:border-yellow-400 transition-all duration-300 hover:shadow-neon-yellow">
+                    <div class="text-yellow-400 text-3xl mb-2">💵</div>
+                    <h4 class="text-lg font-orbitron font-bold text-yellow-300 mb-2">Currency</h4>
+                    <p id="countryCurrency" class="text-xl font-bold text-white"></p>
+                </div>
+
+                <!-- Country Code -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-pink-500/30 hover:border-pink-400 transition-all duration-300 hover:shadow-neon-pink">
+                    <div class="text-pink-400 text-3xl mb-2">📞</div>
+                    <h4 class="text-lg font-orbitron font-bold text-pink-300 mb-2">Country Code</h4>
+                    <p id="countryCode" class="text-2xl font-bold text-white"></p>
+                </div>
+
+                <!-- Religion -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-orange-500/30 hover:border-orange-400 transition-all duration-300 hover:shadow-neon-orange">
+                    <div class="text-orange-400 text-3xl mb-2">🕌</div>
+                    <h4 class="text-lg font-orbitron font-bold text-orange-300 mb-2">Religion</h4>
+                    <p id="countryReligion" class="text-xl font-bold text-white"></p>
+                </div>
+
+                <!-- Elevation -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-indigo-500/30 hover:border-indigo-400 transition-all duration-300 hover:shadow-neon-indigo">
+                    <div class="text-indigo-400 text-3xl mb-2">⛰️</div>
+                    <h4 class="text-lg font-orbitron font-bold text-indigo-300 mb-2">Elevation</h4>
+                    <p id="countryElevation" class="text-2xl font-bold text-white"></p>
+                </div>
+
+                <!-- Gold Reserves -->
+                <div
+                    class="glass-card p-6 rounded-xl border border-amber-500/30 hover:border-amber-400 transition-all duration-300 hover:shadow-neon-amber">
+                    <div class="text-amber-400 text-3xl mb-2">🏆</div>
+                    <h4 class="text-lg font-orbitron font-bold text-amber-300 mb-2">Gold Reserves</h4>
+                    <p id="countryGold" class="text-xl font-bold text-white"></p>
+                </div>
+            </div>
+
+            <!-- Country Map -->
+            <div class="glass-card p-6 rounded-2xl border border-blue-500/30            shadow-neon-blue mb-8">
+                <h3 class="text-2xl font-orbitron font-bold mb-4 text-blue-300">🗺️ Country Map</h3>
+                <div id="countryMap"
+                    class="w-full h-96 rounded-xl overflow-hidden bg-black flex items-center justify-center">
+                    <p class="text-gray-500">Map loading...</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Welcome Message (shown when no country selected) -->
+        <section id="welcomeMessage" class="text-center py-20">
+            <div class="glass-card p-12 rounded-2xl border border-purple-500/30 shadow-neon-purple max-w-3xl mx-auto">
+                <div class="text-8xl mb-6 animate-bounce">🌎</div>
+                <h2
+                    class="text-4xl font-orbitron font-bold mb-4 text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
+                    Welcome to World Almanac
+                </h2>
+                <p class="text-xl text-gray-300 mb-6">
+                    Search for any country above to explore detailed information, live population data, interactive
+                    maps, and more!
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+                    <span class="px-4 py-2 bg-cyan-500/20 rounded-full border border-cyan-500/50">195 Countries</span>
+                    <span class="px-4 py-2 bg-purple-500/20 rounded-full border border-purple-500/50">12 Data
+                        Points</span>
+                    <span class="px-4 py-2 bg-pink-500/20 rounded-full border border-pink-500/50">Real-Time
+                        Updates</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="container mx-auto px-4 py-8 text-center text-gray-500 text-sm">
+        <p class="mb-2">World Almanac © 2025 | Data from Almanique</p>
+        <p>Powered by REST Countries API & CoinGecko API</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./appAlm.js"></script>
+    <script src="./dataAlm.js"></script>
+
+</body>
+
+</html>
