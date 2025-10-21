@@ -333,7 +333,7 @@ button:focus {
 .glass-card {
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 260px;
   color: rgb(var(--neon-cyan));
 }
 
