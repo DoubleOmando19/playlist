@@ -13,7 +13,7 @@
 // Configuration
 // ============================================================================
 
-const API_BASE_URL = 'https://localhost:5000';
+const API_BASE_URL = 'https://api.github.com';
 
 // ============================================================================
 // Navigation Management
