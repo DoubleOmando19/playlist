@@ -189,7 +189,7 @@ body {
 }
 
 .crypto-name {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 700;
   color: rgb(var(--neon-green));
   margin-bottom: 8px;
@@ -289,11 +289,9 @@ body {
 
 @media (max-width: 640px) {
   h1 {
-    font-size: 1.3rem !important;
+    font-size: 1.7rem !important;
   }
-  .text-5xl {
-    font-size: 1.3rem;
-  }
+  
   .grid {
     grid-template-columns: 1fr !important;
   }
