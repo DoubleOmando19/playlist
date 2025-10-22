@@ -130,7 +130,7 @@ async function loadCountryFlag(countryName) {
     flagContainer.innerHTML = '<div class="flex items-center justify-center h-full"><div class="loading-spinner"></div></div>';
 
     try {
-        const response = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=false`);
+        const response = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true`);
 
         if (!response.ok) {
             throw new Error('Failed to fetch flag');
