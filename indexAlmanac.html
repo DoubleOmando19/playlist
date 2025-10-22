@@ -34,7 +34,7 @@
                 WORLD ALMANAC
             </h1>
             <p class="text-center text-xl text-cyan-300 font-light tracking-wider">
-                Discover 195 Countries • Real-Time Data • World Map
+                Discover 195 Countries • Real-Time Data • Maps
             </p>
         </div>
     </header>
@@ -51,7 +51,7 @@
                 <div class="relative">
                     <input type="text" id="countrySearch" placeholder="Type country name..."
                         class="w-full px-6 py-4 bg-gray-900/50 border-2 border-purple-500/50 rounded-xl text-white text-lg focus:outline-none focus:border-cyan-400 focus:shadow-neon-cyan transition-all duration-300 placeholder-gray-500"
-                        autocomplete="off">
+                        autocomplete="off" onkeydown="handleCostKeydown(event);">
                     <div id="searchResults"
                         class="absolute w-full mt-2 bg-gray-900/95 border border-cyan-500/50 rounded-xl max-h-96 overflow-y-auto hidden backdrop-blur-lg z-50 shadow-2xl">
                     </div>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="flex-grow text-center md:text-left">
                         <h2 id="countryName"
-                            class="text-4xl font-orbitron font-black text-transparent bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text mb-2">
+                            class="text-5xl font-orbitron font-black text-transparent bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text mb-2">
                         </h2>
                         <p id="countryCapital" class="text-2xl text-cyan-300 font-light"></p>
                     </div>
@@ -97,7 +97,7 @@
                 <h3 class="text-2xl font-orbitron font-bold mb-4 text-yellow-300">👥 Live Population Counter</h3>
                 <div class="text-center">
                     <div id="populationCounter"
-                        class="text-4xl font-orbitron font-black text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text mb-2">
+                        class="text-5xl font-orbitron font-black text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text mb-2">
                     </div>
                     <p class="text-sm text-gray-400">Updates every second (estimated growth rate: 1.05% annually)</p>
                 </div>
@@ -180,8 +180,8 @@
             </div>
 
             <!-- Country Map -->
-            <div class="glass-card p-6 rounded-2xl border border-blue-500/30 shadow-neon-blue mb-8">
-                <h3 class="text-2xl font-orbitron font-bold mb-4 text-blue-300">🌎 World Map</h3
+            <div class="glass-card p-6 rounded-2xl border border-blue-500/30            shadow-neon-blue mb-8">
+                <h3 class="text-2xl font-orbitron font-bold mb-4 text-blue-300">🌎 World Map</h3>
                 <div id="countryMap"
                     class="w-full h-96 rounded-xl overflow-hidden bg-black flex items-center justify-center">
                     <p class="text-gray-500">Map loading...</p>
