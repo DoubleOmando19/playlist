@@ -289,10 +289,10 @@ body {
 
 @media (max-width: 640px) {
   h1 {
-    font-size: 1.6rem !important;
+    font-size: 1.3rem !important;
   }
   .text-5xl {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
   .grid {
     grid-template-columns: 1fr !important;
