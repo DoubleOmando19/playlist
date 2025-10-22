@@ -50,12 +50,13 @@ function initializeSearch() {
     });
 }
 
-function handledownkey(event) {
+function handleCostKeydown(event) {
     event.key;
     if (event.key === 'Enter') {
-        selectCountry(countryName);
+        displaySearchResults(searchResults);
     }
 }
+
 
 // Display search results
 function displaySearchResults(countries, container) {
@@ -129,7 +130,7 @@ async function loadCountryFlag(countryName) {
     flagContainer.innerHTML = '<div class="flex items-center justify-center h-full"><div class="loading-spinner"></div></div>';
 
     try {
-        const response = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=false`);
+        const response = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true`);
 
         if (!response.ok) {
             throw new Error('Failed to fetch flag');
@@ -171,7 +172,7 @@ function loadCountryMap(countryName, coordinates) {
         }
 
         // Create OpenStreetMap embed
-        const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=`;
+        const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox`;
 
         mapContainer.innerHTML = `
             <iframe 
