@@ -227,7 +227,7 @@ body {
 #countryFlag img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
 }
 
@@ -265,7 +265,7 @@ body {
   }
 
   .text-5xl {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .text-4xl {
