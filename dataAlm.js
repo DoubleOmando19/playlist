@@ -507,7 +507,7 @@ const countriesData = [
     "gold_reserves": "0.25 Tonnes"
   },
   {
-    "country": "People's Republic of China",
+    "country": "China",
     "capital": "Beijing",
     "population": 1416096094,
     "gdp": "43.268 trillion USD",
