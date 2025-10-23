@@ -457,7 +457,7 @@ const countriesData = [
     "gdp": "2.39 trillion USD",
     "area": "9,984,670 km2",
     "coordinates": "56.1304 N 106.3468 W",
-    "official_languages": "English,French",
+    "official_languages": "English, French",
     "currency": "Canadian Dollar (CAD)",
     "country_code": "+1",
     "religion": "Christianity",
