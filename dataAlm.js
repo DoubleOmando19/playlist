@@ -6,7 +6,7 @@ const countriesData = [
     "country": "Afghanistan",
     "capital": "Kabul",
     "population": 44515793,
-    "gdp": "183 billion (PPP) billion(ppp)",
+    "gdp": "183 billion (PPP)",
     "area": "652.867 km2",
     "coordinates": "33.9391 N, 67.7100 E",
     "official_languages": "Pashto, Dari",
@@ -454,7 +454,7 @@ const countriesData = [
     "country": "Canada",
     "capital": "Ottawa",
     "population": 41695000,
-    "gdp": "2.56 trillion USD",
+    "gdp": "2.39 trillion USD",
     "area": "9,984,670 km2",
     "coordinates": "56.1304 N 106.3468 W",
     "official_languages": "English,French",
@@ -513,7 +513,7 @@ const countriesData = [
     "gdp": "43.268 trillion USD",
     "area": "9,596,960 km2",
     "coordinates": "35.8617 N 104.1954 E",
-    "official_languages": "Chinese",
+    "official_languages": "Mandarin",
     "currency": "Chinese Yuan (CNY)",
     "country_code": "+86",
     "religion": "Buddhism",
@@ -2579,7 +2579,7 @@ const countriesData = [
     "gold_reserves": "low/Negligible"
   },
   {
-    "country": "United Arab Emirates",
+    "country": "UAE",
     "capital": "Abu Dhabi",
     "population": 11346000,
     "gdp": "501 billion",
@@ -2607,10 +2607,10 @@ const countriesData = [
     "gold_reserves": "310 Tonnes"
   },
   {
-    "country": "United States of America",
+    "country": "USA",
     "capital": "Washington DC",
     "population": 347275807,
-    "gdp": "25.3 trillion",
+    "gdp": "30.486 trillion",
     "area": "9,147,420 km2",
     "coordinates": "38.7946 N, 106.5348 W",
     "official_languages": "English",
