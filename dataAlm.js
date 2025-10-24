@@ -6,7 +6,7 @@ const countriesData = [
     "country": "Afghanistan",
     "capital": "Kabul",
     "population": 44515793,
-    "gdp": "17.23 billion (USD) billion(ppp)",
+    "gdp": "17.23 billion (USD)",
     "area": "652.867 km2",
     "coordinates": "33.9391 N, 67.7100 E",
     "official_languages": "Pashto, Dari",
@@ -2607,7 +2607,7 @@ const countriesData = [
     "gold_reserves": "310 Tonnes"
   },
   {
-    "country": "United States of America",
+    "country": "United States of America, USA",
     "capital": "Washington DC",
     "population": 347275807,
     "gdp": "30.486 trillion (USD)",
