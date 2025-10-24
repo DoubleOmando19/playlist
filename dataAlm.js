@@ -1104,7 +1104,7 @@ const countriesData = [
     "official_languages": "Hindi, English",
     "currency": "Indian Rupee (INR)",
     "country_code": "+91",
-    "religion": "HIndu",
+    "religion": "Hindu",
     "elevation": "621 m",
     "gold_reserves": "853.63 Tonnes"
   },
