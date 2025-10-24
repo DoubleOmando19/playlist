@@ -2607,7 +2607,7 @@ const countriesData = [
     "gold_reserves": "310 Tonnes"
   },
   {
-    "country": "United States of America, USA",
+    "country": "USA",
     "capital": "Washington DC",
     "population": 347275807,
     "gdp": "30.486 trillion (USD)",
@@ -2618,10 +2618,7 @@ const countriesData = [
     "country_code": "+1",
     "religion": "Christianity",
     "elevation": "760 m",
-    "gold_reserves": "8,133 Tonnes",
-    "keyword": {
-      "country": "USA"
-    }
+    "gold_reserves": "8,133 Tonnes"
   },
   {
     "country": "Uruguay",
