@@ -2619,7 +2619,9 @@ const countriesData = [
     "religion": "Christianity",
     "elevation": "760 m",
     "gold_reserves": "8,133 Tonnes",
-    "keyword": "USA"
+    "keyword": {
+      "country": "USA"
+    }
   },
   {
     "country": "Uruguay",
