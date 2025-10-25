@@ -10,9 +10,24 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">  
   
   <style>
+    :root {
+      --neon-cyan: 0 255 255;
+      --neon-purple: 168 85 247;
+      --neon-pink: 255 154 170;
+      --neon-green: 177 255 59;
+      --neon-blue: 30 56 255;
+      --neon-red: 255 27 30;
+      --neon-yellow: 255 255 46;
+      --neon-orange: 255 163 25;
+      --neon-redrose: 255 199 208;
+      --neon-indigo: 99 102 241;
+      --neon-white: 255 255 255;
+      --neon-black: 0 0 0;
+
     body {
       background-color: black;
     }
+      
     .button1 {
       margin-top: 5px;
       margin-left: 100px;
@@ -33,6 +48,7 @@
       font-size: 11px;
       text-decoration: none;
     }
+      
     .button1::before,
     button1::after {
       content: 'RADIO';
@@ -82,15 +98,27 @@
     .title {
       height: 50px;
       margin-bottom: 1%;
-      margin-top: 5px;
+      margin-top: 12px;
       margin-left: 3px;
       color: white;
-      text-shadow: 1px 1px 1px white;
+      text-shadow: 0px 0px 10px white;
       font-family: Georgia, 'Times New Roman', Times, serif;
-      font-size: 40px;
+      font-size: 38px;
       font-weight: bold;
     }
 
+    .title:hover {
+      height: 50px;
+      margin-bottom: 1%;
+      margin-top: 12px;
+      margin-left: 3px;
+      color: rgb (var(--neon-green));
+      text-shadow: 0px 0px 10px white;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 1s;
+    }
     .Auto-Play1 {
       margin-left: 3px;
       background-color: rgb(200, 0, 0);
@@ -100,7 +128,6 @@
       width: 100px;
       cursor: pointer;
       text-shadow: 0 0 10px red;
-      letter-spacing: 2px;
       box-shadow:
         0 0 20px rgb(254, 46, 46),
         0 0 30px rgb(219, 0, 0);
@@ -127,7 +154,6 @@
       width: 100px;
       cursor: pointer;
       text-shadow: 0 0 10px red;
-      letter-spacing: 2px;
       box-shadow:
         0 0 20px rgb(254, 46, 46),
         0 0 30px rgb(219, 0, 0);
