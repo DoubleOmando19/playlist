@@ -296,6 +296,7 @@ body {
     height: 250px !important;
     color: black;
     background-color: black;
+    object-fit: contain;
   }
 }
 
@@ -304,9 +305,14 @@ body {
     font-size: 2.0rem !important;
   }
   
+  .text-4xl {
+    font-size: 1.75rem;
+  }  
+  
   .text-5xl {
     font-size: 2.0rem;
   }  
+  
   .grid {
     grid-template-columns: 1fr !important;
   }
