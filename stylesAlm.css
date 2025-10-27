@@ -265,11 +265,11 @@ body {
   }
 
   .text-5xl {
-    font-size: 2.0rem;
+    font-size: 2.3rem;
   }
 
   .text-4xl {
-    font-size: 2.0rem;
+    font-size: 2.1rem;
   }
 
   .text-3xl {
@@ -298,11 +298,11 @@ body {
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 2.0rem !important;
+    font-size: 2.3rem !important;
   }
   
   .text-4xl {
-    font-size: 1.9rem;
+    font-size: 2.1rem;
   }  
   
   .text-5xl {
