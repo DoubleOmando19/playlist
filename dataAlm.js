@@ -2607,7 +2607,7 @@ const countriesData = [
     "gold_reserves": "310 Tonnes"
   },
   {
-    "country": "United States of America",
+    "country": "USA",
     "capital": "Washington DC",
     "population": 347275807,
     "gdp": "30.486 trillion (USD)",
