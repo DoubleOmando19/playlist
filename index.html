@@ -11,38 +11,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
-  <script>
-    function runIndexBasedOnDay() {
-      const dayOfWeek = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-      switch (dayOfWeek) {
-        case 0: // Sunday
-          require('./index.html');
-          break;
-        case 1: // Monday
-          require('./index.html');
-          break;
-        case 2: // Tuesday
-          require('./index.html');
-          break;
-        case 3: // Wednesday
-          require('./index.html');
-          break;
-        case 4: // Thursday
-          require('./index.html');
-          break;
-        case 5: // Friday
-          require('./index.html');
-          break;
-        case 6: // Saturday
-          require('./index.html');
-          break;
-        default:
-          console.log('Error: Invalid day of the week.');
-      }
-    }
-
-    runIndexBasedOnDay();
-  </script>
   <style>
     p {
       font-family: "Orbitron", "Roboto", Arial;
@@ -1767,6 +1735,38 @@
   <footer class="footer">
     |utubeplaylist.com © 2023|
   </footer>
+  <script>
+    function runIndexBasedOnDay() {
+      const dayOfWeek = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      switch (dayOfWeek) {
+        case 0: // Sunday
+          require('./index.html');
+          break;
+        case 1: // Monday
+          require('./index.html');
+          break;
+        case 2: // Tuesday
+          require('./index.html');
+          break;
+        case 3: // Wednesday
+          require('./index.html');
+          break;
+        case 4: // Thursday
+          require('./index.html');
+          break;
+        case 5: // Friday
+          require('./index.html');
+          break;
+        case 6: // Saturday
+          require('./index.html');
+          break;
+        default:
+          console.log('Error: Invalid day of the week.');
+      }
+    }
+
+    runIndexBasedOnDay();
+  </script>
 </body>
 
 </html>
