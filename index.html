@@ -1685,34 +1685,28 @@
     |utubeplaylist.com © 2023|
   </footer>
   <script>
-   let i = 0;
+    function loadTodayPage() {
+      const indexFiles = [
+        "index.html",
+        "index.html",
+        "index5.html",
+        "index.html",
+        "index5.html",
+        "index.html",
+        "index5.html",
+      ];
 
-    const indexFiles = [
-      "indexDec2025.html",
-      "indexOct142025.html",
-      "indexDec2025.html",
-      "indexOct142025.html",
-      "indexDec2025.html",
-      "indexOct142025.html",
-      "indexDec2025.html",
-    ];
-
-    let dateIndex = new Date().getDay();
-    const LoadPage = () => {
-      const link = document.createElement('a');
-      link.href = indexFiles[dateIndex];
-      link.textContent = 'Click here to load todays page';
-      document.body.appendChild(link);
-
-    };
-
-    try {
-      LoadPage(i);
-    } catch (error) {
-      console.error('Error loading page;', error);
-      alert('Page could not load');
+      let today = new Date().getDay();
+      const index = today % indexFiles.length;
+      try {
+        window.location.href = indexFiles[index];
+      } catch (error) {
+        console.error('Error loading page;', error);
+        alert('Page could not load');
+      }
     }
-    window.onload = LoadPage;
+
+    window.onload = loadTodayPage;
   </script>
 </body>
 
