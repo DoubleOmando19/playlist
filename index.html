@@ -1687,31 +1687,35 @@
   <script>
     function runIndexBasedOnDay() {
       const dayOfWeek = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      let indexFile = '';
       switch (dayOfWeek) {
         case 0: // Sunday
-          require('index5.html');
+          indexFile = 'index.html';
           break;
         case 1: // Monday
-          require('index.html');
+          indexFile = 'index5.html';
           break;
         case 2: // Tuesday
-          require('index5.html');
+          indexFile = 'index.html';
           break;
         case 3: // Wednesday
-          require('index.html');
+          indexFile = 'index5.html';
           break;
         case 4: // Thursday
-          require('index5.html');
+          indexFile = 'index.html';
           break;
         case 5: // Friday
-          require('index.html');
+          indexFile = 'index5.html';
           break;
         case 6: // Saturday
-          require('index5.html');
+          indexFile = 'index.html';
           break;
         default:
           console.log('Error: Invalid day of the week.');
       }
+      const script = document.createElement('script');
+      script.src = indexFile;
+      document.head.appendChild(script);
     }
 
     runIndexBasedOnDay();
