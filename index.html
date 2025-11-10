@@ -1685,40 +1685,33 @@
     |utubeplaylist.com © 2023|
   </footer>
   <script>
-    function runIndexBasedOnDay() {
-      const dayOfWeek = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-      let indexFile = '';
-      switch (dayOfWeek) {
-        case 0: // Sunday
-          indexFile = 'index.html';
-          break;
-        case 1: // Monday
-          indexFile = 'index5.html';
-          break;
-        case 2: // Tuesday
-          indexFile = 'index.html';
-          break;
-        case 3: // Wednesday
-          indexFile = 'index5.html';
-          break;
-        case 4: // Thursday
-          indexFile = 'index.html';
-          break;
-        case 5: // Friday
-          indexFile = 'index5.html';
-          break;
-        case 6: // Saturday
-          indexFile = 'index.html';
-          break;
-        default:
-          console.log('Error: Invalid day of the week.');
-      }
-      const script = document.createElement('script');
-      script.src = indexFile;
-      document.body.appendChild(script);
-    }
+   let i = 0;
 
-    runIndexBasedOnDay();
+    const indexFiles = [
+      "indexDec2025.html",
+      "indexOct142025.html",
+      "indexDec2025.html",
+      "indexOct142025.html",
+      "indexDec2025.html",
+      "indexOct142025.html",
+      "indexDec2025.html",
+    ];
+
+    let dateIndex = new Date().getDay();
+    const LoadPage = () => {
+      const link = document.createElement('a');
+      link.href = indexFiles[dateIndex];
+      link.textContent = 'Click here to load todays page';
+      document.body.appendChild(link);
+
+    };
+
+    try {
+      LoadPage(i);
+    } catch (error) {
+      console.error('Error loading page;', error);
+      alert('Page could not load');
+    }
   </script>
 </body>
 
