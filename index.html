@@ -11,30 +11,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
-  <script defer>
-    function loadTodayPage() {
-      const indexFiles = [
-        "index.html",
-        "index5.html",
-        "index.html",
-        "index5.html",
-        "index.html",
-        "index5.html",
-        "index.html",
-      ];
-
-      let today = new Date().getDay();
-      const index = today % indexFiles.length;
-      try {
-        window.location.href = indexFiles[index];
-      } catch (error) {
-        console.error('Error loading page;', error);
-        alert('Page could not load');
-      }
-    }
-
-    loadTodayPage();
-  </script>
   <style>
     p {
       font-family: "Orbitron", "Roboto", Arial;
@@ -1708,6 +1684,30 @@
   <footer class="footer">
     |utubeplaylist.com © 2023|
   </footer>
+  <script defer>
+    function loadTodayPage() {
+      const indexFiles = [
+        "index.html",
+        "index5.html",
+        "index.html",
+        "index5.html",
+        "index.html",
+        "index5.html",
+        "index.html",
+      ];
+
+      let today = new Date().getDay();
+      const index = today % indexFiles.length;
+      try {
+        window.location.href = indexFiles[index];
+      } catch (error) {
+        console.error('Error loading page;', error);
+        alert('Page could not load');
+      }
+    }
+
+    loadTodayPage();
+  </script>
 </body>
 
 </html>
