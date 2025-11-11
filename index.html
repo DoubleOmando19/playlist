@@ -5,6 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Utubeplaylist</title>
+  <script defer>
+    function loadTodayPage() {
+      const indexFiles = [
+        "index5.html",
+        "index5.html",
+        "index.html",
+        "index5.html",
+        "index.html",
+        "index5.html",
+        "index.html",
+        "index5.html",
+      ];
+
+      let today = new Date().getDay();
+      const index = today % indexFiles.length;
+      try {
+        window.location.href = indexFiles[index];
+      } catch (error) {
+        console.error('Error loading page;', error);
+        alert('Page could not load');
+      }
+    }
+
+    window.onload = loadTodayPage;
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
