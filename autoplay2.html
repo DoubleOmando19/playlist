@@ -64,7 +64,6 @@
       border: 2px solid rgb(0, 60, 255);
       border-radius: 30px;
       background-color: black;
-      margin-left: 10px;
       color: blue;
     }
 
@@ -83,7 +82,7 @@
 
     @media (max-width: 768px) {
       .header {
-        font-size: 1.3em;
+        font-size: 1.2em;
       }
 
       .container {
@@ -106,7 +105,7 @@
       </h1>
       <div class="controls">
         <div class="videoPlayer">
-          <video style="margin-left: 0px;" class="videoPlayer" id="videoPlayer" width="320" height="300" controls>
+          <video style="margin-left: 0px;" class="videoPlayer" id="videoPlayer" width="300" height="280" controls>
             <!-- Initial video source will be set by JavaScript -->
           </video>
         </div>
@@ -237,6 +236,10 @@
 
     // Event listener for the autoplay button
     autoplayButton.addEventListener('click', playNextVideo);
+    
+    // Event listener for the play button
+    videoPlayer.addEventListener('click', playNextVideo);
+
   </script>
 
 </body>
