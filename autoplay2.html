@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    body {
+      background-color: rgb(15, 71, 255);
+      color: white;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin-bottom: 20px;
+      align-items: center;
+      margin-right: 300px;
+    }
+
+    .control-btn {
+      background-color: white;
+      color: rgb(15, 71, 255);
+      border: 2px solid rgb(15, 71, 255);
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4em;
+      transition: all 0.3s ease;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6em;
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 20px;
+      border: 2px solid rgb(0, 60, 255);
+      border-radius: 30px;
+      background-color: black;
+      color: blue;
+    }
+
+    .videoPlayer {
+      margin-top: 5px;
+      grid-template-columns: 1fr;
+      margin-left: 300px;
+    }
+
+    .buttons {
+      justify-content: center;
+      align-items: center;
+      margin-left: 300px;
+      font-size: .5em;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        font-size: 1.4em;
+      }
+
+      .container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .controls {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>
+        Utubeplaylist
+      </h1>
+      <div class="controls">
+        <div class="videoPlayer">
+          <video style="margin-left: 0px;" class="videoPlayer" id="videoPlayer" width="360" height="360" controls>
+            <!-- Initial video source will be set by JavaScript -->
+          </video>
+        </div>
+        <div class="buttons">
+          <div>
+            <button class="control-btn" id="autoplayButton">AutoPlay</button>
+          </div>
+          <div>
+            <button style="margin-top: 10px;" class="control-btn">
+              <a style="color: rgb(15, 71, 255); text-decoration: none;" href="./musicindex.html">Radio</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Video sources array
+    const videoSources = [
+      "Gunna - just say dat.mp4",
+      "BossMan Dlow - Flood Resurrect The Trap.mp4",
+      "What You Is.mp4",
+      "Drake - What Did I Miss.mp4",
+      "Lil Baby G-Herbo - All On Me.mp4",
+      "Hurricane Wisdom - Powerhouse.mp4",
+      "Moneybagg Yo G-Herbo - Feet On Land.mp4",
+      "Ty Dolla $ign - Don't Kill The Party.mp4",
+      "Shot Callin.mp4",
+      "Which One.mp4",
+      "Gunna - wgft (feat. Burna Boy) [Official Video].mp4",
+      "MOLIY - Shake It To The Max.mp4",
+      "Cardi B - Bodega Baddie.mp4",
+      "French, Lil Durk - Big Bag.mp4",
+      "Travis Scott - 4X4.mp4",
+      "Quavo - Trappa Rappa.mp4",
+      "YoungBoy - Kickboxer.mp4",
+      "Rio Da Yung OG - 4 Minutes Of Hell.mp4",
+      "Travis Scott - Dumbo.mp4",
+      "Burna Boy - Update.mp4",
+      "Dee Mula - Blow My High.mp4",
+      "Rick Ross, Pharrell- For The Money.mp4",
+      "Gunna - GOT DAMN.mp4",
+      "Travis Scott, GloRilla - SHYNE.mp4",
+      "Burna Boy - TaTaTa ft. Travis Scott.mp4",
+      "Rich The Kid, Kodak Black - Rain Snow.mp4",
+      "BossMan Dlow - Shake Dat Ass.mp4",
+      "Quavo, Lil Baby - Legends.mp4",
+      "Lil Durk - Vanish Mode.mp4",
+      "Kodak Black - By Myself.mp4",
+      "PLUTO, Sexyy Red - WHIM WHAMIEE.mp4",
+      "1900Rugrat - One Take ft. Kodak Black.mp4",
+      "Drake - NOKIA .mp4",
+      "Ot7QUANNY FT. Bossman Dlow -  Bout My Money .mp4",
+      "Hurricane Wisdom - Drugs Callin.mp4",
+      "Kendrick Lamar & SZA - luther.mp4",
+      "Central Cee - Truth in lies.mp4",
+      "Kendrick Lamar - Not Like Us.mp4",
+      "NLE Choppa - Gang Baby.mp4",
+      "Tommy Richman - ACTIN UP WITH SEXYY RED.mp4",
+      "SZA - 30 For 30 feat. Kendrick Lamar.mp4",
+      "The Weeknd, Playboi Carti - Timeless.mp4",
+      "One of wun.mp4",
+      "Dumb and dumber.mp4",
+      "ALL RED.mp4",
+      "Talibans.mp4",
+      "Asake wave.mp4",
+      "BAND4BAND.mp4",
+      "Like That.mp4",
+      "Gunna-Him all along.mp4",
+      "Monitoring Me.mp4",
+      "FE!N",
+      "tv off.mp4",
+      "ACTIVE.mp4",
+      "It Is What It Is.mp4",
+      "Lil Baby - Touchdown.mp4",
+      "Tailor Swif1.mp4",
+      "Metro-Walk Em Down.mp4",
+      "Kendrick Lamar - squabble up.mp4",
+      "Chris Brown - Residuals.mp4",
+      "Bellini - Samba De Janeiro.mp4",
+      "James Brown - I Got Soul.mp4",
+      "Artemas - superstar (official music video).mp4",
+      "Martin Garrix:Matisse:Sadko - Butterflies.mp4",
+      "Disco Lines:Tinashe - No Broke Boys.mp4",
+      "La Noche.mp4",
+      "BABY GANG:EL ALFA:OMEGA - KRIMINAL.mp4",
+      "una noche con hugel.mp4",
+      "IAmChino x Pitbull x Flo Rida - Borracho y Loco.mp4",
+      "Bad Bunny - NUEVAYoL.mp4",
+      "Beele - no tiene sentido.mp4",
+      "Daddy Yankee  - El Toque.mp4",
+      "Rels B - Tu Vas Sin.mp4",
+      "Manuel Turizo - Mirame Ahora.mp4",
+      "Se Riega.mp4",
+      "J Balvin, Omega - KLK.mp4",
+      "Myke Towers & Quevedo - SOLEAO.mp4",
+      "Manuel Turizo - MENOS EL CORA.mp4",
+      "blessd.mp4",
+      "Myke Towers & L-Gante - Los Depuro.mp4",
+      "La Bebe.mp4",
+      "Teka.mp4",
+      "Gata Only.mp4",
+      "Que Onda.mp4",
+      "Myke Towers & benny blanco - Degenre.mp4",
+      "TU NAME.mp4",
+      "MESITA.mp4",
+      "CRAZYZ1.mp4",
+    ];
+    const videoPlayer = document.getElementById('videoPlayer');
+    const autoplayButton = document.getElementById('autoplayButton');
+    let currentVideoIndex = 0;
+
+    // Function to play the next video in the playlist
+    function playNextVideo() {
+      if (currentVideoIndex < videoSources.length) {
+        videoPlayer.src = videoSources[currentVideoIndex];
+        videoPlayer.play();
+        currentVideoIndex++;
+      } else {
+        // Reset to the first video if the playlist is finished
+        currentVideoIndex = 0;
+      }
+    }
+
+    // Event listener to play the next video when the current one ends
+    videoPlayer.addEventListener('ended', playNextVideo);
+
+    // Event listener for the autoplay button
+    autoplayButton.addEventListener('click', playNextVideo);
+  </script>
+
+</body>
+
+</html>
