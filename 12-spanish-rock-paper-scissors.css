@@ -34,7 +34,7 @@ span {
   cursor: pointer;
   font-family: "Orbitron", sans-serif;
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1em;
   margin-top: 1px;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@ span {
   margin-left: 50px;
   font-weight: bold;
   font-family: "Orbitron", sans-serif;
-  font-size: 1.4em;
+  font-size: 1em;
   margin-top: 3px;
   justify-content: center;
   align-items: center;
@@ -68,7 +68,7 @@ span {
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
-  font-size: 1.4em;
+  font-size: 1em;
   flex-wrap: nowrap;
 }
 
@@ -82,7 +82,7 @@ span {
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
-  font-size: 1.3em;
+  font-size: 1em;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
@@ -97,7 +97,7 @@ span {
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
-  font-size: 1.3em;
+  font-size: 1em;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
@@ -111,7 +111,7 @@ span {
   color: rgb(228, 228, 228);
   background-color: black;
   margin-top: -20px;
-  margin-left: 270px;
+  margin-left: 220px;
   justify-content: center;
   align-items: center;
   justify-content: center;
@@ -119,7 +119,7 @@ span {
 }
 
 .move-icon {
-  font-size: 1.1em;
+  font-size: .8em;
   height: 55px;
   width: 55px;
   margin-top: 0px;
@@ -129,7 +129,7 @@ span {
 }
 
 .result {
-  font-size: 1.1em;
+  font-size: .8em;
   font-weight: bold;
   margin-top: 50px;
   color: red;
@@ -141,7 +141,7 @@ span {
 
 .score {
   margin-top: 50px;
-  font-size: 1.35em;
+  font-size: 1em;
   font-weight: bold;
   font-family: "Orbitron", sans-serif;
   margin-right: 10px;
@@ -152,7 +152,7 @@ span {
 
 .moves {
   margin-left: 155px;
-  font-size: 1.1em;
+  font-size: 1em;
   margin-top: 30px;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
@@ -165,13 +165,27 @@ span {
     justify-content: center;
     ali-items: center;
   }
-
+  .but {
+    font-size: 1em;
+  }
+  .but2 {
+    font-size: 1em;
+  }  
+  .but3 {
+    font-size: 1em;
+  }
+  .but4 {
+    font-size: 1em;
+  }
+  .auto-play-button {
+    font-size: 1em;
+  }
   .move-icon {
-    font-size: 1.1em;
+    font-size: .7em;
   }
 
   .score {
-    font-size: 1.35em;
+    font-size: .7em;
   }
 
   .container {
