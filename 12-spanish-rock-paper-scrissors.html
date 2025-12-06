@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Game</title>
+  <link rel="stylesheet" href="/Html Cor/youtube/12-spanish-rock-paper-scissors.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <p style="background-color: black; font-size: 55px; color: white; margin-bottom: 50px; margin-left: 50px; margin-top: 5px;"
+      class="title"><span style="color:red;">C</span><span style="color:yellow">A</span><span
+        style="color:rgb(224, 0, 224)">C</span><span style="color:rgb(39, 71, 252);">H</span><span
+        style="color: rgb(6, 251, 6)">I</span><span style="color: aqua;">P</span><span
+        style="color: rgb(255, 171, 16)">U</span><span style="color: rgb(246, 81, 109);">N</span>
+      </span>
+    </p>
+
+    <button class="but js-rock-button"><img src="rock-emoji.png" class="move-icon">PIEDRA</button>
+
+    <button class="but2 js-paper-button">
+      <img src="paper-emoji.png" class="move-icon">PAPEL</button>
+
+    <button class="but3 js-scissors-button">
+      <img src="scissors-emoji.png" class="move-icon">TIJARAS</button>
+
+    <p style="margin-left: 140px;" class="js-moves moves"></p>
+
+    <p class="js-result result"></p>
+
+    <p style="margin-left: 0px;" class="js-score score"></p>
+
+    <button class="but4" onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();" class="but4">REINICIAR PUNTAJE</button>
+
+    <button onclick="autoPlay();" class="auto-play-button">AUTO-JUGAR</button>
+  </div>
+
+  <script src="/Html Cor/youtube/12-spanish-rock-paper-scissors.js"></script>
+</body>
+
+</html>
