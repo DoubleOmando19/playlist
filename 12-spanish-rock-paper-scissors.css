@@ -117,7 +117,7 @@ span {
   color: rgb(228, 228, 228);
   background-color: black;
   margin-top: -20px;
-  margin-left: 20px;
+  margin-left: 10px;
   justify-content: center;
   align-items: center;
   justify-content: center;
@@ -136,7 +136,8 @@ span {
 }
 
 .result {
-  font-size: .8em;
+  display: inline-block
+  font-size: 1em;
   font-weight: bold;
   margin-top: 50px;
   color: red;
@@ -144,6 +145,7 @@ span {
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 .score {
@@ -158,6 +160,9 @@ span {
 }
 
 .moves {
+  display: inline-block;
+  height: 80px;
+  width: 80px;
   margin-left: 155px;
   font-size: 1em;
   margin-top: 30px;
