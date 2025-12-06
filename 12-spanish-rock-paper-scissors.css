@@ -30,8 +30,8 @@ span {
 
 .but {
   display: inline-block;
-  height: 110px;
-  max-width: 110px;
+  height: 100px;
+  max-width: 100px;
   background-color: red;
   color: white;
   border-radius: 50px;
@@ -46,8 +46,8 @@ span {
 
 .but2 {
   display: inline-block;
-  height: 110px;
-  max-width: 110px;
+  height: 100px;
+  max-width: 100px;
   background-color: rgb(1, 211, 1);
   color: white;
   border-radius: 50px;
@@ -56,15 +56,15 @@ span {
   font-weight: bold;
   font-family: "Orbitron", sans-serif;
   font-size: 1em;
-  margin-top: 3px;
+  margin-top: 1px;
   justify-content: center;
   align-items: center;
 }
 
 .but3 {
   display: inline-block;
-  height: 110px;
-  max-width: 110px;
+  height: 100px;
+  max-width: 100px;
   background-color: rgb(37, 37, 255);
   color: white;
   border-radius: 50px;
@@ -75,7 +75,6 @@ span {
   justify-content: center;
   align-items: center;
   font-size: 1em;
-  flex-wrap: nowrap;
 }
 
 .but4 {
@@ -169,39 +168,30 @@ span {
 @media (max-width: 768px) {
   .title {
     font-size: 1.4em;
-    margin-right: 20px;
+    margin-right: 50px;
   }
   .but {
     font-size: .8em;
     display: inline-block;
-    height: 110px;
-    max-width: 110px;
+  
     border-radius: 50px;    
   }
   .but2 {
     font-size: .8em;
     display: inline-block;
-    height: 110px;
-    max-width: 110px;
     border-radius: 50px;
   }  
   .but3 {
-    height: 110px;
-    max-width: 110px;
     font-size: .8em;
     display: inline-block;
     border-radius: 50px;
   }
   .but4 {
-    height: 110px;
-    max-width: 110px;
     font-size: .8em;
     display: inline-block;
     border-radius: 50px;
   }
   .auto-play-button {
-    height: 110px;
-    max-width: 110px;
     font-size: .8em;
     display: inline-block;
     border-radius: 50px; 
@@ -216,5 +206,6 @@ span {
   .container {
     flex-direction: column;
     gap: 5px;
+    white-space: nowrap;
   }
 }
