@@ -28,9 +28,10 @@ input {
   width: 70px;
   display: inline-block;
   padding: 3px;
-  font-family: Arial;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
   color: white;
-  background-color: rgb(18, 18, 255);
+  background-color: rgb(15, 71, 255);
   border-color: white;
   margin-left: 10px;
   margin-top: 15px;
@@ -38,11 +39,12 @@ input {
 
 #download {
   padding: 3px;
-  font-family: Arial;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
   display: inline-block;
   width: 70px;
   color: white;
-  background-color: rgb(18, 18, 255);
+  background-color: rgb(15, 71, 255)
   border-color: white;
   margin-left: 20px;
   margin-top: 15px;
