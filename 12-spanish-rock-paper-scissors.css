@@ -79,7 +79,7 @@ span {
 
 .but4 {
   display: inline-block;
-  margin-left: 70px;
+  margin-left: 20px;
   height: 100px;
   width: 100px;
   background-color: yellow;
@@ -95,7 +95,7 @@ span {
 }
 .auto-play-button {
   display: inline-block;
-  margin-left: 70px;
+  margin-left: 20px;
   height: 100px;
   width: 100px;
   background-color: rgb(205, 42, 205);
@@ -117,7 +117,7 @@ span {
   color: rgb(228, 228, 228);
   background-color: black;
   margin-top: -20px;
-  margin-left: 170px;
+  margin-left: 70px;
   justify-content: center;
   align-items: center;
   justify-content: center;
@@ -127,8 +127,8 @@ span {
 .move-icon {
   display: flex;
   font-size: .8em;
-  height: 55px;
-  width: 55px;
+  height: 100px;
+  width: 100px;
   margin-top: 0px;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
@@ -172,7 +172,7 @@ button {
 @media (max-width: 768px) {
   .title {
     font-size: 1.4em;
-    margin-right: 150px;
+    margin-right: 250px;
   }
   button {
     display: inline-block;
