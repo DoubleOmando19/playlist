@@ -17,6 +17,7 @@ body {
   padding: 30px;
   justify-content: center;
   align-items: center;
+  margin-right: 150px;
 }
 
 span {
@@ -118,7 +119,7 @@ span {
 }
 
 .move-icon {
-  font-size: 15px;
+  font-size: 1.1em;
   height: 55px;
   width: 55px;
   margin-top: 0px;
@@ -128,7 +129,7 @@ span {
 }
 
 .result {
-  font-size: 30px;
+  font-size: 1.1em;
   font-weight: bold;
   margin-top: 50px;
   color: red;
@@ -151,6 +152,7 @@ span {
 
 .moves {
   margin-left: 155px;
+  font-size: 1.1em;
   margin-top: 30px;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
