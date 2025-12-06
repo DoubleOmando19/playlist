@@ -19,7 +19,7 @@ body {
   padding: 30px;
   justify-content: center;
   align-items: center;
-  margin-right: 200px;
+  margin-right: 250px;
   display: inline-block;
 }
 
@@ -125,6 +125,7 @@ span {
 }
 
 .move-icon {
+  display: inline-block;
   font-size: .8em;
   height: 55px;
   width: 55px;
@@ -168,7 +169,6 @@ span {
 @media (max-width: 768px) {
   .title {
     font-size: 1.4em;
-    margin-right: 50px;
   }
   .but {
     font-size: .8em;
@@ -204,6 +204,7 @@ span {
     font-size: .7em;
   }
   .container {
+    display: inline-block;
     flex-direction: column;
     gap: 5px;
     white-space: nowrap;
