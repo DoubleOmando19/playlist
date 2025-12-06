@@ -136,7 +136,7 @@ span {
 }
 
 .result {
-  display: inline-block;
+  display: flex;
   font-size: 1em;
   font-weight: bold;
   margin-top: 50px;
@@ -160,7 +160,7 @@ span {
 }
 
 .moves {
-  display: inline-block;
+  display: flex;
   height: 80px;
   width: 80px;
   margin-left: 155px;
