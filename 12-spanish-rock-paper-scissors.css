@@ -125,7 +125,7 @@ span {
 }
 
 .move-icon {
-  display: inline-block;
+  display: flex;
   font-size: .8em;
   height: 55px;
   width: 55px;
@@ -172,6 +172,7 @@ button {
 @media (max-width: 768px) {
   .title {
     font-size: 1.4em;
+    margin-right: 150px;
   }
   button {
     display: inline-block;
@@ -193,18 +194,18 @@ button {
     border-radius: 50px;
   }
   .but4 {
-    font-size: .8em;
+    font-size: .7em;
     display: inline-block;
     border-radius: 50px;
   }
   .auto-play-button {
-    font-size: .8em;
+    font-size: .7em;
     display: inline-block;
     border-radius: 50px; 
   }
   .move-icon {
     font-size: .7em;
-    display: inline-block;
+    display: flex;
   }
   .score {
     font-size: .7em;
@@ -212,7 +213,7 @@ button {
   .container {
     display: inline-block;
     flex-direction: column;
-    gap: 5px;
+    gap: 1px;
     white-space: nowrap;
   }
 }
