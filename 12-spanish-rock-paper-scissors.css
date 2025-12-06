@@ -17,7 +17,7 @@ body {
   padding: 30px;
   justify-content: center;
   align-items: center;
-  margin-right: 150px;
+  margin-right: 200px;
 }
 
 span {
@@ -26,6 +26,7 @@ span {
 }
 
 .but {
+  display: inline-block;
   height: 110px;
   max-width: 110px;
   background-color: red;
@@ -41,6 +42,7 @@ span {
 }
 
 .but2 {
+  display: inline-block;
   height: 110px;
   max-width: 110px;
   background-color: rgb(1, 211, 1);
@@ -57,6 +59,7 @@ span {
 }
 
 .but3 {
+  display: inline-block;
   height: 110px;
   max-width: 110px;
   background-color: rgb(37, 37, 255);
@@ -73,6 +76,7 @@ span {
 }
 
 .but4 {
+  display: inline-block;
   margin-left: 70px;
   height: 100px;
   width: 100px;
@@ -88,6 +92,7 @@ span {
   align-items: center;
 }
 .auto-play-button {
+  display: inline-block;
   margin-left: 70px;
   height: 100px;
   width: 100px;
@@ -166,28 +171,26 @@ span {
     ali-items: center;
   }
   .but {
-    font-size: 1em;
+    font-size: .6em;
   }
   .but2 {
-    font-size: 1em;
+    font-size: .6em;
   }  
   .but3 {
-    font-size: 1em;
+    font-size: .6em;
   }
   .but4 {
-    font-size: 1em;
+    font-size: .6em;
   }
   .auto-play-button {
-    font-size: 1em;
+    font-size: .6em;
   }
   .move-icon {
     font-size: .7em;
   }
-
   .score {
     font-size: .7em;
   }
-
   .container {
     flex-direction: column;
     gap: 5px;
