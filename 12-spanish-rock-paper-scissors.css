@@ -88,7 +88,7 @@ span {
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
-  font-size: 1em;
+  font-size: .7em;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
@@ -104,7 +104,7 @@ span {
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
-  font-size: 1em;
+  font-size: .7em;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
@@ -127,8 +127,8 @@ span {
 .move-icon {
   display: flex;
   font-size: .8em;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   margin-top: 0px;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
@@ -136,7 +136,7 @@ span {
 }
 
 .result {
-  display: inline-block
+  display: inline-block;
   font-size: 1em;
   font-weight: bold;
   margin-top: 50px;
@@ -177,7 +177,7 @@ button {
 @media (max-width: 768px) {
   .title {
     font-size: 1.4em;
-    margin-right: 350px;
+    margin-right: 370px;
   }
   button {
     display: inline-block;
@@ -213,7 +213,7 @@ button {
     display: flex;
   }
   .score {
-    font-size: .7em;
+    font-size: 1em;
   }
   .container {
     display: inline-block;
