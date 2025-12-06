@@ -167,26 +167,30 @@ span {
 @media (max-width: 768px) {
   .title {
     font-size: 1.4em;
-    justify-content: center;
-    ali-items: center;
   }
   .but {
-    font-size: .6em;
+    font-size: .8em;
+    display: inline-block;
   }
   .but2 {
-    font-size: .6em;
+    font-size: .8em;
+    display: inline-block;
   }  
   .but3 {
-    font-size: .6em;
+    font-size: .8em;
+    display: inline-block;
   }
   .but4 {
-    font-size: .6em;
+    font-size: .8em;
+    display: inline-block;
   }
   .auto-play-button {
-    font-size: .6em;
+    font-size: .8em;
+    display: inline-block;
   }
   .move-icon {
     font-size: .7em;
+    display: inline-block;
   }
   .score {
     font-size: .7em;
