@@ -82,7 +82,7 @@ span {
   width: 100px;
   background-color: yellow;
   color: rgb(52, 52, 52);
-  border-radius: 80px;
+  border-radius: 50px;
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
@@ -98,7 +98,7 @@ span {
   width: 100px;
   background-color: rgb(205, 42, 205);
   color: white;
-  border-radius: 80px;
+  border-radius: 50px;
   cursor: pointer;
   font-weight: bold;
   margin-top: 20px;
@@ -167,26 +167,42 @@ span {
 @media (max-width: 768px) {
   .title {
     font-size: 1.4em;
+    margin-right: 20px;
   }
   .but {
     font-size: .8em;
     display: inline-block;
+    height: 110px;
+    max-width: 110px;
+    border-radius: 50px;    
   }
   .but2 {
     font-size: .8em;
     display: inline-block;
+    height: 110px;
+    max-width: 110px;
+    border-radius: 50px;
   }  
   .but3 {
+    height: 110px;
+    max-width: 110px;
     font-size: .8em;
     display: inline-block;
+    border-radius: 50px;
   }
   .but4 {
+    height: 110px;
+    max-width: 110px;
     font-size: .8em;
     display: inline-block;
+    border-radius: 50px;
   }
   .auto-play-button {
+    height: 110px;
+    max-width: 110px;
     font-size: .8em;
     display: inline-block;
+    border-radius: 50px; 
   }
   .move-icon {
     font-size: .7em;
