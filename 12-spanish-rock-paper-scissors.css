@@ -165,10 +165,16 @@ span {
   justify-content: center;
   align-items: center;
 }
+button {
+  display: inline-block;
+}
 
 @media (max-width: 768px) {
   .title {
     font-size: 1.4em;
+  }
+  button {
+    display: inline-block;
   }
   .but {
     font-size: .8em;
