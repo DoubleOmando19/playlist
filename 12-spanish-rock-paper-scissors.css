@@ -111,7 +111,7 @@ span {
 }
 
 .title {
-  font-size: 1.8em;
+  font-size: 1.7em;
   font-family: "Orbitron", sans-serif;
   font-weight: bold;
   color: rgb(228, 228, 228);
@@ -129,7 +129,7 @@ span {
   font-size: .8em;
   height: 90px;
   width: 90px;
-  margin-top: 0px;
+  margin-top: 10px;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
@@ -183,17 +183,19 @@ button {
     display: inline-block;
   }
   .but {
+    margin-top: 10px;
     font-size: .8em;
     display: inline-block;
-  
     border-radius: 50px;    
   }
   .but2 {
+    margin-top: 10px;
     font-size: .8em;
     display: inline-block;
     border-radius: 50px;
   }  
   .but3 {
+    margin-top: 10px;
     font-size: .8em;
     display: inline-block;
     border-radius: 50px;
