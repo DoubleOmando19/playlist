@@ -211,7 +211,7 @@ button {
     border-radius: 50px; 
   }
   .move-icon {
-    font-size: .7em;
+    font-size: .6em;
     display: flex;
   }
   .score {
