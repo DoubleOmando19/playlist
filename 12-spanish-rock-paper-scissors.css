@@ -126,9 +126,9 @@ span {
 
 .move-icon {
   display: flex;
-  font-size: .5em;
-  height: 95px;
-  width: 95px;
+  font-size: 1em;
+  height: 85px;
+  width: 85px;
   margin-top: 10px;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
