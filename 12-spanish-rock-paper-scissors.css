@@ -31,7 +31,7 @@ span {
 .but {
   display: inline-block;
   height: 100px;
-  max-width: 100px;
+  width: 100px;
   background-color: red;
   color: white;
   border-radius: 50px;
@@ -47,7 +47,7 @@ span {
 .but2 {
   display: inline-block;
   height: 100px;
-  max-width: 100px;
+  width: 100px;
   background-color: rgb(1, 211, 1);
   color: white;
   border-radius: 50px;
@@ -64,7 +64,7 @@ span {
 .but3 {
   display: inline-block;
   height: 100px;
-  max-width: 100px;
+  width: 100px;
   background-color: rgb(15, 71, 255);
   color: white;
   border-radius: 50px;
@@ -120,13 +120,11 @@ span {
   margin-left: 10px;
   justify-content: center;
   align-items: center;
-  justify-content: center;
-  align-items: center;
 }
 
 .move-icon {
   display: flex;
-  font-size: 1em;
+  font-size: .7em;
   height: 85px;
   width: 85px;
   margin-top: 10px;
