@@ -176,7 +176,7 @@ button {
 
 @media (max-width: 768px) {
   .title {
-    font-size: 1.1em;
+    font-size: 1em;
     margin-right: 370px;
   }
   button {
