@@ -124,15 +124,15 @@ span {
 
 .move-icon {
   display: flex;
-  font-size: .7em;
+  font-size: .8em;
   height: 85px;
   width: 85px;
-  margin-top: 20px;
+  margin-top: 30px;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
   margin-left: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .result {
@@ -215,7 +215,7 @@ button {
   .move-icon {
     font-size: .5em;
     display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
   }
   .score {
     font-size: 1em;
