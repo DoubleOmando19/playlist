@@ -176,7 +176,7 @@ button {
 
 @media (max-width: 768px) {
   .title {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-right: 370px;
   }
   button {
@@ -193,12 +193,14 @@ button {
     font-size: .8em;
     display: inline-block;
     border-radius: 50px;
+    margin-left: 10px;
   }  
   .but3 {
     margin-top: 5px;
     font-size: .8em;
     display: inline-block;
     border-radius: 50px;
+    margin-left: 10px;
   }
   .but4 {
     font-size: .7em;
@@ -211,8 +213,9 @@ button {
     border-radius: 50px; 
   }
   .move-icon {
-    font-size: .4em;
+    font-size: .5em;
     display: flex;
+    margin-top: 10px;
   }
   .score {
     font-size: 1em;
