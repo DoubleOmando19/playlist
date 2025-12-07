@@ -221,6 +221,7 @@ button {
     font-size: 1em;
   }
   .container {
+    position: fixed;
     display: inline-block;
     flex-direction: column;
     gap: 1px;
