@@ -126,7 +126,7 @@ span {
 
 .move-icon {
   display: flex;
-  font-size: .7em;
+  font-size: .6em;
   height: 95px;
   width: 95px;
   margin-top: 10px;
@@ -211,7 +211,7 @@ button {
     border-radius: 50px; 
   }
   .move-icon {
-    font-size: .6em;
+    font-size: .5em;
     display: flex;
   }
   .score {
