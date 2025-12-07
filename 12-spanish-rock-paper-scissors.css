@@ -127,10 +127,12 @@ span {
   font-size: .7em;
   height: 85px;
   width: 85px;
-  margin-top: 10px;
+  margin-top: 15px;
   font-family: "Orbitron", sans-serif;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
+  padding-bottom: 10px;
 }
 
 .result {
