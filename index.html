@@ -18,14 +18,17 @@
       margin-bottom: 0px;
       text-decoration: none;
     }
+
     a {
       text-decoration: none;
     }
+
     .button {
       text-decoration: none;
       width: 72px;
       cursor: pointer;
     }
+
     body {
       /*This is the way*/
       font-family: Roboto;
@@ -40,6 +43,7 @@
       text-decoration: none;
       cursor: pointer;
     }
+
     .equalizer {
       display: flex;
       align-items: flex-end;
@@ -48,32 +52,39 @@
       margin-top: -6px;
       margin-left: 10px;
     }
+
     .bar {
       width: 5px;
       background-color: white;
       border-radius: 3px;
       animation: bounce 2.5s infinite ease-in-out;
     }
+
     .bar:nth-child(1) {
       background-color: #a50000;
       animation-delay: 0s;
     }
+
     .bar:nth-child(2) {
       background-color: #be0000;
       animation-delay: 0.1s;
     }
+
     .bar:nth-child(3) {
       background-color: rgb(225, 0, 0);
       animation-delay: 0.2s;
     }
+
     .bar:nth-child(4) {
       background-color: #ff0000;
       animation-delay: 0.3s;
     }
+
     .bar:nth-child(5) {
       background-color: #fb1515;
       animation-delay: 0.4s;
     }
+
     @keyframes bounce {
 
       0%,
@@ -85,12 +96,14 @@
         height: 28px;
       }
     }
+
     .thumbnail {
       width: 100%;
       margin-top: 25px;
       margin-left: 5px;
       border: solid 2px black;
     }
+
     .video-title {
       display: flex;
       font-family: 'Orbitron', sans-serif;
@@ -109,6 +122,7 @@
       transition: 4s;
       white-space: nowrap;
     }
+
     .video-title:hover {
       display: flex;
       font-family: "Orbitron", sans-serif;
@@ -127,6 +141,7 @@
       transition: 3s;
       white-space: nowrap;
     }
+
     .video-info-grid {
       display: grid;
       grid-template-columns: 50px 1fr;
@@ -139,6 +154,7 @@
       box-shadow: 1px 1px 1px black;
 
     }
+
     .profile-picture {
       width: 36px;
       border-radius: 50px;
@@ -147,6 +163,7 @@
       box-shadow: 5px 5px 10px black;
       transition: 4s;
     }
+
     .profile-picture:hover {
       width: 36px;
       border-radius: 50px;
@@ -156,6 +173,7 @@
       box-shadow: 1px 5px 5px 10px white;
       transition: 4s;
     }
+
     .thumbnail-row {
       position: relative;
       display: flex;
@@ -168,6 +186,7 @@
       border: 2px solid white;
       box-shadow: 1px 1px 1px black;
     }
+
     .video-author,
     .video-stats {
       font-size: 13px;
@@ -175,6 +194,7 @@
       font-family: 'Roboto';
       margin-top: 0px;
     }
+
     .video-author {
       font-family: 'Orbitron', sans-serif;
       font-size: 13px;
@@ -189,6 +209,7 @@
       padding-right: 2px;
       transition: 4s;
     }
+
     .video-author:hover {
       color: whitesmoke;
       font-size: 14px;
@@ -203,6 +224,7 @@
       border: 3px solid white;
       transition: 3s;
     }
+
     .video-grid {
       color: rgb(59, 59, 255);
       border-color: black;
@@ -217,6 +239,7 @@
       text-decoration: none;
       margin-right: 20px;
     }
+
     @media(max-width: 525px) {
       .video-grid {
         grid-template-columns: 1fr;
@@ -226,11 +249,13 @@
         scroll-behavior: smooth;
       }
     }
+
     @media(min-width: 1200px) {
       .video-grid {
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
+
     input {
       padding: 3px;
       width: 350px;
@@ -240,17 +265,20 @@
       color: grey;
       padding-left: 5px;
     }
+
     input:focus {
       border: 1px solid grey;
       color: grey;
       font-size: 14px;
       padding-left: 5px;
     }
+
     input::placeholder {
       font-size: 14px;
       color: grey;
       padding-left: 5px;
     }
+
     .sidebar {
       font-family: Arial;
       font-size: 10px;
@@ -268,6 +296,7 @@
       transition: 2s;
       border: solid 1px black;
     }
+
     .sidebar-link {
       background-color: black;
       height: 74px;
@@ -280,27 +309,32 @@
       width: 72px;
       border: solid 1px black;
     }
+
     .sidebar-link:hover {
       color: white;
       background-color: black;
       cursor: pointer;
       text-decoration: none;
     }
+
     .sidebar-link img {
       height: 24px;
       margin-bottom: 8px;
       text-decoration: none;
       max-width: 72px;
     }
+
     .sidebar-link div {
       font-family: Arial;
       font-size: 10;
       text-decoration: none;
       max-width: 72px;
     }
+
     .tabs {
       text-decoration: none;
     }
+
     .utubeheader {
       font-family: "Orbitron", sans-serif;
       letter-spacing: normal;
@@ -325,10 +359,12 @@
       z-index: 1;
       transition: 4s;
     }
+
     .utubeheader:hover {
       color: white;
       transition: 3s;
     }
+
     .header {
       height: 44px;
       display: flex;
@@ -348,40 +384,49 @@
       z-index: 1;
       border-top: 2px solid white;
     }
+
     .left {
       width: 100px;
       padding-top: 17px;
     }
+
     .leftleft {
       width: 150px;
       padding-top: 17px;
     }
+
     .leftleftleft {
       width: 150px;
       padding-top: 17px;
     }
+
     .middle {
       flex: 1;
       max-width: 280px;
       padding-top: 17px;
     }
+
     .rightrightright {
       width: 150px;
       padding-top: 17px;
     }
+
     .rightright {
       width: 130px;
       padding-top: 17px;
     }
+
     .right {
       width: 150px;
       padding-top: 17px;
     }
+
     html {
       scroll-behavior: smooth;
       scrollbar-color: rgba(0, 0, 0, 0);
       scrollbar-width: none;
     }
+
     .footer {
       display: flex;
       align-items: center;
@@ -412,8 +457,8 @@
 
   <div class="header">
     <div style="background-color: black;" class="left">
-      <a style="padding-left: 10px; margin-left: 17px; color: white; font-weight: bold; text-decoration: none;" href="https://www.nike.com/"
-        target="_blank">Nike</a>
+      <a style="padding-left: 10px; margin-left: 17px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.nike.com/" target="_blank">Nike</a>
     </div>
 
     <div style="background-color: black;" class="leftleft"><a
@@ -932,7 +977,7 @@
             PLUTO</div>
         </button></a>
     </div>
-    
+
     <div>
       <a style="font-family: impact; font-weight: bold; font-size: 15px; background-color: black; color: white; padding: 3px;"
         href="#">JUMP ☝️</a>
@@ -1066,8 +1111,7 @@
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
-            src="What You Is.mp4" loading="preload" controls width="280"
-            height="155"></video>
+            src="What You Is.mp4" loading="preload" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
@@ -1160,8 +1204,8 @@
           </div>
         </div>
       </div>
-      
-      <div style="height: 300px; margin-top: -10px" class="video-preview">
+
+      <div style="height: 300px; margin-top: -30px" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1184,8 +1228,8 @@
           </div>
         </div>
       </div>
-      
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+
+      <div style="height: 310px; margin-top: -30px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1209,7 +1253,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+      <div style="height: 310px; margin-top: -30px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1237,7 +1281,7 @@
 
   <main>
     <section class="video-grid">
-      <div style="height: 310px; margin-top: 20px;" class="video-preview">
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1259,9 +1303,9 @@
             </p>
           </div>
         </div>
-      </div>  
-      
-      <div style="height: 310px; margin-top: 20px;" class="video-preview">
+      </div>
+
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1285,7 +1329,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: 20px;" class="video-preview">
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1309,7 +1353,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+      <div style="height: 310px; margin-top: -20px; margin-bottom: 15px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1358,7 +1402,7 @@
           </div>
         </div>
       </div>
-      
+
       <div style="height: 310px; margin-top: -20px;" class="video-preview">
         <div class="thumbnail-row">
           <video
@@ -1386,7 +1430,7 @@
   </main>
   <main>
     <section class="video-grid">
-      <div style="height: 310px; margin-top: 0px;" class="video-preview">
+      <div style="height: 310px; margin-top: -10px; margin-bottom: 15px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1410,7 +1454,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: 0px;" class="video-preview">
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1434,7 +1478,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: 0px;" class="video-preview">
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1457,7 +1501,7 @@
             </p>
           </div>
         </div>
-      </div> 
+      </div>
     </section>
   </main>
   <main>
@@ -1533,7 +1577,7 @@
           </div>
         </div>
       </div>
-        
+
       <div style="height: 310px; margin-top: -20px;" class="video-preview">
         <div class="thumbnail-row">
           <video
@@ -1581,7 +1625,7 @@
           </div>
         </div>
       </div>
-    
+
       <div style="height: 310px; margin-top: -20px;" class="video-preview">
         <div class="thumbnail-row">
           <video
