@@ -79,7 +79,7 @@ input {
   background-color: blue;
   border: 2px solid white;
   margin-left: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
