@@ -90,6 +90,7 @@ input {
   input {
     width: 160px;
     height: 23px;
+    display: flex;
   }
 
   body {
