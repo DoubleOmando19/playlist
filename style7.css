@@ -1,7 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  width: 300px;
-  height: 700px;
+  display: flex;
   background-color: black;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  max-height: 100vh;
+  padding: 30px;
+  border-bottom: 2px solid white;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 img {
@@ -9,45 +26,81 @@ img {
 }
 
 h1 {
-  width: 300px;
+  width: 210px;
+  height: 120px;
   font-family: Impact;
+  background-color: rgb(50, 50, 50);
   display: block;
-  font-size: 40px;
+  font-size: 2.7em;
   color: white;
-  margin-left: 10px;
+  border: 1px solid rgb(40, 40, 40);
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 input {
-  width: 160px;
+  width: 170px;
+  height: 23px;
   display: block;
-  margin-left: 10px;
   border: 2px solid grey;
+  margin-left: 10px;
 }
 
 #generate {
   width: 70px;
   display: inline-block;
   padding: 3px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: white;
-  background-color: rgb(15, 71, 255);
+  background-color: rgb(18, 18, 255);
   border-color: white;
   margin-left: 10px;
-  margin-top: 15px;
-  border-radius: 5px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgb(18, 18, 255), 0 0 30px rgb(18, 18, 255);
 }
 
 #download {
-  padding: 3px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
+  margin-top: 30px;
+  border-radius: 10px;
   display: inline-block;
-  width: 70px;
+  width: 75px;
+  padding: 3px;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: white;
-  background-color: rgb(15, 71, 255);
+  background-color: rgb(18, 18, 255);
   border-color: white;
-  border-radius: 5px;
   margin-left: 20px;
-  margin-top: 15px;
+  box-shadow: 0 0 20px rgb(18, 18, 255), 0 0 30px rgb(18, 18, 255);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+    width: 160px;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input {
+    width: 160px;
+    height: 23px;
+  }
+
+  body {
+    display: flex;
+    background-color: black;
+    color: white;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    max-height: 100vh;
+    padding: 30px;
+    border-bottom: 2px solid white;
+    justify-content: center;
+    align-items: center;
+  }
 }
