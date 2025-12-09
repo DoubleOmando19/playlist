@@ -23,7 +23,7 @@ body {
   border: 3px solid green;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 306px;
 }
 
 img {
@@ -38,7 +38,7 @@ h1 {
   display: block;
   font-size: 2.9em;
   color: red;
-  text-shadow: .5px .5px .5px white;
+  text-shadow: 1px 1px 1px white;
   border: 2px solid rgb(17, 255, 0);
   justify-content: center;
   align-items: center;
@@ -61,7 +61,7 @@ input {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: white;
   background-color: blue;
-  border-color: white;
+  border: 2px solid white;
   margin-left: 10px;
   margin-top: 30px;
   border-radius: 10px;
@@ -72,12 +72,12 @@ input {
   margin-top: 30px;
   border-radius: 10px;
   display: inline-block;
-  width: 70px;
+  width: 72px;
   padding: 3px;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: white;
   background-color: blue;
-  border-color: white;
+  border: 2px solid white;
   margin-left: 20px;
   margin-bottom: 5px;
 }
@@ -89,7 +89,7 @@ input {
     justify-content: center;
     align-items: center;
     padding-top: 10px;
-    text-shadow: .5px .5px .5px white;
+    text-shadow: 1px 1px 1px white;
   }
 
   input {
