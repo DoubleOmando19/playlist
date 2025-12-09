@@ -19,6 +19,9 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  background-color: rgb(17, 255, 0);
+  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -29,24 +32,24 @@ h1 {
   width: 210px;
   height: 120px;
   font-family: Impact;
-  background-color: rgb(50, 50, 50);
+  background-color: black;
   display: block;
   font-size: 2.7em;
-  color: white;
-  border: 1px solid rgb(40, 40, 40);
+  color: red;
+  text-shadow: 1px 1px 1px white;
+  border: 1px solid rgb(17, 255, 0);
   justify-content: center;
   align-items: center;
   padding-left: 10px;
   padding-top: 5px;
   margin-bottom: 10px;
-  border-radius: 10px;
 }
 
 input {
   width: 170px;
   height: 23px;
   display: block;
-  border: 2px solid grey;
+  border: 2px solid black;
   margin-left: 10px;
 }
 
@@ -61,7 +64,8 @@ input {
   margin-left: 10px;
   margin-top: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgb(18, 18, 255), 0 0 30px rgb(18, 18, 255);
+  box-shadow: 0 0 20px rgb(18, 18, 255);
+  margin-bottom: 10px;
 }
 
 #download {
@@ -75,22 +79,23 @@ input {
   background-color: rgb(18, 18, 255);
   border-color: white;
   margin-left: 20px;
-  box-shadow: 0 0 20px rgb(18, 18, 255), 0 0 30px rgb(18, 18, 255);
+  box-shadow: 0 0 20px rgb(18, 18, 255);
+  margin-bottom: 5px;
 }
 
 @media (max-width: 768px) {
   h1 {
     font-size: 2em;
-    width: 160px;
+    width: 183px;
     height: 90px;
     justify-content: center;
     align-items: center;
   }
 
   input {
-    width: 160px;
-    height: 23px;
+    width: 170px;
     display: flex;
+    height: 23px;
   }
 
   body {
