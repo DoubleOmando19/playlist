@@ -115,6 +115,7 @@ span {
   font-family: "Orbitron", sans-serif;
   font-weight: bold;
   color: rgb(228, 228, 228);
+  text-shadow: 1px 1px 1px white;
   background-color: black;
   margin-top: -20px;
   margin-left: 10px;
