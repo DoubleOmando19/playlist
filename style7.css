@@ -12,8 +12,10 @@ body {
   max-height: 100vh;
   padding: 30px;
   border-bottom: 2px solid white;
+  border-top: 2px solid white;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 
 .container {
