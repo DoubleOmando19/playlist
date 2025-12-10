@@ -9,7 +9,7 @@ body {
   background-color: black;
   color: white;
   font-family: Georgia, "Times New Roman", Times, serif;
-  max-height: 100vh;
+  max-height: 120vh;
   padding: 30px;
   justify-content: center;
   align-items: center;
@@ -85,6 +85,7 @@ img {
   align-items: center;
   margin-top: 15px;
   margin-bottom: -10px;
+  margin-left: 100px;
 }
 
 @media (max-width: 768px) {
