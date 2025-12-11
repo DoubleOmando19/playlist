@@ -13,7 +13,7 @@ body {
   padding: 30px;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .container {
@@ -37,7 +37,7 @@ h1 {
   font-size: 2em;
   color: red;
   text-shadow: 1px 1px 1px white;
-  border: 2px solid rgb(17, 255, 0);
+  border: 3px solid rgb(17, 255, 0);
   justify-content: center;
   align-items: center;
   padding-left: 37px;
