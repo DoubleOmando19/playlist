@@ -19,7 +19,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: rgb(255, 55, 55);
+  background-color: rgb(255, 70, 70);
   border: 3px solid red;
   justify-content: center;
   align-items: center;
