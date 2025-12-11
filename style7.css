@@ -28,17 +28,19 @@ body {
 
 h1 {
   width: 300px;
-  height: 135px;
-  font-family: "Rajdhani", sans-serif;
+  height: 95px;
+  margin-top: 5px;
+  padding-top: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
   background-color: black;
   display: block;
-  font-size: 2.9em;
+  font-size: 2em;
   color: red;
   text-shadow: 1px 1px 1px white;
   border: 2px solid rgb(17, 255, 0);
   justify-content: center;
   align-items: center;
-  padding-left: 45px;
+  padding-left: 35px;
   padding-top: 5px;
 }
 
