@@ -181,10 +181,6 @@ button {
 }
 
 @media (max-width: 768px) {
-  body {
-    margin-top: -140px;
-    margin-left: 50px;
-  }
   .title {
     font-size: 3.6em;
     justify-content: center;
