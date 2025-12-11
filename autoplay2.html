@@ -27,7 +27,7 @@
       background-color: black;
       color: white;
       font-family: Arial, sans-serif;
-      min-height: 80vh;
+      min-height: 100vh;
       padding: 30px;
     }
 
@@ -73,10 +73,11 @@
       align-items: center;
       margin-right: 5px;
       padding: 5px;
+      left: -5px;
     }
     
     .header {
-      height: 470px;
+      height: 420px;
       font-family: 'Orbitron', sans-serif;
       font-weight: bold;
       font-size: 1.6em;
@@ -102,17 +103,10 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        background-color: black;
-        color: white;
-        font-family: 'Orbitron', sans-serif;
-        min-height: 80vh;
-        padding: 30px;
-      }      
       .header {
-        height: 470px;
+        height: 460px;
         font-size: 1.15em;
-        background: linear-gradient(135deg, #19199d 0%, #1e5afc 30%, #ea0c0c 100%);
+        background: linear-gradient(135deg, #19199d 0%, #1e5afc 50%, #ea0c0c 100%);
         color: black;
         font-weight: bold;
       }
@@ -124,6 +118,8 @@
         font-size: 1.25em;
         margin-bottom: 40px;
         padding: 5px;
+        positive: relative;
+        left: -5px;
       }
       .container {
         flex-direction: column;
