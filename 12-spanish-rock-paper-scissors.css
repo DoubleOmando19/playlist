@@ -18,7 +18,7 @@ body {
   align-items: center;
   display: flex;
   margin-top: -120px;
-  margin-right: 10px;
+  margin-right: -20px;
 }
 
 span {
@@ -114,7 +114,7 @@ span {
 }
 
 .title {
-  font-size: 5em;
+  font-size: 4.5em;
   font-family: "Orbitron", sans-serif;
   font-weight: bold;
   color: rgb(228, 228, 228);
@@ -124,7 +124,6 @@ span {
   padding-bottom: 50px;
   justify-content: center;
   align-items: center;
-  margin-left: -30px;
 }
 
 .move-icon {
@@ -181,39 +180,17 @@ button {
 }
 
 @media (max-width: 768px) {
+  body {
+    margin-top: -130px;
+  }
   .title {
     font-size: 3.6em;
     justify-content: center;
     align-items: center;
-    margin-left: 40px;
-    padding-top: -30;
-    margin-top: -10;
+    margin-left: 35px;
   }
   button {
     display: inline-block;
-  }
-  .but {
-    width: 100px;
-    margin-top: 5px;
-    font-size: 0.8em;
-    display: inline-block;
-    border-radius: 50px;
-  }
-  .but2 {
-    width: 100px;
-    margin-top: 5px;
-    font-size: 0.8em;
-    display: inline-block;
-    border-radius: 50px;
-    margin-right: 10px;
-  }
-  .but3 {
-    width: 100px;
-    margin-top: 5px;
-    font-size: 0.8em;
-    display: inline-block;
-    border-radius: 50px;
-    margin-right: 90px;
   }
   .but4 {
     font-size: 0.7em;
@@ -239,5 +216,6 @@ button {
     display: inline-block;
     flex-direction: column;
     white-space: nowrap;
+    padding: 5px;
   }
 }
