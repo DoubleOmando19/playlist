@@ -28,9 +28,9 @@ body {
 
 h1 {
   width: 300px;
-  height: 95px;
+  height: 100px;
   margin-top: 5px;
-  padding-top: 5px;
+  padding-top: 10px;
   font-family: Georgia, "Times New Roman", Times, serif;
   background-color: black;
   display: block;
@@ -40,8 +40,7 @@ h1 {
   border: 2px solid rgb(17, 255, 0);
   justify-content: center;
   align-items: center;
-  padding-left: 35px;
-  padding-top: 5px;
+  padding-left: 37px;
 }
 
 input {
@@ -52,7 +51,7 @@ input {
   margin-left: 10px;
   margin-top: 0px;
 }
-input: focus {
+input:focus {
   transform: scale(1);
 }
 
