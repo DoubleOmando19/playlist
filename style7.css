@@ -6,7 +6,7 @@
 
 body {
   display: flex;
-  background: linear-gradient(135deg, #000006 0%, #4b515d 50%, #c2bdbd 100%);
+  background-color: black;
   color: white;
   font-family: "Rajdhani", sans-serif;
   max-height: 100vh;
@@ -32,7 +32,7 @@ h1 {
   margin-top: 5px;
   padding-top: 10px;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: black;
+  background: linear-gradient(135deg, #000006 0%, #4b515d 50%, #c2bdbd 100%);
   display: block;
   font-size: 2em;
   color: red;
