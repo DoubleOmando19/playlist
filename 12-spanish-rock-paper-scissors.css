@@ -181,7 +181,8 @@ button {
 
 @media (max-width: 768px) {
   body {
-    margin-top: -130px;
+    margin-top: -100px
+    position: fixed;
   }
   .title {
     font-size: 3.6em;
@@ -191,6 +192,15 @@ button {
   }
   button {
     display: inline-block;
+  }
+  .but {
+    font-size: 0.75em;
+  }
+  .but2 {
+    font-size: 0.75em;
+  }
+  .but3 {
+    font-size: 0.75em;
   }
   .but4 {
     font-size: 0.7em;
