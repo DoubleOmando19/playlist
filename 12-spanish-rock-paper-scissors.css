@@ -13,11 +13,12 @@ body {
   background-color: black;
   color: white;
   min-height: 100vh;
-  padding: 30px;
+  padding: 20px;
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-top: 0px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 span {
@@ -181,24 +182,24 @@ button {
 
 @media (max-width: 768px) {
   .title {
-    font-size: 3.2em;
+    font-size: 3em;
     justify-content: center;
     align-items: center;
     margin-left: 30px;
-    margin-top: -130px;
+    margin-top: -125px;
     margin-bottom: 20px;
   }
   button {
     display: inline-block;
   }
   .but {
-    font-size: 0.69em;
+    font-size: 0.68em;
   }
   .but2 {
-    font-size: 0.69em;
+    font-size: 0.68em;
   }
   .but3 {
-    font-size: 0.69em;
+    font-size: 0.68em;
   }
   .but4 {
     font-size: 0.7em;
