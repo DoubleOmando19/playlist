@@ -34,7 +34,7 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
-            border-top: 2px solid rgb(15, 71, 255);
+            border-top: 3px solid rgb(15, 71, 255);
             padding: 20px;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -278,6 +278,9 @@
                 font-size: 1.1em;
                 text-shadow: 1px 1px 1px white; 
             }
+            .header {
+                border-top: none;
+            }
 
             .title-container {
                 flex-direction: column;
@@ -344,6 +347,27 @@
         // Station data from research
         const defaultStations = [
             {
+                "name": "Detriot WJLB 97.9",
+                "country": "<span style='font-size: 21px;'>🇺🇸</span> USA",
+                "genre": "Rap, Pop",
+                "url": "https://stream.revma.ihrhls.com/zc1141",
+                "description": "English"
+            },
+            {
+                "name": "Toronto Z103.5",
+                "country": "<span style='font-size: 21px;'>🇨🇦</span> Canada",
+                "genre": "Rap, Pop",
+                "url": "https://evanov.leanstream.co/CIDCFM",
+                "description": "English"
+            },
+            {
+                "name": "New York HOT 97",
+                "country": "<span style='font-size: 21px;'>🇺🇸</span> USA",
+                "genre": "Rap, Pop",
+                "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WQHTFM.mp3",
+                "description": "English"
+            },
+            {
                 "name": "Rap Radio",
                 "country": "<span style='font-size: 21px;'>🇺🇸</span> United States",
                 "genre": "Rap",
@@ -383,7 +407,7 @@
                 "country": "<span style='font-size: 21px;'>🇮🇹</span> Italy",
                 "genre": "Electronic",
                 "url": "http://icy.unitedradio.it/105Dance90.mp3",
-                "description": "Eurodance, Dance, Club"
+                "description": "Eurodance, Dance"
             },
             {
                 "name": "Maxima FM Radio",
@@ -404,28 +428,7 @@
                 "country": "<span style='font-size: 21px;'>🇭🇺</span> Hungary",
                 "genre": "Electronic",
                 "url": "https://dancewave.online/dance.mp3",
-                "description": "Club, House, Trance"
-            },
-            {
-                "name": "Detriot WJLB 97.9",
-                "country": "<span style='font-size: 21px;'>🇺🇸</span> USA",
-                "genre": "Rap, Pop",
-                "url": "https://stream.revma.ihrhls.com/zc1141",
-                "description": "English"
-            },
-            {
-                "name": "Toronto Z103.5",
-                "country": "<span style='font-size: 21px;'>🇨🇦</span> Canada",
-                "genre": "Rap, Pop",
-                "url": "https://evanov.leanstream.co/CIDCFM",
-                "description": "English"
-            },
-            {
-                "name": "New York HOT 97",
-                "country": "<span style='font-size: 21px;'>🇺🇸</span> USA",
-                "genre": "Rap, Pop",
-                "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/WQHTFM.mp3",
-                "description": "English"
+                "description": "Club, House"
             }
         ];
 
