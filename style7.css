@@ -122,5 +122,14 @@ img {
     max-height: 100vh;
     justify-content: center;
     align-items: center;
+  } 
+
+  .container {
+    margin-left: 100px;
+    width: 306px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin-top: -20px;
   }
 }
