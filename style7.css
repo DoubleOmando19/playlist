@@ -24,6 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 457px;
+  height: 270px;
 }
 
 h1 {
@@ -41,6 +42,7 @@ h1 {
   justify-content: center;
   align-items: center;
   padding-left: 37px;
+  margin-bottom: -20px;
 }
 
 input {
@@ -131,5 +133,6 @@ img {
     align-items: center;
     display: block;
     margin-top: -20px;
+    height: 211px;
   }
 }
