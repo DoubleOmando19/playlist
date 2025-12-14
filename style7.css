@@ -24,7 +24,6 @@ body {
   justify-content: center;
   align-items: center;
   width: 457px;
-  height: 270px;
 }
 
 h1 {
@@ -123,6 +122,5 @@ input:focus {
     align-items: center;
     display: block;
     margin-top: -20px;
-    height: 211px;
   }
 }
