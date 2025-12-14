@@ -50,14 +50,6 @@ function initializeSearch() {
     });
 }
 
-function handleCostKeydown(event) {
-    event.key;
-    if (event.key === 'Enter') {
-        displaySearchResults(searchResults);
-    }
-}
-
-
 // Display search results
 function displaySearchResults(countries, container) {
     if (countries.length === 0) {
