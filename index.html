@@ -252,7 +252,31 @@
         scroll-behavior: smooth;
       }
     }
+    @keyframes slide {
+      from {
+        transform: translateX(100%);
+        opacity: 1;
+      }
 
+      to {
+        transform: translateX(-100%);
+        opacity: 1;
+      }
+    }
+    
+    .rolling-text {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: slide 25s linear infinite;
+      font-weight: bold;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Orbitron', sans-serif;
+      color: white;      
+    }
+    
     @media(min-width: 1200px) {
       .video-grid {
         grid-template-columns: 1fr 1fr 1fr;
@@ -445,14 +469,14 @@
       white-space: nowrap;
       overflow: hidden;
       animation: slide 30s linear infinite;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-weight: bold;
       font-size: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Orbitron', sans-serif;
-      color: white;      
+      color: white;
+      margin-top: -5px;
     }
   </style>
 </head>
@@ -1707,18 +1731,12 @@
         style="color: rgb(222, 3, 3); font-weight: bold;">
         !!! AutoPlay !!! </span> Check out <span
         style="font-weight: bold; background-color: black; color: rgb(255, 226, 59);">'Top Hits of
-        the
-        Month'</span>
-      stream now!!!"
-      <span style="border-radius: 20px; background-color: red;">🎧</span> "<span
+        the Month'</span> stream now!!!"
+        <span style="border-radius: 20px; background-color: red;">🎧</span> "<span
         style="color: rgb(222, 3, 3); font-weight: bold;">
         !!! Click & Play !!! </span> Check out <span style="background-color: black; color: rgb(255, 226, 59);">'Top
-        Hits of
-        the
-        Month'</span>
-      stream now!!!🍒..."
-    </div>
-  </div>  
-</body>
-
+        Hits of the Month'</span> stream now!!!🍒..."
+      </div>
+    </div>  
+  </body>
 </html>
