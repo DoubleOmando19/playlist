@@ -252,30 +252,6 @@
         scroll-behavior: smooth;
       }
     }
-    @keyframes slide {
-      from {
-        transform: translateX(100%);
-        opacity: 1;
-      }
-
-      to {
-        transform: translateX(-100%);
-        opacity: 1;
-      }
-    }
-    
-    .rolling-text {
-      white-space: nowrap;
-      overflow: hidden;
-      animation: slide 25s linear infinite;
-      font-weight: bold;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Orbitron', sans-serif;
-      color: white;      
-    }
     
     @media(min-width: 1200px) {
       .video-grid {
@@ -467,7 +443,7 @@
     
     .rolling-text {
       white-space: nowrap;
-      overflow: hidden;
+      overflow: auto;
       animation: slide 30s linear infinite;
       font-weight: bold;
       font-size: 15px;
