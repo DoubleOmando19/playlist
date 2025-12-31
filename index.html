@@ -207,6 +207,8 @@
       color: rgb(59, 59, 255);
       border-color: black;
       position: sticky;
+      left: 0;
+      right: 0;
       background-color: black;
       font-family: Arial;
       margin-top: -28px;
@@ -218,10 +220,13 @@
       text-decoration: none;
       margin-right: 20px;
     }
-    @media(max-width: 525px) {
+    @media(max-width: 500px) {
       .video-grid {
         grid-template-columns: 1fr;
         position: sticky;
+        width: 380px;
+        left: 0;
+        right: 0;
       }
       html {
         scroll-behavior: smooth;
@@ -397,11 +402,14 @@
     .rolling-text {
       white-space: nowrap;
       overflow-x: visible;
-      position: fixed;
+      position: sticky;
+      left: 0;
+      right: 0;
+      width 800px;
       animation: slide 30s linear infinite;
       font-weight: bold;
       font-size: 15px;
-      display: flex;
+      display: inline-block;
       align-items: center;
       justify-content: center;
       font-family: 'Orbitron', sans-serif;
