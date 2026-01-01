@@ -225,8 +225,9 @@
     @media(max-width: 500px) {
       .video-grid {
         grid-template-columns: 1fr;
-        position: relative;
-    
+        position: sticky;
+        overflow-x: hidden;
+        overflow-y: auto;    
       }
       html {
         scroll-behavior: smooth;
