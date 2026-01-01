@@ -39,6 +39,8 @@
       height: 1200px;
       text-decoration: none;
       cursor: pointer;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
     .equalizer {
       display: flex;
@@ -223,10 +225,7 @@
     @media(max-width: 500px) {
       .video-grid {
         grid-template-columns: 1fr;
-        position: sticky;
-        width: 310px;
-        left: 72px;
-        right: 382px;
+        position: relative;
     
       }
       html {
@@ -403,7 +402,8 @@
     .rolling-text {
       white-space: nowrap;
       overflow-x: visible;
-      position: sticky;
+      position: relative;
+      bottom: 0;
       left: 0;
       right: 0;
       animation: slide 30s linear infinite;
@@ -414,7 +414,8 @@
       justify-content: center;
       font-family: 'Orbitron', sans-serif;
       color: white;
-      margin-top: -5px;
+      margin-top: -10px;
+      height: 50px;
     }
   </style>
 </head>
