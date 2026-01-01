@@ -229,11 +229,16 @@
         overflow-x: none;
         overflow-y: auto;
         width: 310px;
+        left: 0;
+        right: 0;
       }
       html {
         scroll-behavior: smooth;
       }
-    }
+      body {
+        overflow-x: none;
+        overflow-y: auto;
+      }
     @media(min-width: 1200px) {
       .video-grid {
         grid-template-columns: 1fr 1fr 1fr;
