@@ -132,7 +132,7 @@
       height: 23px;
       margin-bottom: 10px;
       width: 228px;
-      background-color: lightgoldenrodyellow;
+      background-color: rgb(15, 71, 255);
       box-shadow: 5px 5px 10px whitesmoke;
       border-radius: 5px;
       padding-left: 5px;
@@ -232,22 +232,40 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 15px;
-      row-gap: 5px;
+      row-gap: 4px;
       padding-top: 5px;
       text-decoration: none;
       margin-right: 5px;
-      box-shadow: 5px 5px 10px white;
+
     }
 
     @media(max-width: 525px) {
       .video-grid {
         grid-template-columns: 1fr;
+        max-width: 312px;
       }
 
       html {
         scroll-behavior: smooth;
         scrollbar-color: rgba(0, 0, 0, 0);
         scrollbar-width: none;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        bottom: -3;
+        justify-content: center;
+        animation: slide 40s linear infinite;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: 'Orbitron', sans-serif;
+        color: whitesmoke;
+        margin-top: 10px;
+        white-space: nowrap;
+        width: 300px;
+        padding-top: 10px;
       }
     }
 
@@ -372,7 +390,7 @@
       flex-direction: row;
       justify-content: space-between;
       text-decoration: none;
-      margin-top: -35px;
+      margin-top: -40px;
       font-family: "Orbitron", sans-serif;
       font-weight: bold;
       font-size: 13px;
@@ -429,15 +447,32 @@
       scrollbar-width: none;
     }
 
+    @keyframes slide {
+      from {
+        transform: translateX(100%);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(-100%);
+        opacity: 1;
+      }
+    }
+
     .footer {
       display: flex;
       align-items: center;
+      position: fixed;
+      bottom: 0;
       justify-content: center;
-      font-size: 10px;
+      animation: slide 40s linear infinite;
+      font-size: 1em;
       font-weight: bold;
       font-family: 'Orbitron', sans-serif;
       color: whitesmoke;
       margin-top: -9px;
+      white-space: nowrap;
+      width: 300px;
     }
   </style>
 </head>
@@ -715,18 +750,6 @@
         </button></a>
     </div>
 
-    <div title="GM" class="sidebar-link"><a href="https://www.gm.ca/" target="_blank"><button
-          style="background-color: black; border: 1px solid black; padding-bottom: 2px;">
-          <img
-            style="padding-top: 12px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 1px; background-color: black; border-radius: 50px; font-size: 20px;"
-            src="GM.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: "
-            Orbitron", sans-serif;">
-            GM</div>
-        </button></a>
-    </div>
-
     <div title="Porsche" class="sidebar-link"><a href="https://www.porsche.com/" target="_blank"><button
           style="max-width: 72px; background-color: black; border: 1px solid black;">
           <img
@@ -967,7 +990,7 @@
         </button></a>
     </div>
 
-    <div title="AutoPlay" class="sidebar-link"><a href="autoplay2.html" target="_blank"><button
+    <div title="AutoPlay" class="sidebar-link"><a href="autoplay1.html" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
             style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 7px; background-color: black; border-radius: 30px;"
@@ -992,7 +1015,7 @@
         </button></a>
     </div>
 
-    <div style="margin-top: 21px;">
+    <div style="margin-top: 11px;">
       <a style="font-family: impact; font-weight: bold; font-size: 15px; background-color: black; color: white; padding: 3px;"
         href="#">JUMP ☝️</a>
     </div>
@@ -1219,7 +1242,7 @@
         </div>
       </div>
 
-      <div style="height: 300px; margin-top: -10px" class="video-preview">
+      <div style="height: 300px; margin-top: -15px" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1243,7 +1266,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1267,7 +1290,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1443,7 +1466,7 @@
   </main>
   <main>
     <section class="video-grid">
-      <div style="height: 310px; margin-top: 5px;" class="video-preview">
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1467,7 +1490,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: 5px;" class="video-preview">
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1491,7 +1514,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: 5px;" class="video-preview">
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1517,6 +1540,7 @@
       </div>
     </section>
   </main>
+
   <main>
     <section class="video-grid">
       <div style="height: 310px; margin-top: 10px;" class="video-preview">
@@ -1591,7 +1615,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1713,7 +1737,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+      <div style="margin-bottom: 15px; height: 310px; margin-top: -10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1739,7 +1763,24 @@
     </section>
   </main>
   <footer class="footer">
-    |utubeplaylist.com © 2023|
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;">!!! AutoPlay !!!</span>
+    <span>Check it out</span>
+    <span style="font-weight: bold; background-color: black; color: rgb(255, 226, 59);">'Top Hits of
+      the Month'</span>
+    <span> stream now!!!"</span>
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;">!!! Click & Play !!!</span>
+    <span>Check it out</span>
+    <span style="font-weight: bold; background-color: black; color: rgb(255, 226, 59);">'Top Hits of
+      the Month'</span>
+    <span> stream now!!!"</span>
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;">!!! AutoPlay !!!</span>
+    <span>Check it out</span>
+    <span style="font-weight: bold; background-color: black; color: rgb(255, 226, 59);">'Top Hits of
+      the Month'</span>
+    <span> stream now!!! 🍒🍒🍒</span>
   </footer>
 </body>
 
