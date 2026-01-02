@@ -233,8 +233,8 @@
       color: rgb(59, 59, 255);
       border-color: black;
       position: sticky;
-      left: 0;
-      right: 0;
+      overflow-x: hidden;
+      overflow-y: auto;  
       background-color: black;
       font-family: Arial;
       margin-top: -28px;
@@ -269,9 +269,6 @@
         margin-right: 5px;
       }
 
-      .rolling-text {
-        display: none;
-      }
     }
 
     @media(min-width: 1200px) {
@@ -398,7 +395,7 @@
       margin-top: -40px;
       font-family: "Orbitron", sans-serif;
       font-weight: bold;
-      font-size: 11px;
+      font-size: .7em;
       background-color: black;
       color: red;
       text-shadow: 1px black;
