@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <script>
-    window.onload(runFileForToday());
+    runFileForToday();
 
     function runFileForToday() {
       const today = new Date().getDay(); // Get the current day of the week
@@ -30,7 +30,7 @@
         case 5: // Friday
           window.location.href = ('index.html');
         case 6: // Saturday
-          window.location.href = ('./index.html');
+          window.location.href = ('index.html');
         default:
           console.log("Invalid day of the week");
       }
