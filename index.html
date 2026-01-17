@@ -14,7 +14,7 @@
   <script>
     window.onload(runFileForToday());
     function runFileForToday() {
-      const today = new Date().getDay(0-6); // Get the current day of the week
+      const today = new Date().getDay(today); // Get the current day of the week
       switch (today) {
         case 0: // Sunday
           window.location.href = ('index5.html');
