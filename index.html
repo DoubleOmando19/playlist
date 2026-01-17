@@ -11,6 +11,32 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <script>
+    window.onload(runFileForToday());
+
+    function runFileForToday() {
+      const today = new Date().getDay(); // Get the current day of the week
+      switch (today) {
+        case 0: // Sunday
+          window.location.href = ('./index5.html');
+        case 1: // Monday
+          window.location.href = ('./index4.html');
+        case 2: // Tuesday
+          window.location.href = ('./index.html');
+        case 3: // Wednesday
+          window.location.href = ('./index5.html');
+        case 4: // Thursday
+          window.location.href = ('./index4.html');
+        case 5: // Friday
+          window.location.href = ('./index.html');
+        case 6: // Saturday
+          window.location.href = ('./index.html');
+        default:
+          console.log("Invalid day of the week");
+      }
+      return today;
+    }
+  </script>
   <style>
     p {
       font-family: "Orbitron", "Roboto", Arial;
