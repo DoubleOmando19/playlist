@@ -1788,23 +1788,23 @@
   </footer>
   <script>
     window.onload(runFileForToday());
-    function runFileForToday() {
+    function runFileForToday(today) {
       const today = new Date().getDay(); // Get the current day of the week
       
       if (today === 0) { // Sunday
-        window.location.href = ('index5.html');
+        ('index5.html');
       } else if (today === 1) { // Monday
-        window.location.href = ('index.html');
+        ('index.html');
       } else if (today === 2) { // Tuesday
-        window.location.href = ('index5.html');
+        ('index5.html');
       } else if (today === 3) { // Wednesday
-        window.location.href = ('index4.html');
+        ('index4.html');
       } else if (today === 4) { // Thursday
-        window.location.href = ('index.html');
+        ('index.html');
       } else if (today === 5) { // Friday
-        window.location.href = ('index5.html');
+        ('index5.html');
       } else if (today === 6) { // Saturday
-        window.location.href = ('index.html');
+        ('index.html');
       }
       return today;
     } 
