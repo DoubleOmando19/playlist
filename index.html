@@ -10,39 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <script>
-    window.onload(runFileForToday());
-    function runFileForToday() {
-      const today = new Date().getDay(today); // Get the current day of the week
-      switch (today) {
-        case 0: // Sunday
-          window.location.href = ('index5.html');
-          break;
-        case 1: // Monday
-          window.location.href = ('index4.html');
-          break;
-        case 2: // Tuesday
-          window.location.href = ('index.html');
-          break;
-        case 3: // Wednesday
-          window.location.href = ('index5.html');
-          break;
-        case 4: // Thursday
-          window.location.href = ('index4.html');
-          break;
-        case 5: // Friday
-          window.location.href = ('index.html');
-          break;
-        case 6: // Saturday
-          window.location.href = ('index5.html');
-          break;
-        default:
-          console.log("Invalid day of the week");
-          return today;
-      }
-    }    
-  </script>
+    rel="stylesheet">   
   <style>
     p {
       font-family: "Orbitron", "Roboto", Arial;
@@ -1818,6 +1786,35 @@
       the Month ' </span>
     <span> stream now!!! 🍒 🍒 🍒</span>
   </footer>
-</body>
-
+  <script>
+    window.onload(runFileForToday());
+    function runFileForToday() {
+      const today = new Date().getDay(); // Get the current day of the week
+      switch (today) {
+        case 0: // Sunday
+          window.location.href = ('index5.html');
+          break;
+        case 1: // Monday
+          window.location.href = ('index4.html');
+          break;
+        case 2: // Tuesday
+          window.location.href = ('index.html');
+          break;
+        case 3: // Wednesday
+          window.location.href = ('index5.html');
+          break;
+        case 4: // Thursday
+          window.location.href = ('index4.html');
+          break;
+        case 5: // Friday
+          window.location.href = ('index.html');
+          break;
+        case 6: // Saturday
+          window.location.href = ('index5.html');
+          break;
+  
+          return today;
+      }
+    } 
+  </body>
 </html>
