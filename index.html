@@ -1790,31 +1790,23 @@
     window.onload(runFileForToday());
     function runFileForToday() {
       const today = new Date().getDay(); // Get the current day of the week
-      switch (today) {
-        case 0: // Sunday
-          ('index5.html');
-          break;
-        case 1: // Monday
-          ('index4.html');
-          break;
-        case 2: // Tuesday
-          ('index.html');
-          break;
-        case 3: // Wednesday
-          ('index5.html');
-          break;
-        case 4: // Thursday
-          ('index4.html');
-          break;
-        case 5: // Friday
-          ('index.html');
-          break;
-        case 6: // Saturday
-          ('index.html');
-          break;
-  
-          return today;
+      
+      if (today === 0) { // Sunday
+        window.location.href = ('index5.html');
+      } else if (today === 1) { // Monday
+        window.location.href = ('index.html');
+      } else if (today === 2) { // Tuesday
+        window.location.href = ('index5.html');
+      } else if (today === 3) { // Wednesday
+        window.location.href = ('index4.html');
+      } else if (today === 4) { // Thursday
+        window.location.href = ('index.html');
+      } else if (today === 5) { // Friday
+        window.location.href = ('index5.html');
+      } else if (today === 6) { // Saturday
+        window.location.href = ('index.html');
       }
+      return today;
     } 
   </script>
   </body>
