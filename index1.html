@@ -108,11 +108,11 @@
       display: flex;
       font-family: 'Orbitron', sans-serif;
       margin-top: 12px;
-      font-size: 14px;
+      font-size: .8em;
       font-weight: bold;
       height: 20px;
       margin-bottom: 10px;
-      width: 228px;
+      width: 229px;
       background-color: rgb(15, 71, 255);
       box-shadow: 5px 5px 10px black;
       border-radius: 5px;
@@ -127,7 +127,7 @@
       display: flex;
       font-family: "Orbitron", sans-serif;
       margin-top: 12px;
-      font-size: 15px;
+      font-size: .85em;
       font-weight: bold;
       height: 23px;
       margin-bottom: 10px;
@@ -151,6 +151,8 @@
       background-color: rgb(59, 59, 59);
       border: 1px solid white;
       border-radius: 10px;
+      box-shadow: 1px 1px 1px black;
+
     }
 
     .profile-picture {
@@ -196,6 +198,7 @@
     .video-author {
       font-family: 'Orbitron', sans-serif;
       color: whitesmoke;
+      font-size: .8em;
       margin-bottom: 4px;
       width: 205px;
       font-weight: bold;
@@ -230,21 +233,41 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 15px;
-      row-gap: 5px;
+      row-gap: 4px;
       padding-top: 5px;
       text-decoration: none;
       margin-right: 5px;
+      z-index: 5;
+
     }
 
     @media(max-width: 525px) {
       .video-grid {
         grid-template-columns: 1fr;
+        max-width: 312px;
       }
 
       html {
         scroll-behavior: smooth;
         scrollbar-color: rgba(0, 0, 0, 0);
         scrollbar-width: none;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        justify-content: center;
+        animation: slide 20s linear infinite;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: 'Orbitron', sans-serif;
+        color: whitesmoke;
+        margin-top: 5px;
+        white-space: nowrap;
+        width: 300px;
+        padding-top: 10px;
       }
     }
 
@@ -342,24 +365,25 @@
       display: flex;
       flex-direction: row;
       width: 100%;
-      height: 64px;
+      height: 65px;
       position: fixed;
       top: 0;
-      padding-top: 4px;
+      padding-top: 5px;
       padding-bottom: 3px;
       border-bottom: solid 2px black;
       color: red;
       background-color: black;
       font-size: 30px;
       font-weight: bold;
+      margin-top: 0px;
       margin-bottom: 5px;
       z-index: 1;
-      transition: 4s;
+      transition: 3s;
     }
 
     .utubeheader:hover {
       color: white;
-      transition: 3s;
+      transition: 2s;
     }
 
     .header {
@@ -368,7 +392,7 @@
       flex-direction: row;
       justify-content: space-between;
       text-decoration: none;
-      margin-top: -35px;
+      margin-top: -45px;
       font-family: "Orbitron", sans-serif;
       font-weight: bold;
       font-size: 13px;
@@ -399,8 +423,9 @@
 
     .middle {
       flex: 1;
-      max-width: 280px;
+      max-width: 270px;
       padding-top: 17px;
+      margin-left: 5px;
 
     }
 
@@ -425,15 +450,33 @@
       scrollbar-width: none;
     }
 
+    @keyframes slide {
+      from {
+        transform: translateX(100%);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(-100%);
+        opacity: 1;
+      }
+    }
+
     .footer {
       display: flex;
       align-items: center;
+      position: fixed;
+      bottom: 0;
       justify-content: center;
-      font-size: 10px;
+      animation: slide 10s linear infinite;
+      font-size: 1em;
       font-weight: bold;
       font-family: 'Orbitron', sans-serif;
       color: whitesmoke;
-      margin-top: -9px;
+      margin-top: 5px;
+      white-space: nowrap;
+      padding-top: 10px;
+      width: 300px;
     }
   </style>
 </head>
@@ -455,38 +498,38 @@
 
   <div class="header">
     <div style="background-color: black;" class="left">
-      <a style="margin-left: 15px; color: white; font-weight: bold; text-decoration: none;" href="https://www.nike.com/"
-        target="_blank">Nike</a>
+      <a style="margin-top: 0px; margin-left: 15px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.nike.com/" target="_blank">Nike</a>
     </div>
 
     <div style="background-color: black;" class="leftleft"><a
-        style="margin-left: 24px; color: white; font-weight: bold; text-decoration: none;"
+        style="margin-top: 0px; margin-left: 24px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.underarmour.ca/" target="_blank">Underarmour</a>
     </div>
 
     <div style="background-color: black;" class="leftleftleft"><a
-        style="margin-right: 22px; margin-left: 29px; color: white; font-weight: bold; text-decoration: none;"
+        style="margin-top: 0px; margin-right: 22px; margin-left: 29px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.sportchek.ca/" target="_blank">SportChek</a>
     </div>
 
     <div style="background-color: black;" class="middle">
       <form action="https://www.google.com/search" target="_blank" method="get">
         <input style="color: black; font-size: 13px; border: 1px solid black; border-radius: 10px;
-          margin-top: -7px; height: 15px; flex: 1; max-width: 210px; padding-bottom: 2px;
-          margin-bottom: 2px; padding-left: 5px; margin-left: 45px;" type="text" placeholder="Search..." name="q">
+          margin-top: -7px; height: 15px; flex: 1; max-width: 280px; padding-bottom: 2px;
+          margin-bottom: 2px; padding-left: 6px; margin-left: 11px;" type="text" placeholder="Search..." name="q">
       </form>
     </div>
 
     <div style="background-color: black;" class="rightrightright"><a
-        style="margin-left: 55px; color: white; font-weight: bold; text-decoration: none;" href="https://www.amazon.ca/"
-        target="_blank">Amazon</a></div>
+        style="margin-top: 0px; margin-left: 55px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.amazon.ca/" target="_blank">Amazon</a></div>
 
     <div style="background-color: black" class="rightright"><a
-        style="margin-left: 10px; color: white; font-weight: bold; text-decoration: none;"
+        style="margin-top: 0px; margin-left: 10px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.rabbit.tech/" target="_blank">Rabbit</a></div>
 
     <div style="background-color: black" class="right"><a
-        style="margin-left: -10px; padding-right: 5px; margin-right: 10px; color: white; font-weight: bold; text-decoration: none;"
+        style="margin-top: 0px; margin-left: -10px; padding-right: 5px; margin-right: 10px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.openai.com/" target="_blank">OpenAI</a>
     </div>
   </div>
@@ -630,7 +673,7 @@
     <div title="DJI" class="sidebar-link"><a href="https://store.dji.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-right: 3px; background-color: black; border-radius: 50px;"
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: black; border-radius: 50px;"
             src="DJI.jpg" loading="preload">
           <div
             style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: "
@@ -711,22 +754,10 @@
         </button></a>
     </div>
 
-    <div title="GM" class="sidebar-link"><a href="https://www.gm.ca/" target="_blank"><button
-          style="background-color: black; border: 1px solid black; padding-bottom: 2px;">
-          <img
-            style="padding-top: 12px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 1px; background-color: black; border-radius: 50px; font-size: 20px;"
-            src="GM.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: "
-            Orbitron", sans-serif;">
-            GM</div>
-        </button></a>
-    </div>
-
     <div title="Porsche" class="sidebar-link"><a href="https://www.porsche.com/" target="_blank"><button
           style="max-width: 72px; background-color: black; border: 1px solid black;">
           <img
-            style="height: 30px; font-size: 14px; display: flex; justify-content: center; align-items: center; margin-left: 8px; margin-right: 2px; background-color: black; border-radius: 50px;"
+            style="height: 30px; font-size: 14px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 2px; background-color: black; border-radius: 50px;"
             src="PORSCHE.png" loading="lazy">
           <div
             style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
@@ -750,7 +781,7 @@
     <div title="Ferrari" class="sidebar-link"><a href="https://www.ferrari.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 11px; background-color: black; border-radius: 50%;"
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 12px; background-color: black; border-radius: 50%;"
             src="Ferrari.png" loading="lazy">
           <div
             style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
@@ -762,10 +793,10 @@
     <div title="Bitcoin" class="sidebar-link"><a href="https://coinmarketcap.com/" target="_blank"><button
           style="max-width: 72px; background-color: black; border: 1px solid black; padding-bottom: 2px;">
           <img
-            style="padding-top: 6px; height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 9px; margin-right: 5px; background-color: black; border-radius: 50px; font-size: 20px;"
+            style="padding-top: 6px; height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 9px; margin-right: 10px; background-color: black; border-radius: 50px; font-size: 20px;"
             src="bitcoin.png" loading="lazy">
           <div
-            style="cursor: pointer; margin-left: 1px; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
+            style="cursor: pointer; margin-left: 1px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
             Orbitron", sans-serif;">
             BITCOIN</div>
         </button></a>
@@ -774,7 +805,7 @@
     <div title="SpeedTest" class="sidebar-link"><a href="https://www.speedtest.net/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 11px; background-color: black; border-radius: 50px;"
+            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 13px; background-color: black; border-radius: 50px;"
             src="SpeedTest.png" loading="lazy">
           <div
             style="cursor: pointer; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
@@ -786,7 +817,7 @@
     <div title="Nvidia" class="sidebar-link"><a href="https://www.nvidia.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black;">
           <img
-            style="height: 32px; display: flex; justify-content: center; align-items: center; margin-left: 6px; background-color: black; border-radius: 50px;"
+            style="height: 32px; display: flex; justify-content: center; align-items: center; margin-left: 4px; background-color: black; border-radius: 50px;"
             src="NVIDIA.png" loading="lazy">
           <div
             style="cursor: pointer; margin-right: 6px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: "
@@ -810,7 +841,7 @@
     <div title="AliExpress" class="sidebar-link"><a href="https://www.aliexpress.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 10px; background-color: black; border-radius: 50px;"
+            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: black; border-radius: 50px;"
             src="Aliexpress.png">
           <div
             style="cursor: pointer; margin-left: 2px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
@@ -822,7 +853,7 @@
     <div title="Shimano" class="sidebar-link"><a href="https://bike.shimano.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 27px; display: flex; justify-content: center; align-items: center; margin-right: 9px; margin-left: 11px; background-color: black; border-radius: 50px;"
+            style="height: 27px; display: flex; justify-content: center; align-items: center; margin-right: 9px; margin-left: 13px; background-color: black; border-radius: 50px;"
             src="Shimano.webp" loading="lazy">
           <div
             style="cursor: pointer; margin-left: 3px; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: "
@@ -858,10 +889,10 @@
     <div title="Alien Gear Holsters" class="sidebar-link"><a href="https://www.aliengearholsters.com/"
         target="_blank"><button style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="max-width: 72px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 0px; background-color: black; border-radius: 50px;"
+            style="max-width: 72px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 0px; mrgin-right: 3px; background-color: black; border-radius: 50px;"
             src="Alien.webp" loading="lazy">
           <div
-            style="cursor: pointer; max-width: 72px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: "
+            style="cursor: pointer; max-width: 72px; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: "
             Orbitron", sans-serif;">
             ALIEN</div>
         </button></a>
@@ -882,10 +913,10 @@
     <div title="3M" class="sidebar-link"><a href="https://www.3mcanada.ca/" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 3px; background-color: black;"
+            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: black;"
             src="MMM.png" loading="lazy">
           <div
-            style="cursor: pointer; margin-left: 5px; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: "
+            style="cursor: pointer; margin-left: 5px; margin-right: 9px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: "
             Orbitron", sans-serif;">
             3M</div>
         </button></a>
@@ -894,10 +925,10 @@
     <div title="QR Code Generator" class="sidebar-link"><a href="QR Code.html" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="padding-left: 0px; cursor: pointer; height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 9px; margin-right: 0px; background-color: black; border-radius: 50%;"
+            style="padding-left: 0px; cursor: pointer; height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 11px; margin-right: 0px; background-color: black; border-radius: 50%;"
             src="QRCode.png">
           <div
-            style="margin-left: 4px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
+            style="margin-left: 4px; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
             Orbitron", sans-serif;">
             QRCODE</div>
         </button></a>
@@ -906,10 +937,10 @@
     <div title="BestBuy" class="sidebar-link"><a href="https://www.bestbuy.ca" target="_blank">
         <button style="width: 72px; border: 1px solid black; background-color: black;">
           <img
-            style="cursor: pointer; margin-top: 0px; margin-left: 9px; margin-right: 5px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 95px; font-size: 12; font-weight: bold; font-family: copperplate;"
+            style="height: 32px; cursor: pointer; margin-top: 0px; margin-left: 11px; margin-right: 9px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 95px; font-size: 12; font-weight: bold; font-family: copperplate;"
             src="bestbuy.png">
           <div
-            style="margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
+            style="margin-left: 1px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
             Orbitron", sans-serif;">
             BESTBUY</div>
         </button></a>
@@ -918,7 +949,7 @@
     <div title="PlayStation" class="sidebar-link"><a href="https://www.playstation.com/" target="_blank"><button
           style="width: 72px; height: 74px; background-color: black; border: 0px solid black;">
           <img
-            style="height: 30px; cursor: pointer; margin-right: 11px; font-size: 17px; display: flex; justify-content: center; align-items: center; margin-left: 11px; background-color: black; border-radius: 50px;"
+            style="height: 29px; cursor: pointer; margin-right: 11px; font-size: 17px; display: flex; justify-content: center; align-items: center; margin-left: 14px; background-color: black; border-radius: 50px;"
             src="PlayStation.png" loading="lazy">
           <div
             style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 9px; font-weight: bold; font-family: "
@@ -930,10 +961,10 @@
     <div title="DeepSeek" class="sidebar-link"><a href="https://www.deepseek.com" target="_blank">
         <button style="width: 72px; border: 1px solid black; background-color: black;">
           <img
-            style="cursor: pointer; margin-top: 0px; margin-left: 11px; margin-right: 6px; height: 31px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 50px; font-size: 12px; font-weight: bold; font-family: copperplate;"
+            style="cursor: pointer; margin-top: 0px; margin-left: 11px; margin-right: 8px; height: 35px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 50px;"
             src="Deepseek.png">
           <div
-            style="margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
+            style="margin-left: 1px; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
             Orbitron", sans-serif;">
             DEEPSEEK</div>
         </button></a>
@@ -942,10 +973,10 @@
     <div title="Cachipun" class="sidebar-link"><a href="12-spanish-rock-paper-scissors.html" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 29px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 8px; background-color: black; border-radius: 30px;"
+            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 11px; background-color: black; border-radius: 30px;"
             src="PRS.png" loading="lazy">
           <div
-            style="cursor: pointer; margin-left: 5px; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
+            style="cursor: pointer; margin-left: 5px; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
             Orbitron", sans-serif;">
             CACHIPUN</div>
         </button></a>
@@ -954,7 +985,7 @@
     <div title="World Almanac" class="sidebar-link"><a href="indexAlmanac.html" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 7px; background-color: black; border-radius: 30px;"
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 9px; background-color: black; border-radius: 30px;"
             src="World.png" loading="lazy">
           <div
             style="cursor: pointer; margin-left: 5px; margin-right: 10px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
@@ -966,7 +997,7 @@
     <div title="AutoPlay" class="sidebar-link"><a href="autoplay2.html" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 7px; background-color: black; border-radius: 30px;"
+            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 10px; background-color: black; border-radius: 30px;"
             src="Autoplay.png" loading="lazy">
           <div
             style="cursor: pointer; margin-left: 5px; margin-right: 11px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: "
@@ -988,30 +1019,31 @@
         </button></a>
     </div>
 
-    <div style="margin-top: 21px;">
+    <div style="margin-top: 11px;">
       <a style="font-family: impact; font-weight: bold; font-size: 15px; background-color: black; color: white; padding: 3px;"
         href="#">JUMP ☝️</a>
     </div>
   </nav>
-  
+
   <main>
     <section class="video-grid">
-      <div style="height: 320px;" class="video-preview">
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
         <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="City Boys.mp4" controls width="285"
-            height="155"></video>
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="City Boys.mp4" loading="preload" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
             <img class="profile-picture" src="burnaboi.jpg">
           </div>
           <div class="video-info">
-            <p class="video-title">
+            <h2 class="video-title">
               Burna Boy - City Boys
-            </p>
-            <p class="video-author">
+            </h2>
+            <h3 class="video-author">
               Burna Boy
-            </p>
+            </h3>
             <p style="font-size: 19px; color: gold;" class="video-stats">
               &#9733;
             </p>
@@ -1019,516 +1051,23 @@
         </div>
       </div>
 
-      <div style="height: 320px;" class="video-preview">
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
         <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="fukumean.mp4" controls width="285"
-            height="155"></video>
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="fukumean.mp4" loading="preload" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
             <img class="profile-picture" src="gunnapic.jpg">
           </div>
           <div class="video-info">
-            <p class="video-title">
+            <h2 class="video-title">
               Gunna - Fukumean
-            </p>
-            <p class="video-author">
+            </h2>
+            <h3 class="video-author">
               Gunna
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>   
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="NLE Shotta Flow 7.mp4"
-            controls width="285" height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="NLEChop.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              NLE-Shotta Flow 7
-            </p>
-            <p class="video-author">
-              NLE CHOPPA
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>      
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="LALA.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="Miketowerspic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Mike Towers - LaLa
-            </p>
-            <p class="video-author">
-              Mike Towers
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733; &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;"
-            src="Anuel AA Mejor Que Yo.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="Anuel11pic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Anuel AA - Mejor Que Yo
-            </p>
-            <p class="video-author">
-              Anuel AA
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Mi Gata.mp4" controls width="285" height="155">
-          </video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="stanlypic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Mi Gata
-            </p>
-            <p class="video-author">
-              Stanly
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733; &#9733;
-            </p>
-          </div>
-        </div>
-      </div>      
-    </section>
-  </main>
-  <main>
-    <section class="video-grid">
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Let Go.mp4" controls width="285" height="155">
-          </video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="centalceepic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Cenral Cee - Let Go
-            </p>
-            <p class="video-author">
-              Central Cee
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733; &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Last Last.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="burnaboi.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Burna Boy - Last Last
-            </p>
-            <p class="video-author">
-              Burna Boy
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733; &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Snooze.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="SZApic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              SZA - Snooze
-            </p>
-            <p class="video-author">
-              SZA
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Calm Down.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="selinagomezpic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Rema, S Gomez - Calm Down
-            </p>
-            <p class="video-author">
-              Selena Gomez
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733; &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="First Person.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="ovologo.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Drake - First Person Shooter
-            </p>
-            <p class="video-author">
-              Drake, J Cole
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Baby.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="Anuel11pic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Anuel AA, Quavo - Baby
-            </p>
-            <p class="video-author">
-              Anuel AA
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <main>
-    <section class="video-grid">
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Shaq & Kobe.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="Rickrosspic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Rick Ross - Shaq & Kobe
-            </p>
-            <p class="video-author">
-              Rick Ross
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Un preview.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="Badbunnypic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Bad Bunny - Un Preview
-            </p>
-            <p class="video-author">
-              Bad Bunny
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Oh U Went.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="youngthugpic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Oh U Went
-            </p>
-            <p class="video-author">
-              Young Thug
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="What It Is.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="Doechiipic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Doechii - What it is
-            </p>
-            <p class="video-author">
-              Doechii
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Big7.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="burnaboi.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Burna Boy - Big 7
-            </p>
-            <p class="video-author">
-              Burna Boy
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Greatness.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="quavopic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Quavo - Greatness
-            </p>
-            <p class="video-author">
-              Quavo
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <main>
-    <section class="video-grid">
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="SHAKA LAKA.mp4" controls width="285"
-            height="155">
-          </video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="69pic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              6ix9ine - Shaka Laka
-            </p>
-            <p class="video-author">
-              Tekashi 6ix9ine
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Rich Flex.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="ovologo.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Drake - Rich Flex
-            </p>
-            <p class="video-author">
-              Drake
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="HVN ON EARTH.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="lilteccapic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Lil Tecca Kodak Black - HVN
-            </p>
-            <p class="video-author">
-              Lil Tecca
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Entrapreneur.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="centalceepic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Central Cee - Entrapreneur
-            </p>
-            <p class="video-author">
-              Central Cee
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Big Everything.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="bustapic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              B Rhymes - Big Everything
-            </p>
-            <p class="video-author">
-              Busta Rhymes
-            </p>
+            </h3>
             <p style="font-size: 19px; color:gold;" class="video-stats">
               &#9733;
             </p>
@@ -1536,22 +1075,240 @@
         </div>
       </div>
 
-      <div style="height: 320px;" class="video-preview">
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
         <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Giza.mp4" controls width="285"
-            height="155"></video>
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="NLE Shoota Flow 7.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="NLEChop.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              NLE - Shotta Flow 7
+            </h2>
+            <h3 class="video-author">
+              NLE Choppa
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="LALA.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Miketowerspic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Mike Towers - LaLa
+            </h2>
+            <h3 class="video-author">
+              Mike Towers
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Anuel AA Mejor Que Yo.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Anuel11pic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 style="font-size: .79em;" class="video-title">
+              Anuel AA - Mejor Que Yo
+            </h2>
+            <h3 class="video-author">
+              Anuel AA
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Mi Gata.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="stanlypic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Stanly - Mi Gata
+            </h2>
+            <h3 class="video-author">
+              Stanly
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Let Go.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="centalceepic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Central Cee - Let Go
+            </h2>
+            <h3 class="video-author">
+              Central Cee
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Last Last.mp4" loading="lazy" controls width="280" height="155">
+          </video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
             <img class="profile-picture" src="burnaboi.jpg">
           </div>
           <div class="video-info">
-            <p class="video-title">
-              Burna Boy - Giza
-            </p>
-            <p class="video-author">
+            <h2 class="video-title">
+              Burna Boy - Last Last
+            </h2>
+            <h3 class="video-author">
               Burna Boy
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
             </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Snooze.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="SZApic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 style="margin-top: 12px;" class="video-title">
+              SZA - Snooze
+            </h2>
+            <h3 style="margin-top: 12px;" class="video-author">
+              SZA
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 300px; margin-top: -15px" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Calm Down.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="selinagomezpic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 style="font-size: .77em;" class="video-title">
+              Rema S Gomez - Calm Down
+            </h2>
+            <h3 class="video-author">
+              Selena Gomez
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="First Person.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="ovologo.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Drake - First Person Shooter
+            </h2>
+            <h3 class="video-author">
+              Drake
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Baby.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Anuel11pic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Anuel AA, Quavo - Baby
+            </h2>
+            <h3 class="video-author">
+              Anuel AA, Quavo
+            </h3>
             <p style="font-size: 19px; color: gold;" class="video-stats">
               &#9733;
             </p>
@@ -1562,22 +1319,23 @@
   </main>
   <main>
     <section class="video-grid">
-      <div style="height: 320px;" class="video-preview">
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
         <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Sticky.mp4" controls width="285" height="155">
-          </video>
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Shaq & Kobe.mp4" loading="preload" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
-            <img class="profile-picture" src="ovologo.jpg">
+            <img class="profile-picture" src="Rickrosspic.jpg">
           </div>
           <div class="video-info">
-            <p class="video-title">
-              Drake - Sticky
-            </p>
-            <p class="video-author">
-              Drake
-            </p>
+            <h2 class="video-title">
+              Rick Ross - Shaq & Kobe
+            </h2>
+            <h3 class="video-author">
+              Rick Ross
+            </h3>
             <p style="font-size: 19px; color: gold;" class="video-stats">
               &#9733;
             </p>
@@ -1585,117 +1343,119 @@
         </div>
       </div>
 
-      <div style="height: 320px;" class="video-preview">
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
         <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="Patty Cake.mp4" controls width="285"
-            height="155"></video>
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Un preview.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Badbunnypic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Bad Bunny - Un Preview
+            </h2>
+            <h3 class="video-author">
+              Bad Bunny
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Oh U Went.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="youngthugpic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Young Thug - Oh U Went
+            </h2>
+            <h3 class="video-author">
+              Young Thug
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px; margin-bottom: 15px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="What It Is.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Doechiipic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Doechii - What It Is
+            </h2>
+            <h3 class="video-author">
+              Doechii
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Big7.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="burnaboi.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Burna Boy - Big 7
+            </h2>
+            <h3 class="video-author">
+              Burna Boy
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Greatness.mp4" loading="lazy" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
             <img class="profile-picture" src="quavopic.jpg">
           </div>
           <div class="video-info">
-            <p class="video-title">
-              Quavo - Patty cake
-            </p>
-            <p class="video-author">
+            <h2 class="video-title">
+              Quavo - Greatness
+            </h2>
+            <h3 class="video-author">
               Quavo
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 25px; background-color: black;" src="PISTOL PACCIN.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="NLEChop.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              NLE Choppa - Pistol Paccin
-            </p>
-            <p class="video-author">
-              NLE Choppa
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;" src="Dientes.mp4" controls
-            width="285" height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="jbalvinpic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              J Balvin - Dientes
-            </p>
-            <p class="video-author">
-              J Balvin
-            </p>
-            <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="color: blue; margin-top: 5px; background-color: black;" src="Montana, Lil Baby Okay.mp4"
-            controls width="285" height="155">
-          </video>
-        </div>
-
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="Frenchmontanapic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              French, Lil Baby - Okay
-            </p>
-            <p class="video-author">
-              French Montana
-            </p>
-            <p style="font-size: 19px; color: gold;" ; class="video-stats">
-              &#9733;
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="height: 320px;" class="video-preview">
-        <div class="thumbnail-row">
-          <video style="margin-top: 5px; background-color: black;"
-            src="Lil Durk - What Happened.mp4" controls width="285"
-            height="155"></video>
-        </div>
-        <div class="video-info-grid">
-          <div class="channel-picture">
-            <img class="profile-picture" src="Lildurkpic.jpg">
-          </div>
-          <div class="video-info">
-            <p class="video-title">
-              Lil Durk - What Happened
-            </p>
-            <p class="video-author">
-              Lil Durk, Gunna
-            </p>
+            </h3>
             <p style="font-size: 19px; color: gold;" class="video-stats">
               &#9733;
             </p>
@@ -1704,6 +1464,346 @@
       </div>
     </section>
   </main>
+  <main>
+    <section class="video-grid">
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="SHAKA LAKA.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="69pic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              6ix9ine - Shaka Laka
+            </h2>
+            <h3 class="video-author">
+              6ix9ine
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Rich Flex.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="ovologo.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Drake - Rich Flex
+            </h2>
+            <h3 class="video-author">
+              Drake
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="HVN ON EARTH.mp4" loading="lazy" controls width="280" height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="lilteccapic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Lil Tecca - HVN
+            </h2>
+            <h3 class="video-author">
+              Kodak Black
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main>
+    <section class="video-grid">
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 3px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Entrapreneur.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="centalceepic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Central Cee - Entrapreneur
+            </h2>
+            <h3 class="video-author">
+              Central Cee
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Big Everything.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="bustapic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              B Rhymes - Big Everything
+            </h2>
+            <h3 class="video-author">
+              Busta Rhymes
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Giza.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="burnaboi.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Burna Boy - Giza
+            </h2>
+            <h3 class="video-author">
+              Burna Boy
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Sticky.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="ovologo.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Drake - Sticky
+            </h2>
+            <h3 style="margin-top: 13px;" class="video-author">
+              Drake
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Patty Cake.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="quavopic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Quavo - Patty cake
+            </h2>
+            <h3 style="margin-top: 13px;" class="video-author">
+              Quavo
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="PISTOL PACCIN.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="NLEChop.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              NLE Choppa - Pistol Paccin
+            </h2>
+            <h3 class="video-author">
+              NLE Choppa
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Dientes.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="jbalvinpic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 style="font-family: " Orbitron", sans-serif;" class="video-title">
+              J Balvin - Dientes
+            </h2>
+            <h3 style="font-family: " Orbitron", sans-serif;" class="video-author">
+              J Balvin
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Montana, Lil Baby Okay.mp4" loading="lazy" controls width="280" height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Frenchmontanapic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Montana, Lil Baby - Okay
+            </h2>
+            <h3 class="video-author">
+              French Montana
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 15px; height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 12px; margin-top: 10px; background-color: black;"
+            src="Lil Durk - What Happened.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Lildurkpic.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Lil Durk - What Happened
+            </h2>
+            <h3 class="video-author">
+              Lil Durk
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! AutoPlay !!! </span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span> stream now!!!"</span>
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! Click & Play !!!</span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span> stream now!!!"</span>
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! AutoPlay !!! </span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span> stream now!!! 🍒 🍒 🍒</span>
+  </footer>
+  <script>
+    window.onload(runFileForToday());
+    function runFileForToday() {
+      const today = new Date().getDay(); // Get the current day of the week
+
+      if (today === 0) { // Sunday
+        window.location.href = ('index5.html');
+      } else if (today === 1) { // Monday
+        ('index.html');
+      } else if (today === 2) { // Tuesday
+        window.location.href = ('index5.html');
+      } else if (today === 3) { // Wednesday
+        window.location.href = ('index4.html');
+      } else if (today === 4) { // Thursday
+        ('index.html');
+      } else if (today === 5) { // Friday
+        window.location.href('index5.html');
+      } else if (today === 6) { // Saturday
+        ('index.html');
+      }
+      return today;
+    } 
+  </script>
 </body>
 
 </html>
