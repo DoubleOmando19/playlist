@@ -426,17 +426,24 @@
       scrollbar-color: rgba(0, 0, 0, 0);
       scrollbar-width: none;
     }
-
+    
     .footer {
       display: flex;
       align-items: center;
+      position: fixed;
+      bottom: 0;
       justify-content: center;
-      font-size: 10px;
+      animation: slide 7s linear infinite;
+      font-size: 1em;
       font-weight: bold;
       font-family: 'Orbitron', sans-serif;
       color: whitesmoke;
-      margin-top: -9px;
+      margin-top: 5px;
+      white-space: nowrap;
+      padding-top: 10px;
+      width: 300px;
     }
+    
   </style>
 </head>
 
