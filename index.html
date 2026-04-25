@@ -12,35 +12,30 @@
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <style>
-    html, body {
-        overflow-x: hidden;
-        max-width: 100vw;
-        box-sizing: border-box;
-    }
-    *, *::before, *::after {
-        box-sizing: border-box;
-    }
     p {
       font-family: "Orbitron", "Roboto", Arial;
       margin-top: 0px;
       margin-bottom: 0px;
       text-decoration: none;
     }
+
     a {
       text-decoration: none;
     }
+
     .button {
       text-decoration: none;
       width: 72px;
       cursor: pointer;
     }
+
     body {
       /*This is the way*/
       font-family: Roboto;
       background-color: black;
       margin: 0;
       margin-top: 120px;
-      padding-left: 78px;
+      padding-left: 75px;
       padding-top: 0px;
       padding-right: 24px;
       margin-bottom: 1000px;
@@ -48,6 +43,7 @@
       text-decoration: none;
       cursor: pointer;
     }
+
     .equalizer {
       display: flex;
       align-items: flex-end;
@@ -56,86 +52,98 @@
       margin-top: -6px;
       margin-left: 10px;
     }
+
     .bar {
       width: 5px;
       background-color: white;
       border-radius: 3px;
       animation: bounce 2.5s infinite ease-in-out;
     }
+
     .bar:nth-child(1) {
       background-color: #a50000;
       animation-delay: 0s;
     }
+
     .bar:nth-child(2) {
       background-color: #be0000;
       animation-delay: 0.1s;
     }
+
     .bar:nth-child(3) {
       background-color: rgb(225, 0, 0);
       animation-delay: 0.2s;
     }
+
     .bar:nth-child(4) {
       background-color: #ff0000;
       animation-delay: 0.3s;
     }
+
     .bar:nth-child(5) {
       background-color: #fb1515;
       animation-delay: 0.4s;
     }
+
     @keyframes bounce {
+
       0%,
       100% {
         height: 8px;
       }
+
       50% {
         height: 28px;
       }
     }
+
     .thumbnail {
       width: 100%;
       margin-top: 25px;
       margin-left: 5px;
       border: solid 2px black;
     }
+
     .video-title {
       display: flex;
       font-family: 'Orbitron', sans-serif;
       margin-top: 12px;
-      font-size: 13px;
+      font-size: .8em;
       font-weight: bold;
       height: 20px;
       margin-bottom: 10px;
-      width: 234px;
+      width: 229px;
       background-color: rgb(15, 71, 255);
       box-shadow: 5px 5px 10px black;
       border-radius: 5px;
       padding-left: 3px;
       padding-right: 2px;
       padding-top: 2px;
-      color: black;
-      text-shadow: 1px 1px 1px white;
+      color: whitesmoke;
       transition: 4s;
       white-space: nowrap;
     }
+
     .video-title:hover {
       display: flex;
       font-family: "Orbitron", sans-serif;
       margin-top: 12px;
-      font-size: 14px;
+      font-size: .85em;
       font-weight: bold;
       height: 23px;
       margin-bottom: 10px;
-      width: 237px;
+      width: 228px;
       background-color: rgb(15, 71, 255);
       box-shadow: 5px 5px 10px whitesmoke;
       border-radius: 5px;
       padding-left: 5px;
       padding-top: 2px;
-      color: white;
+      color: whitesmoke;
       border: 3px solid white;
       transition: 3s;
       white-space: nowrap;
     }
+
     .video-info-grid {
       display: grid;
       grid-template-columns: 50px 1fr;
@@ -146,7 +154,9 @@
       border: 1px solid white;
       border-radius: 10px;
       box-shadow: 1px 1px 1px black;
+
     }
+
     .profile-picture {
       width: 36px;
       border-radius: 50px;
@@ -155,6 +165,7 @@
       box-shadow: 5px 5px 10px black;
       transition: 4s;
     }
+
     .profile-picture:hover {
       width: 36px;
       border-radius: 50px;
@@ -164,6 +175,7 @@
       box-shadow: 1px 5px 5px 10px white;
       transition: 4s;
     }
+
     .thumbnail-row {
       position: relative;
       display: flex;
@@ -176,17 +188,19 @@
       border: 2px solid white;
       box-shadow: 1px 1px 1px black;
     }
+
     .video-author,
     .video-stats {
-      font-size: 13px;
-      color: black;
+      font-size: 14px;
+      color: rgb(87, 87, 87);
       font-family: 'Roboto';
       margin-top: 0px;
     }
+
     .video-author {
       font-family: 'Orbitron', sans-serif;
-      font-size: 13px;
-      color: black;
+      color: whitesmoke;
+      font-size: .8em;
       margin-bottom: 4px;
       width: 205px;
       font-weight: bold;
@@ -197,9 +211,9 @@
       padding-right: 2px;
       transition: 4s;
     }
+
     .video-author:hover {
       color: whitesmoke;
-      font-size: 14px;
       margin-bottom: 4px;
       width: 205px;
       font-weight: bold;
@@ -211,23 +225,24 @@
       border: 3px solid white;
       transition: 3s;
     }
+
     .video-grid {
       color: rgb(59, 59, 255);
       border-color: black;
-      position: sticky;
-      left: 0;
-      right: 0;
       background-color: black;
       font-family: Arial;
       margin-top: -28px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr 1fr 1fr;
       column-gap: 15px;
-      row-gap: 5px;
+      row-gap: 4px;
       padding-top: 5px;
       text-decoration: none;
-      margin-right: 20px;
+      margin-right: 5px;
+      z-index: 5;
+
     }
+
     @media(max-width: 525px) {
       .video-grid {
         grid-template-columns: 1fr;
@@ -239,7 +254,7 @@
         scrollbar-color: rgba(0, 0, 0, 0);
         scrollbar-width: none;
       }
-      
+
       .footer {
         display: flex;
         align-items: center;
@@ -257,39 +272,41 @@
         padding-top: 10px;
       }
     }
-    
+
     @media(min-width: 1200px) {
       .video-grid {
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
+
     input {
       padding: 3px;
-      width: 100%;
-      max-width: 350px;
-      box-sizing: border-box;
-      order: 1px solid grey;
+      width: 350px;
+      border: 1px solid grey;
       font-size: 14px;
       caret-color: black;
       color: grey;
       padding-left: 5px;
     }
+
     input:focus {
       border: 1px solid grey;
       color: grey;
       font-size: 14px;
       padding-left: 5px;
     }
+
     input::placeholder {
       font-size: 14px;
       color: grey;
       padding-left: 5px;
     }
+
     .sidebar {
       font-family: Arial;
       font-size: 10px;
       position: absolute;
-      left: 0;
+      left: -3px;
       bottom: 1200px;
       top: -7px;
       max-width: 72px;
@@ -302,6 +319,7 @@
       transition: 2s;
       border: solid 1px black;
     }
+
     .sidebar-link {
       background-color: black;
       height: 74px;
@@ -314,65 +332,72 @@
       width: 72px;
       border: solid 1px black;
     }
+
     .sidebar-link:hover {
       color: white;
       background-color: black;
       cursor: pointer;
       text-decoration: none;
     }
+
     .sidebar-link img {
       height: 24px;
       margin-bottom: 8px;
       text-decoration: none;
       max-width: 72px;
     }
+
     .sidebar-link div {
       font-family: Arial;
       font-size: 10;
       text-decoration: none;
       max-width: 72px;
     }
+
     .tabs {
       text-decoration: none;
     }
+
     .utubeheader {
       font-family: "Orbitron", sans-serif;
       letter-spacing: normal;
       cursor: pointer;
       text-shadow: 1px 1px 1px white;
-      margin-right: 20px;
+      margin-right: 5px;
       display: flex;
       flex-direction: row;
       width: 100%;
-      height: 64px;
+      height: 65px;
       position: fixed;
       top: 0;
-      padding-top: 4px;
+      padding-top: 5px;
       padding-bottom: 3px;
       border-bottom: solid 2px black;
       color: red;
       background-color: black;
-      font-size: .95em;
+      font-size: 30px;
       font-weight: bold;
-      margin-top: 1px;
+      margin-top: 0px;
       margin-bottom: 5px;
       z-index: 1;
-      transition: 4s;
-    }
-    .utubeheader:hover {
-      color: white;
       transition: 3s;
     }
+
+    .utubeheader:hover {
+      color: white;
+      transition: 2s;
+    }
+
     .header {
       height: 44px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       text-decoration: none;
-      margin-top: -40px;
+      margin-top: -45px;
       font-family: "Orbitron", sans-serif;
       font-weight: bold;
-      font-size: 11px;
+      font-size: 13px;
       background-color: black;
       color: red;
       text-shadow: 1px black;
@@ -382,40 +407,51 @@
       z-index: 1;
       border-top: 2px solid white;
     }
+
     .left {
       width: 100px;
       padding-top: 17px;
     }
+
     .leftleft {
       width: 150px;
       padding-top: 17px;
     }
+
     .leftleftleft {
       width: 150px;
       padding-top: 17px;
     }
+
     .middle {
       flex: 1;
-      max-width: 280px;
+      max-width: 270px;
       padding-top: 17px;
+      margin-left: 5px;
+
     }
+
     .rightrightright {
       width: 150px;
       padding-top: 17px;
     }
+
     .rightright {
       width: 130px;
       padding-top: 17px;
     }
+
     .right {
       width: 150px;
       padding-top: 17px;
     }
+
     html {
       scroll-behavior: smooth;
       scrollbar-color: rgba(0, 0, 0, 0);
       scrollbar-width: none;
     }
+
     @keyframes slide {
       from {
         transform: translateX(100%);
@@ -427,22 +463,22 @@
         opacity: 1;
       }
     }
-    .rolling-text {
-      white-space: nowrap;
-      overflow-x: hidden;
-      position: sticky;
-      left: 0;
-      right: 0;
-      width 800px;
-      animation: slide 30s linear infinite;
-      font-weight: bold;
-      font-size: 15px;
-      display: inline-block;
+
+    .footer {
+      display: flex;
       align-items: center;
+      position: fixed;
+      bottom: 0;
       justify-content: center;
+      animation: slide 10s linear infinite;
+      font-size: 1em;
+      font-weight: bold;
       font-family: 'Orbitron', sans-serif;
-      color: white;
-      margin-top: -5px;
+      color: whitesmoke;
+      margin-top: 5px;
+      white-space: nowrap;
+      padding-top: 10px;
+      width: 300px;
     }
   </style>
 </head>
@@ -464,17 +500,17 @@
 
   <div class="header">
     <div style="background-color: black;" class="left">
-      <a style="padding-left: 10px; margin-left: 17px; color: white; font-weight: bold; text-decoration: none;"
+      <a style="margin-top: 0px; margin-left: 15px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.nike.com/" target="_blank">Nike</a>
     </div>
 
     <div style="background-color: black;" class="leftleft"><a
-        style="margin-left: 41px; color: white; font-weight: bold; text-decoration: none;"
+        style="margin-top: 0px; margin-left: 24px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.underarmour.ca/" target="_blank">Underarmour</a>
     </div>
 
     <div style="background-color: black;" class="leftleftleft"><a
-        style="margin-right: 30px; margin-left: 45px; color: white; font-weight: bold; text-decoration: none;"
+        style="margin-top: 0px; margin-right: 22px; margin-left: 29px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.sportchek.ca/" target="_blank">SportChek</a>
     </div>
 
@@ -482,20 +518,20 @@
       <form action="https://www.google.com/search" target="_blank" method="get">
         <input style="color: black; font-size: 13px; border: 1px solid black; border-radius: 10px;
           margin-top: -7px; height: 15px; flex: 1; max-width: 210px; padding-bottom: 2px;
-          margin-bottom: 2px; padding-left: 5px; margin-left: 27px;" type="text" placeholder="Search..." name="q">
+          margin-bottom: 2px; padding-left: 6px; margin-left: 47px;" type="text" placeholder="Search..." name="q">
       </form>
     </div>
 
     <div style="background-color: black;" class="rightrightright"><a
-        style="margin-left: 45px; color: white; font-weight: bold; text-decoration: none;" href="https://www.amazon.ca/"
-        target="_blank">Amazon</a></div>
+        style="margin-top: 0px; margin-left: 55px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.amazon.ca/" target="_blank">Amazon</a></div>
 
     <div style="background-color: black" class="rightright"><a
-        style="margin-left: 20px; color: white; font-weight: bold; text-decoration: none;"
+        style="margin-top: 0px; margin-left: 10px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.rabbit.tech/" target="_blank">Rabbit</a></div>
 
     <div style="background-color: black" class="right"><a
-        style="margin-left: 10px; color: white; font-weight: bold; text-decoration: none;"
+        style="margin-top: 0px; margin-left: -10px; padding-right: 5px; margin-right: 10px; color: white; font-weight: bold; text-decoration: none;"
         href="https://www.openai.com/" target="_blank">OpenAI</a>
     </div>
   </div>
@@ -507,10 +543,10 @@
     <div title="YouTube" class="sidebar-link"><a href="https://www.youtube.com/" target="_blank"><button
           style="border: 1px solid black; max-width: 72px; background-color: black; color: black;">
           <img
-            style="height: 33px; display: flex; justify-content: center; align-items: center; margin-right: 1px; margin-left: 12px; padding-right: 1px; background-color: black;"
+            style="height: 33px; display: flex; justify-content: center; align-items: center; margin-right: 1px; margin-left: 9px; padding-right: 1px; background-color: black;"
             src="Youtube.png" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             YOUTUBE</div>
         </button></a>
     </div>
@@ -518,10 +554,10 @@
     <div title="FIFA" class="sidebar-link"><a href="https://www.fifa.com/" target="_blank">
         <button style="background-color: black; border: 1px solid black;">
           <img
-            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 2px; margin-right: 5px; background-color: black; border-radius: 50px;"
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 2px; margin-right: 7px; background-color: black; border-radius: 50px;"
             src="Fifa.png" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
             FIFA</div>
         </button></a>
     </div>
@@ -529,10 +565,10 @@
     <div title="NBA" class="sidebar-link"><a href="https://www.nba.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black;">
           <img
-            style="height: 38px; display: flex; justify-content: center; align-items: center; margin-left: 6px; margin-right: 1px; background-color: white; border-color: black;"
+            style="height: 38px; display: flex; justify-content: center; align-items: center; margin-left: 6px; margin-right: 12px; background-color: white; border-color: black;"
             src="logo-nba.png" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
             NBA</div>
         </button></a>
     </div>
@@ -540,10 +576,10 @@
     <div title="Ring Magazine" class="sidebar-link"><a href="https://www.ringmagazine.com" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="padding-left: 4px; height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 0px; margin-right: 8px; background-color: black; border-radius: 7px;"
+            style="padding-left: 4px; height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 0px; margin-right: 10px; background-color: black; border-radius: 7px;"
             src="Ringmag.png" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             RING</div>
         </button></a>
     </div>
@@ -553,8 +589,8 @@
           <img
             style="height: 36px; display: flex; justify-content: center; align-items: center; margin-right: 6px; background-color: black; border-radius: 50px;"
             src="NFLlogo.png" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             NFL</div>
         </button></a>
     </div>
@@ -564,8 +600,8 @@
           <img
             style="height: 32px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: black; border-radius: 50px;"
             src="UFClogo.jpg" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
             UFC</div>
         </button></a>
     </div>
@@ -573,10 +609,10 @@
     <div title="NHL" class="sidebar-link"><a href="https://www.nhl.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black;">
           <img
-            style="height: 29px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: black; border-radius: 55%;"
+            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: black; border-radius: 55%;"
             src="NHL.jpg" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             NHL</div>
         </button></a>
     </div>
@@ -584,10 +620,10 @@
     <div title="CNN" class="sidebar-link"><a href="https://www.cnn.com" target="_blank">
         <button style="border: 1px solid black; background-color: black;">
           <img
-            style="height: 33px; margin-top: 2px; margin-left: 0px; margin-right: 3px; display: flex; justify-content: center; align-items: center; background-color: black; border-radius: 95px; font-size: 13px; font-weight: bold; font-family: "
-            Orbitron";" src="cnn.png" loading="preload">
-          <div
-            style="margin-right: 3px; cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+            style="height: 33px; margin-top: 2px; margin-left: 0px; margin-right: 3px; display: flex; justify-content: center; align-items: center; background-color: black; border-radius: 95px; font-size: 13px; font-weight: bold;"
+            src="cnn.png" loading="preload">
+          <div style="margin-right: 3px; cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             CNN</div>
         </button></a>
     </div>
@@ -597,8 +633,8 @@
           <img
             style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 6px; margin-right: 9px; background-color: black; border-radius: 50px;"
             src="RT.png" loading="preload">
-          <div
-            style="cursor: pointer; margin-left: 2px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 2px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             RT</div>
         </button></a>
     </div>
@@ -606,10 +642,10 @@
     <div title="Reuters News" class="sidebar-link"><a href="https://www.reuters.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 12px; margin-right: 0px; background-color: black; border-radius: 50px;"
+            style="height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 2px; background-color: black; border-radius: 50px;"
             src="Reuters.png" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             REUTERS</div>
         </button></a>
     </div>
@@ -619,8 +655,8 @@
           <img
             style="height: 40px; display: flex; justify-content: center; align-items: center; margin-right: 6px; margin-left: 2px; background-color: black; border-radius: 50px;"
             src="TMZlogo.jpg" loading="preload">
-          <div
-            style="cursor: pointer; margin-left: 4px; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 4px; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
             TMZ</div>
         </button></a>
     </div>
@@ -628,10 +664,10 @@
     <div title="DJI" class="sidebar-link"><a href="https://store.dji.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: black; border-radius: 50px;"
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-right: 7px; background-color: black; border-radius: 50px;"
             src="DJI.jpg" loading="preload">
-          <div
-            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             DJI</div>
         </button></a>
     </div>
@@ -639,10 +675,10 @@
     <div title="Calvin Klein" class="sidebar-link"><a href="https://www.calvinklein.us/" target="_blank"><button
           style="background-color: black; border: 1px solid black;">
           <img
-            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 6px; margin-right: 2px; background-color: black; border-radius: 50px;"
+            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 5px; margin-right: 2px; background-color: black; border-radius: 50px;"
             src="CK.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             CALVIN</div>
         </button></a>
     </div>
@@ -652,8 +688,8 @@
           <img
             style="height: 32px; display: flex; justify-content: center; align-items: center; margin-left: 5px; margin-right: 0px; background-color: black; border-radius: 50px;"
             src="Diesel.webp" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 5px; margin-left: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 5px; margin-left: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             DIESEL</div>
         </button></a>
     </div>
@@ -661,10 +697,10 @@
     <div title="Guess" class="sidebar-link"><a href="https://www.guess.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black;">
           <img
-            style="height: 26px; display: flex; justify-content: center; align-items: center; margin-left: 5px; margin-right: 2px; background-color: black; border-radius: 50px;"
+            style="height: 26px; display: flex; justify-content: center; align-items: center; margin-left: 4px; margin-right: 2px; background-color: black; border-radius: 50px;"
             src="Guess.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 5px; margin-left: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 5px; margin-left: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             GUESS</div>
         </button></a>
     </div>
@@ -674,8 +710,8 @@
           <img
             style="height: 30px; margin-top: 0px; margin-right: 8px; margin-left: 6px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 95px; font-size: 15; font-weight: bold; font-family: copperplate;"
             src="TOYOTA.png" loading="lazy">
-          <div
-            style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; margin-right: 2px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; margin-right: 2px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             TOYOTA</div>
         </button></a>
     </div>
@@ -685,8 +721,8 @@
           <img
             style="border-radius: 50px; margin-top: 4px; height: 30px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: white;"
             src="Ford.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             FORD</div>
         </button></a>
     </div>
@@ -694,43 +730,43 @@
     <div title="Tesla" class="sidebar-link"><a href="https://www.tesla.com/" target="_blank"><button
           style="padding-top: 3px; background-color: black; border: 1px solid black;">
           <img
-            style="font-size: 12px; padding-top: 9px; height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 6px; background-color: black; border-radius: 50px;"
+            style="font-size: 12px; padding-top: 9px; height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 5px; background-color: black; border-radius: 50px;"
             src="TESLA.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 6px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 5px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             TESLA</div>
-        </button></a>
-    </div>
-
-    <div title="GM" class="sidebar-link"><a href="https://www.gm.ca/" target="_blank"><button
-          style="background-color: black; border: 1px solid black; padding-bottom: 2px;">
-          <img
-            style="padding-top: 12px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: black; border-radius: 50px; font-size: 20px;"
-            src="GM.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: Orbitron, sans-serif;">
-            GM</div>
         </button></a>
     </div>
 
     <div title="Porsche" class="sidebar-link"><a href="https://www.porsche.com/" target="_blank"><button
           style="max-width: 72px; background-color: black; border: 1px solid black;">
           <img
-            style="height: 30px; font-size: 14px; display: flex; justify-content: center; align-items: center; margin-left: 12px; margin-right: 4px; background-color: black; border-radius: 50px;"
+            style="height: 30px; font-size: 14px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 2px; background-color: black; border-radius: 50px;"
             src="PORSCHE.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 9px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             PORSCHE</div>
+        </button></a>
+    </div>
+
+    <div title="BMW" class="sidebar-link"><a href="https://www.bmw.ca/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: black; border-radius: 50px;"
+            src="BMW.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            BMW</div>
         </button></a>
     </div>
 
     <div title="Ferrari" class="sidebar-link"><a href="https://www.ferrari.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 11px; background-color: black; border-radius: 50%;"
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 13px; background-color: black; border-radius: 50%;"
             src="Ferrari.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             FERRARI</div>
         </button></a>
     </div>
@@ -738,10 +774,10 @@
     <div title="Bitcoin" class="sidebar-link"><a href="https://coinmarketcap.com/" target="_blank"><button
           style="max-width: 72px; background-color: black; border: 1px solid black; padding-bottom: 2px;">
           <img
-            style="padding-top: 6px; height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 7px; margin-right: 5px; background-color: black; border-radius: 50px; font-size: 20px;"
+            style="padding-top: 6px; height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 9px; margin-right: 11px; background-color: black; border-radius: 50px; font-size: 20px;"
             src="bitcoin.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-left: 1px; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 1px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             BITCOIN</div>
         </button></a>
     </div>
@@ -751,8 +787,8 @@
           <img
             style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 13px; background-color: black; border-radius: 50px;"
             src="SpeedTest.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 8px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             SPEEDTEST</div>
         </button></a>
     </div>
@@ -762,8 +798,8 @@
           <img
             style="height: 32px; display: flex; justify-content: center; align-items: center; margin-left: 4px; background-color: black; border-radius: 50px;"
             src="NVIDIA.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 6px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 6px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             NVIDIA</div>
         </button></a>
     </div>
@@ -773,8 +809,8 @@
           <img
             style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 8px; background-color: black; border-radius: 50px;"
             src="Walmart.png">
-          <div
-            style="padding-bottom: 2px; cursor: pointer; margin-right: 4px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="padding-bottom: 2px; cursor: pointer; margin-right: 4px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             WALMART</div>
         </button></a>
     </div>
@@ -782,10 +818,10 @@
     <div title="AliExpress" class="sidebar-link"><a href="https://www.aliexpress.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 10px; background-color: black; border-radius: 50px;"
+            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: black; border-radius: 50px;"
             src="Aliexpress.png">
-          <div
-            style="cursor: pointer; margin-left: 2px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 8px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 2px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             ALIEXPRESS</div>
         </button></a>
     </div>
@@ -793,10 +829,10 @@
     <div title="Shimano" class="sidebar-link"><a href="https://bike.shimano.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 27px; display: flex; justify-content: center; align-items: center; margin-right: 9px; margin-left: 12px; background-color: black; border-radius: 50px;"
+            style="height: 27px; display: flex; justify-content: center; align-items: center; margin-right: 9px; margin-left: 14px; background-color: black; border-radius: 50px;"
             src="Shimano.webp" loading="lazy">
-          <div
-            style="cursor: pointer; margin-left: 3px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 3px; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             SHIMANO</div>
         </button></a>
     </div>
@@ -806,8 +842,8 @@
           <img
             style="margin-right: 0px; height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 10px; background-color: black; border-radius: 50px;"
             src="Cervelo.webp" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             CERVELO</div>
         </button></a>
     </div>
@@ -817,8 +853,8 @@
           <img
             style="height: 29px; display: flex; justify-content: center; align-items: center; margin-right: 8px; margin-left: 5px; background-color: black; border-radius: 50px;"
             src="Apple.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             APPLE</div>
         </button></a>
     </div>
@@ -826,10 +862,10 @@
     <div title="Alien Gear Holsters" class="sidebar-link"><a href="https://www.aliengearholsters.com/"
         target="_blank"><button style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="max-width: 72px; height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 2px; margin-left: 0px; background-color: black; border-radius: 50px;"
+            style="max-width: 72px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 2px; mrgin-right: 3px; background-color: black; border-radius: 50px;"
             src="Alien.webp" loading="lazy">
-          <div
-            style="cursor: pointer; max-width: 72px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; max-width: 72px; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             ALIEN</div>
         </button></a>
     </div>
@@ -837,10 +873,10 @@
     <div title="Glock" class="sidebar-link"><a href="https://us.glock.com/" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-right: 1px; margin-left: 3px; background-color: black; border-radius: 50px;"
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 4px; background-color: black; border-radius: 50px;"
             src="Glock.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-left: 3px; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 4px; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             GLOCK</div>
         </button></a>
     </div>
@@ -848,10 +884,10 @@
     <div title="3M" class="sidebar-link"><a href="https://www.3mcanada.ca/" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 7px; background-color: black;"
+            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: black;"
             src="MMM.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-left: 5px; margin-right: 11px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 5px; margin-right: 9px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
             3M</div>
         </button></a>
     </div>
@@ -859,21 +895,21 @@
     <div title="QR Code Generator" class="sidebar-link"><a href="QR Code.html" target="_blank"><button
           style="background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="padding-left: 0px; height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 11px; margin-right: 0px; background-color: black; border-radius: 50%;"
+            style="padding-left: 0px; cursor: pointer; height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 11px; margin-right: 0px; background-color: black; border-radius: 50%;"
             src="QRCode.png">
-          <div
-            style="margin-left: 4px; margin-right: 10px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
-            QR CODE</div>
+          <div style="margin-left: 4px; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            QRCODE</div>
         </button></a>
     </div>
 
     <div title="BestBuy" class="sidebar-link"><a href="https://www.bestbuy.ca" target="_blank">
         <button style="width: 72px; border: 1px solid black; background-color: black;">
           <img
-            style="height: 31px; margin-left: 9px; margin-right: 12px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 95px; font-size: 12; font-weight: bold; font-family: copperplate;"
+            style="height: 32px; cursor: pointer; margin-top: 0px; margin-left: 11px; margin-right: 9px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 95px; font-size: 12; font-weight: bold; font-family: copperplate;"
             src="bestbuy.png">
-          <div
-            style="margin-left: 0px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="margin-left: 1px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             BESTBUY</div>
         </button></a>
     </div>
@@ -881,10 +917,10 @@
     <div title="PlayStation" class="sidebar-link"><a href="https://www.playstation.com/" target="_blank"><button
           style="width: 72px; height: 74px; background-color: black; border: 0px solid black;">
           <img
-            style="height: 29px; margin-right: 11px; font-size: 17px; display: flex; justify-content: center; align-items: center; margin-left: 11px; background-color: black; border-radius: 50px;"
+            style="height: 29px; cursor: pointer; margin-right: 11px; font-size: 17px; display: flex; justify-content: center; align-items: center; margin-left: 14px; background-color: black; border-radius: 50px;"
             src="PlayStation.png" loading="lazy">
-          <div
-            style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 8px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 9px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             PLAYSTATION</div>
         </button></a>
     </div>
@@ -892,10 +928,10 @@
     <div title="DeepSeek" class="sidebar-link"><a href="https://www.deepseek.com" target="_blank">
         <button style="width: 72px; border: 1px solid black; background-color: black;">
           <img
-            style="margin-left: 9px; margin-right: 18px; height: 33px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 50px; font-size: 12px; font-weight: bold; font-family: copperplate;"
+            style="cursor: pointer; margin-top: 0px; margin-left: 11px; margin-right: 8px; height: 35px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 50px;"
             src="Deepseek.png">
-          <div
-            style="cursor: pointer; margin-left: 0px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="margin-left: 1px; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             DEEPSEEK</div>
         </button></a>
     </div>
@@ -903,10 +939,10 @@
     <div title="Cachipun" class="sidebar-link"><a href="12-spanish-rock-paper-scissors.html" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 27px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 10px; background-color: black; border-radius: 50px;"
+            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 13px; background-color: black; border-radius: 30px;"
             src="PRS.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-left: 4px; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: white; font-size: 9px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 5px; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             CACHIPUN</div>
         </button></a>
     </div>
@@ -914,10 +950,10 @@
     <div title="World Almanac" class="sidebar-link"><a href="indexAlmanac.html" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 27px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 9px; background-color: black; border-radius: 30px;"
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 11px; background-color: black; border-radius: 30px;"
             src="World.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-left: 5px; margin-right: 11px; display: flex; justify-content: center; align-items: center; color: white; font-size: 9px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 5px; margin-right: 10px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             ALMANAC</div>
         </button></a>
     </div>
@@ -925,10 +961,10 @@
     <div title="AutoPlay" class="sidebar-link"><a href="autoplay2.html" target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 25px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 9px; background-color: black; border-radius: 50px;"
+            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 12px; background-color: black; border-radius: 30px;"
             src="Autoplay.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-left: 4px; margin-right: 11px; display: flex; justify-content: center; align-items: center; color: white; font-size: 9px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 5px; margin-right: 11px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
             AUTOPLAY</div>
         </button></a>
     </div>
@@ -937,16 +973,16 @@
         target="_blank"><button
           style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
           <img
-            style="height: 29px; display: flex; justify-content: center; align-items: center; margin-right: 4px; margin-left: 6px; background-color: black; border-radius: 30px;"
+            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 3px; background-color: black; border-radius: 30px;"
             src="Pluto.png" loading="lazy">
-          <div
-            style="cursor: pointer; margin-left: 1px; margin-right: 12px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: Orbitron, sans-serif;">
+          <div style="cursor: pointer; margin-left: 2px; margin-right: 9px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
             PLUTO</div>
         </button></a>
     </div>
 
-    <div style="margin-right: 5px; margin-top: 15px;">
-      <a style="font-family: Orbitron, sans-serif; font-weight: bold; font-size: 15px; background-color: black; color: white; padding: 3px;"
+    <div style="margin-top: 11px;">
+      <a style="font-family: impact; font-weight: bold; font-size: 15px; background-color: black; color: white; padding: 3px;"
         href="#">JUMP ☝️</a>
     </div>
   </nav>
@@ -1078,7 +1114,7 @@
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
-            src="What You Is.mp4" loading="preload" controls width="280" height="155"></video>
+            src="Shot Callin.mp4" loading="lazy" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
@@ -1086,13 +1122,13 @@
           </div>
           <div class="video-info">
             <h2 class="video-title">
-              NBA YoungBoy - What You Is
+              NBA YoungBoy - Shot Callin
             </h2>
             <h3 class="video-author">
-              NBA, Mellow Rackz
+              NBA YoungBoy
             </h3>
             <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
+              &#9733; &#9733;
             </p>
           </div>
         </div>
@@ -1172,7 +1208,7 @@
         </div>
       </div>
 
-      <div style="height: 300px; margin-top: -10px" class="video-preview">
+      <div style="height: 300px; margin-top: -15px" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1196,11 +1232,11 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
-            src="Shot Callin.mp4" loading="lazy" controls width="280" height="155"></video>
+            src="What You Is.mp4" loading="preload" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
@@ -1208,19 +1244,19 @@
           </div>
           <div class="video-info">
             <h2 class="video-title">
-              NBA YoungBoy - Shot Callin
+              NBA YoungBoy - What You Is
             </h2>
             <h3 class="video-author">
-              NBA YoungBoy
+              NBA, Mellow Rackz
             </h3>
             <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733; &#9733;
+              &#9733;
             </p>
           </div>
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1396,7 +1432,7 @@
   </main>
   <main>
     <section class="video-grid">
-      <div style="height: 310px; margin-top: 5px;" class="video-preview">
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1420,7 +1456,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: 5px;" class="video-preview">
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1444,7 +1480,7 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: 5px;" class="video-preview">
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
         <div class="thumbnail-row">
           <video
             style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
@@ -1470,27 +1506,28 @@
       </div>
     </section>
   </main>
+
   <main>
     <section class="video-grid">
       <div style="height: 310px; margin-top: 10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
-            style="padding-top: 2px; border-radius: 3px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
-            src="Bad Bunny - NUEVAYoL.mp4" loading="lazy" controls width="280" height="155"></video>
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Rels B - Tu Vas Sin.mp4" loading="lazy" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
-            <img class="profile-picture" src="Badbunnypic.jpg">
+            <img class="profile-picture" src="Rels B.jpg">
           </div>
           <div class="video-info">
             <h2 class="video-title">
-              Bad Bunny - Nuevayol
+              Rels B - Tu Vas Sin
             </h2>
-            <h3 class="video-author">
-              Bad Bunny
+            <h3 style="margin-top: 13px;" class="video-author">
+              Rels B
             </h3>
             <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733;
+              &#9733; &#9733;
             </p>
           </div>
         </div>
@@ -1547,22 +1584,22 @@
       <div style="height: 310px; margin-top: -10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
-            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
-            src="Rels B - Tu Vas Sin.mp4" loading="lazy" controls width="280" height="155"></video>
+            style="padding-top: 2px; border-radius: 3px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Bad Bunny - NUEVAYoL.mp4" loading="lazy" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
           <div class="channel-picture">
-            <img class="profile-picture" src="Rels B.jpg">
+            <img class="profile-picture" src="Badbunnypic.jpg">
           </div>
           <div class="video-info">
             <h2 class="video-title">
-              Rels B - Tu Vas Sin
+              Bad Bunny - Nuevayol
             </h2>
-            <h3 style="margin-top: 13px;" class="video-author">
-              Rels B
+            <h3 class="video-author">
+              Bad Bunny
             </h3>
             <p style="font-size: 19px; color: gold;" class="video-stats">
-              &#9733; &#9733;
+              &#9733;
             </p>
           </div>
         </div>
@@ -1666,10 +1703,10 @@
         </div>
       </div>
 
-      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+      <div style="margin-bottom: 15px; height: 310px; margin-top: -10px;" class="video-preview">
         <div class="thumbnail-row">
           <video
-            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 12px; margin-top: 10px; background-color: black;"
             src="Beele - no tiene sentido.mp4" loading="lazy" controls width="280" height="155"></video>
         </div>
         <div class="video-info-grid">
@@ -1691,25 +1728,49 @@
       </div>
     </section>
   </main>
-    <div class="rolling-text">
-      <span style="border-radius: 20px; background-color: red;">🎧</span>
-      <span style="color: rgb(222, 3, 3); font-weight: bold;">!!! AutoPlay !!!</span>
-      <span>Check it out</span>
-      <span style="font-weight: bold; background-color: black; color: rgb(255, 226, 59);">'Top Hits of
-        the Month'</span>
-      <span> stream now!!!"</span>
-      <span style="border-radius: 20px; background-color: red;">🎧</span>
-      <span style="color: rgb(222, 3, 3); font-weight: bold;">!!! Click & Play !!!</span>
-      <span>Check it out</span>
-      <span style="font-weight: bold; background-color: black; color: rgb(255, 226, 59);">'Top Hits of
-        the Month'</span>
-      <span> stream now!!!"</span>
-      <span style="border-radius: 20px; background-color: red;">🎧</span>
-      <span style="color: rgb(222, 3, 3); font-weight: bold;">!!! AutoPlay !!!</span>
-      <span>Check it out</span>
-      <span style="font-weight: bold; background-color: black; color: rgb(255, 226, 59);">'Top Hits of
-        the Month'</span>
-      <span> stream now!!! 🍒🍒🍒</span> 
-    </div>  
-  </body>
+  <footer class="footer">
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! AutoPlay !!! </span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span> stream now!!!"</span>
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! Click & Play !!!</span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span> stream now!!!</span>
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! AutoPlay !!! </span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span> stream now!!! 🍒 🍒 🍒</span>
+  </footer>
+  <script>
+    window.onload(runFileForToday());
+    function runFileForToday() {
+      const today = new Date().getDay(); // Get the current day of the week
+
+      if (today === 0) { // Sunday
+        window.location.href = ('index1.html');
+      } else if (today === 1) { // Monday
+        ('index.html');
+      } else if (today === 2) { // Tuesday
+        window.location.href = ('index5.html');
+      } else if (today === 3) { // Wednesday
+        window.location.href = ('index4.html');
+      } else if (today === 4) { // Thursday
+        ('index.html');
+      } else if (today === 5) { // Friday
+        window.location.href = ('index5.html');
+      } else if (today === 6) { // Saturday
+        ('index.html');
+      }
+      return today;
+    } 
+  </script>
+</body>
+
 </html>
