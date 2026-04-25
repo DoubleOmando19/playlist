@@ -228,29 +228,36 @@
       text-decoration: none;
       margin-right: 20px;
     }
-    @media(max-width: 500px) {
-      body {
-        padding-left: 20px;
-        padding-right: 10px;
-        overflow-x: hidden;
-        max-width: 90%;
-        box-sizing: border-box;
-      }
+    @media(max-width: 525px) {
       .video-grid {
         grid-template-columns: 1fr;
-        position: sticky;
-        width: 90%;
-        left: 10px;
-        right: 0;
-        max-width: 90%;
-        box-sizing: border-box;
-        overflow-x: hidden;
+        max-width: 312px;
       }
+
       html {
         scroll-behavior: smooth;
-        overflow-x: hidden;
+        scrollbar-color: rgba(0, 0, 0, 0);
+        scrollbar-width: none;
+      }
+      
+      .footer {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        justify-content: center;
+        animation: slide 20s linear infinite;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: 'Orbitron', sans-serif;
+        color: whitesmoke;
+        margin-top: 5px;
+        white-space: nowrap;
+        width: 300px;
+        padding-top: 10px;
       }
     }
+    
     @media(min-width: 1200px) {
       .video-grid {
         grid-template-columns: 1fr 1fr 1fr;
