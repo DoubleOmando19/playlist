@@ -1746,27 +1746,27 @@
     <span> Check it out </span>
     <span style="font-weight: bold; color: white;"> ' Top Hits of
       the Month ' </span>
-    <span> stream now!!! 🍒 🍒 🍒</span>
+    <span>stream now</span>
   </footer>
   <script>
-    window.onload(runFileForToday());
+    window.onload(runFileForToday);
     function runFileForToday() {
       const today = new Date().getDay(); // Get the current day of the week
 
       if (today === 0) { // Sunday
-        window.location.href = ('index1.html');
+        return;
       } else if (today === 1) { // Monday
-        ('index.html');
+        return;
       } else if (today === 2) { // Tuesday
         window.location.href = ('index5.html');
       } else if (today === 3) { // Wednesday
         window.location.href = ('index4.html');
       } else if (today === 4) { // Thursday
-        ('index.html');
+        return;
       } else if (today === 5) { // Friday
         window.location.href = ('index5.html');
       } else if (today === 6) { // Saturday
-        ('index.html');
+        return;
       }
       return today;
     } 
