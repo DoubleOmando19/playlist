@@ -94,8 +94,8 @@ function selectCountry(countryName) {
     loadCountryFlag(country.country);
     loadCountryMap(country.country, country.coordinates);
 
-    // Start population counter
-    startPopulationCounter(country.population);
+    // Start population counter via REST Countries API (live data)
+    loadPopulationFromAPI(country.country, country.population);
 
     // Scroll to country info
     countryInfo.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -184,6 +184,27 @@ function loadCountryMap(countryName, coordinates) {
                 </div>
             </div>
         `;
+    }
+}
+
+// Fetch live population data from REST Countries API
+async function loadPopulationFromAPI(countryName, fallbackPopulation) {
+    try {
+        const response = await fetch(`https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}?fullText=true&fields=population`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch population data');
+        }
+        const data = await response.json();
+        if (data && data.length > 0 && data[0].population) {
+            console.log(`Live population for ${countryName}: ${data[0].population}`);
+            startPopulationCounter(data[0].population);
+        } else {
+            console.warn('No population data from API, using fallback');
+            startPopulationCounter(fallbackPopulation);
+        }
+    } catch (error) {
+        console.error('Error fetching population from API:', error);
+        startPopulationCounter(fallbackPopulation);
     }
 }
 
