@@ -1764,10 +1764,8 @@
   </footer>
   <script>
     window.onload(runFileForToday);
-
     function runFileForToday() {
       const today = new Date().getDay(); // Get the current day of the week
-
       if (today === 0) { // Sunday
         return;
       } else if (today === 1) { // Monday
