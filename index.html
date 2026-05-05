@@ -1763,7 +1763,7 @@
     <span>stream now</span>
   </footer>
   <script>
-    window.onload(runFileForToday);
+    window.onload = runFileForToday;
     function runFileForToday() {
       const today = new Date().getDay(); // Get the current day of the week
       if (today === 0) { // Sunday
