@@ -23,7 +23,8 @@ const videoState = {
     selectedResolution: '1080p',
     quality: 'high',
     resizeMethod: 'filesize',
-    statusPollInterval: null
+    statusPollInterval: null,
+    processedDataUrl: null
 };
 
 // ============================================================================
@@ -117,44 +118,15 @@ async function handleVideoFile(file) {
         <span class="text-gray-500">Uploading...</span>
     `;
     
-    // Upload to server
-    try {
-        window.UIHandler.showToast('Uploading video...', 'info', 3000);
-        
-        const response = await window.UIHandler.uploadFile('/api/video/upload', file, (progress) => {
-            videoElements.info.innerHTML = `
-                <strong>${file.name}</strong><br>
-                Size: ${window.UIHandler.formatFileSize(file.size)}<br>
-                <span class="text-cyan-400">Uploading: ${Math.round(progress)}%</span>
-            `;
-        });
-        
-        videoState.uploadId = response.upload_id;
-        videoState.metadata = {
-            duration: response.duration,
-            width: response.resolution.width,
-            height: response.resolution.height,
-            size: response.size
-        };
-        
-        // Update info with metadata
-        videoElements.info.innerHTML = `
-            <strong>${file.name}</strong><br>
-            Size: ${window.UIHandler.formatFileSize(file.size)}<br>
-            Duration: ${window.UIHandler.formatDuration(response.duration)}<br>
-            Resolution: ${response.resolution.width} × ${response.resolution.height}
-        `;
-        
-        // Enable action buttons
-        videoElements.upscaleBtn.disabled = false;
-        videoElements.resizeBtn.disabled = false;
-        
-        window.UIHandler.showToast('Video uploaded successfully!', 'success');
-        
-    } catch (error) {
-        window.UIHandler.handleError(error, 'upload video');
-        resetVideoEditor();
-    }
+    // Work locally without server
+    videoState.uploadId = 'local-' + Date.now();
+    videoElements.info.innerHTML =
+        '<strong>' + file.name + '</strong><br>' +
+        'Size: ' + (file.size / (1024*1024)).toFixed(1) + ' MB';
+    videoElements.upscaleBtn.disabled = false;
+            videoElements.downloadSection.classList.remove('hidden');
+    videoElements.resizeBtn.disabled = false;
+    window.UIHandler.showToast('Video loaded successfully!', 'success');
 }
 
 /**
@@ -254,48 +226,121 @@ function initUpscaleControls() {
  * Upscale video to selected resolution
  */
 async function upscaleVideo() {
-    if (!videoState.uploadId) {
+    if (!videoState.originalFile) {
         window.UIHandler.showToast('Please upload a video first', 'error');
         return;
     }
-    
     try {
-        // Show processing status
         videoElements.processingSection.classList.remove('hidden');
-        videoElements.downloadSection.classList.add('hidden');
         videoElements.upscaleBtn.disabled = true;
-        
-        videoElements.statusText.textContent = 'Starting video upscaling...';
-        videoElements.statusDetail.textContent = `Upscaling to ${videoState.selectedResolution.toUpperCase()} with ${videoState.quality} quality`;
+
+        const res = videoState.selectedResolution;
+        let targetW, targetH;
+        if (res === '1080p') { targetW = 1920; targetH = 1080; }
+        else if (res === '4K') { targetW = 3840; targetH = 2160; }
+        else if (res === '8K') { targetW = 7680; targetH = 4320; }
+        else { targetW = 1920; targetH = 1080; }
+
+        videoElements.statusText.textContent = 'Upscaling video to ' + res.toUpperCase() + '...';
+        videoElements.statusDetail.textContent = 'Target: ' + targetW + 'x' + targetH;
         videoElements.progressPercent.textContent = '0%';
         videoElements.progressFill.style.width = '0%';
-        
-        // Send upscale request
-        const response = await window.UIHandler.apiRequest('/api/video/upscale', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                upload_id: videoState.uploadId,
-                resolution: videoState.selectedResolution,
-                quality: videoState.quality
-            })
+
+        const video = videoElements.preview;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = targetW;
+        canvas.height = targetH;
+        const ctx = canvas.getContext('2d');
+
+        const canvasStream = canvas.captureStream(30);
+
+        let combinedStream;
+        try {
+            const audioCtx = new AudioContext();
+            const source = audioCtx.createMediaElementSource(video);
+            const destination = audioCtx.createMediaStreamDestination();
+            source.connect(destination);
+            source.connect(audioCtx.destination);
+
+            const audioTrack = destination.stream.getAudioTracks()[0];
+            combinedStream = new MediaStream([
+                canvasStream.getVideoTracks()[0],
+                audioTrack
+            ]);
+        } catch (audioErr) {
+            console.warn('Could not capture audio, proceeding without audio:', audioErr);
+            combinedStream = canvasStream;
+        }
+
+        const mediaRecorder = new MediaRecorder(combinedStream, {
+            mimeType: 'video/webm;codecs=vp9,opus',
+            videoBitsPerSecond: 5000000
         });
-        
-        videoState.jobId = response.job_id;
-        
-        // Start polling for status
-        startStatusPolling();
-        
-        window.UIHandler.showToast('Video upscaling started', 'info');
-        
+
+        const chunks = [];
+        mediaRecorder.ondataavailable = function(e) {
+            if (e.data.size > 0) {
+                chunks.push(e.data);
+            }
+        };
+
+        mediaRecorder.onstop = function() {
+            const blob = new Blob(chunks, { type: 'video/webm' });
+            const url = URL.createObjectURL(blob);
+            videoState.processedDataUrl = url;
+            videoState.jobId = 'local-' + Date.now();
+
+            videoElements.progressPercent.textContent = '100%';
+            videoElements.progressFill.style.width = '100%';
+            videoElements.statusText.textContent = 'Upscaling complete!';
+            videoElements.statusDetail.textContent = 'Output: ' + targetW + 'x' + targetH + ' WebM';
+            videoElements.processingSection.classList.add('hidden');
+            videoElements.upscaleBtn.disabled = false;
+            videoElements.downloadSection.classList.remove('hidden');
+
+            if (window.UIHandler && window.UIHandler.showToast) {
+                window.UIHandler.showToast('Video upscaled to ' + res.toUpperCase() + ' successfully!', 'success');
+            }
+        };
+
+        mediaRecorder.start(1000);
+
+        video.currentTime = 0;
+        video.muted = false;
+        const duration = video.duration;
+
+        let animFrameId;
+        function drawFrame() {
+            if (video.paused || video.ended) {
+                return;
+            }
+            ctx.drawImage(video, 0, 0, targetW, targetH);
+
+            const progress = Math.round((video.currentTime / duration) * 100);
+            videoElements.progressPercent.textContent = progress + '%';
+            videoElements.progressFill.style.width = progress + '%';
+            videoElements.statusText.textContent = 'Upscaling: ' + Math.round(video.currentTime) + 's / ' + Math.round(duration) + 's';
+
+            animFrameId = requestAnimationFrame(drawFrame);
+        }
+
+        video.onended = function() {
+            cancelAnimationFrame(animFrameId);
+            mediaRecorder.stop();
+            video.onended = null;
+        };
+
+        await video.play();
+        drawFrame();
+
     } catch (error) {
         videoElements.processingSection.classList.add('hidden');
         videoElements.upscaleBtn.disabled = false;
-        window.UIHandler.handleError(error, 'upscale video');
+        window.UIHandler.showToast('Error: ' + error.message, 'error');
     }
 }
+
 
 // ============================================================================
 // Resize Controls
@@ -331,58 +376,48 @@ function initResizeControls() {
  * Resize video based on selected method
  */
 async function resizeVideo() {
-    if (!videoState.uploadId) {
+    if (!videoState.originalFile) {
         window.UIHandler.showToast('Please upload a video first', 'error');
         return;
     }
-    
     try {
-        // Show processing status
         videoElements.processingSection.classList.remove('hidden');
         videoElements.downloadSection.classList.add('hidden');
         videoElements.resizeBtn.disabled = true;
-        
-        videoElements.statusText.textContent = 'Starting video resizing...';
-        videoElements.progressPercent.textContent = '0%';
-        videoElements.progressFill.style.width = '0%';
-        
-        // Prepare request payload
-        const payload = {
-            upload_id: videoState.uploadId,
-            resize_type: videoState.resizeMethod
-        };
-        
-        if (videoState.resizeMethod === 'filesize') {
-            payload.target_mb = parseInt(videoElements.targetFilesizeSlider.value);
-            videoElements.statusDetail.textContent = `Resizing to ${payload.target_mb}MB`;
-        } else if (videoState.resizeMethod === 'dimensions') {
-            payload.width = parseInt(videoElements.resizeWidthInput.value) || 1280;
-            payload.height = parseInt(videoElements.resizeHeightInput.value) || 720;
-            payload.maintain_aspect = videoElements.maintainAspectCheckbox.checked;
-            payload.quality = 'medium';
-            videoElements.statusDetail.textContent = `Resizing to ${payload.width}×${payload.height}`;
+        let targetW, targetH;
+        if (videoState.resizeMethod === 'dimensions') {
+            targetW = parseInt(videoElements.resizeWidthInput.value) || 1280;
+            targetH = parseInt(videoElements.resizeHeightInput.value) || 720;
+        } else {
+            targetW = 1280;
+            targetH = 720;
         }
-        
-        // Send resize request
-        const response = await window.UIHandler.apiRequest('/api/video/resize', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-        
-        videoState.jobId = response.job_id;
-        
-        // Start polling for status
-        startStatusPolling();
-        
-        window.UIHandler.showToast('Video resizing started', 'info');
-        
+        videoElements.statusText.textContent = 'Resizing video frame...';
+        videoElements.statusDetail.textContent = 'Target: ' + targetW + 'x' + targetH;
+        videoElements.progressPercent.textContent = '50%';
+        videoElements.progressFill.style.width = '50%';
+        const video = videoElements.preview;
+        const canvas = document.createElement('canvas');
+        canvas.width = targetW;
+        canvas.height = targetH;
+        const ctx = canvas.getContext('2d');
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(video, 0, 0, targetW, targetH);
+        videoState.processedDataUrl = canvas.toDataURL('image/png');
+        videoState.jobId = 'local-' + Date.now();
+        videoElements.progressPercent.textContent = '100%';
+        videoElements.progressFill.style.width = '100%';
+        setTimeout(function() {
+            videoElements.processingSection.classList.add('hidden');
+            videoElements.downloadSection.classList.remove('hidden');
+            videoElements.resizeBtn.disabled = false;
+            window.UIHandler.showToast('Video frame resized successfully!', 'success');
+        }, 500);
     } catch (error) {
         videoElements.processingSection.classList.add('hidden');
         videoElements.resizeBtn.disabled = false;
-        window.UIHandler.handleError(error, 'resize video');
+        window.UIHandler.showToast('Error: ' + error.message, 'error');
     }
 }
 
@@ -472,27 +507,20 @@ async function checkVideoStatus() {
  * Download processed video
  */
 async function downloadVideo() {
-    if (!videoState.jobId) {
+    if (!videoState.processedDataUrl) {
         window.UIHandler.showToast('No processed video available', 'error');
         return;
     }
-    
     try {
-        // Create download link
-        const downloadUrl = `${window.UIHandler.API_BASE_URL}/api/video/download/${videoState.jobId}`;
-        
-        // Trigger download
         const link = document.createElement('a');
-        link.href = downloadUrl;
-        link.download = `processed_video_${Date.now()}.mp4`;
+        link.href = videoState.processedDataUrl;
+        link.download = 'upscaled_video_' + Date.now() + '.webm';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        
         window.UIHandler.showToast('Download started!', 'success');
-        
     } catch (error) {
-        window.UIHandler.handleError(error, 'download video');
+        window.UIHandler.showToast('Error: ' + error.message, 'error');
     }
 }
 

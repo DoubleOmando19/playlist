@@ -13,7 +13,7 @@
 // Configuration
 // ============================================================================
 
-const API_BASE_URL = 'https://localhost:5000';
+const API_BASE_URL = 'http://localhost:5500';
 
 // ============================================================================
 // Navigation Management
@@ -355,13 +355,13 @@ function preventDefaults(e) {
  * @returns {Object} Validation result {valid: boolean, error: string}
  */
 function validateImageFile(file) {
-    const validTypes = ['image/jpeg', 'image/png', 'image/bmp', 'image/gif', 'image/tiff', 'image/webp'];
+    const validTypes = ['image/jpeg', 'image/png', 'image/bmp', 'image/gif', 'image/tiff', 'image/webp', 'image/jpg'];
     const maxSize = 50 * 1024 * 1024; // 50MB
 
     if (!validTypes.includes(file.type)) {
         return {
             valid: false,
-            error: 'Invalid file type. Please upload a JPG, PNG, BMP, GIF, TIFF, or WebP image.'
+            error: 'Invalid file type. Please upload a JPG, PNG, BMP, GIF, TIFF, JPG or WebP image.'
         };
     }
 
