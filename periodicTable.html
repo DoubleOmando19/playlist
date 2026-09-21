@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <style>
+        .Play {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(245, 1, 1);
+            color: white;
+            border: none;
+            height: 38px;
+            width: 120px;
+            border-radius: 2px;
+            cursor: pointer;
+            text-shadow: 0 0 10px red;
+            letter-spacing: 3px;
+            box-shadow:
+                0 0 10px red,
+                0 0 20px red;
+            position: relative;
+            top: 15px;
+            display: grid;
+            place-items: center;
+            margin: auto;
+            text-transform: uppercase;
+            border-radius: 15px;
+            transition: 0.5s;
+            padding: 3px;
+            z-index: 1;
+        }
+
+        button:hover {
+            color: white;
+            border-color: red;
+            text-shadow: 0 0 10px red;
+            box-shadow:
+                0 0 10px red,
+                0 0 20px red;
+            letter-spacing: 5px;
+            border-radius: 15px;
+            width: 130px;
+        }
+
+        button:hover:before {
+            animation: pulse 2s ease-out infinite;
+            border-radius: 15px;
+            width: 100px;
+            color: white;
+        }
+
+        button:hover:after {
+            animation: pulse 2s 1s ease-out infinite;
+            border-radius: 15px;
+            width: 100px;
+            color: white;
+        }
+
+        @keyframes pulse {
+            100% {
+                transform: scale(3);
+                opacity: 0;
+                width: 100px;
+            }
+        }
+
+        body {
+            background-color: #1a1a2e;
+            margin-top: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #results {
+            background-color: #000000;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            min-height: 100px;
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 300px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <h1 style="text-align: center; color: red; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 40px;">
+        Periodic Table of Elements</h1>
+    <div style="text-align: center; margin: 20px;">
+        <label for="searchInput" style="color: white; font-size: 16px;">Enter Element (Name, Symbol, or Atomic
+            Number):</label><br><br>
+        <input type="text" id="searchInput" placeholder="e.g. Hydrogen, H, or 1">
+        <button class="Play" id="searchBtn">Search</button>
+    </div>
+    <div>
+        <img style="display: grid; margin-top: 50px; text-align: center; place-items: center; height: 400px; width: 600px; margin-left: 400px; flex-shrink: 0;"
+            src="/Periodic Table/Periodictable.png">
+    </div>
+    <div id="results" style="text-align: center; color: white; font-size: 16px;"></div>
+    <script>
+        var PT = [
+            { n: "1", s: "H", nm: "Hydrogen" }, { n: "2", s: "He", nm: "Helium" }, { n: "3", s: "Li", nm: "Lithium" },
+            { n: "4", s: "Be", nm: "Beryllium" }, { n: "5", s: "B", nm: "Boron" }, { n: "6", s: "C", nm: "Carbon" },
+            { n: "7", s: "N", nm: "Nitrogen" }, { n: "8", s: "O", nm: "Oxygen" }, { n: "9", s: "F", nm: "Fluorine" },
+            { n: "10", s: "Ne", nm: "Neon" }, { n: "11", s: "Na", nm: "Sodium" }, { n: "12", s: "Mg", nm: "Magnesium" },
+            { n: "13", s: "Al", nm: "Aluminium" }, { n: "14", s: "Si", nm: "Silicon" }, { n: "15", s: "P", nm: "Phosphorus" },
+            { n: "16", s: "S", nm: "Sulfur" }, { n: "17", s: "Cl", nm: "Chlorine" }, { n: "18", s: "Ar", nm: "Argon" },
+            { n: "19", s: "K", nm: "Potassium" }, { n: "20", s: "Ca", nm: "Calcium" }, { n: "21", s: "Sc", nm: "Scandium" },
+            { n: "22", s: "Ti", nm: "Titanium" }, { n: "23", s: "V", nm: "Vanadium" }, { n: "24", s: "Cr", nm: "Chromium" },
+            { n: "25", s: "Mn", nm: "Manganese" }, { n: "26", s: "Fe", nm: "Iron" }, { n: "27", s: "Co", nm: "Cobalt" },
+            { n: "28", s: "Ni", nm: "Nickel" }, { n: "29", s: "Cu", nm: "Copper" }, { n: "30", s: "Zn", nm: "Zinc" },
+            { n: "31", s: "Ga", nm: "Gallium" }, { n: "32", s: "Ge", nm: "Germanium" }, { n: "33", s: "As", nm: "Arsenic" },
+            { n: "34", s: "Se", nm: "Selenium" }, { n: "35", s: "Br", nm: "Bromine" }, { n: "36", s: "Kr", nm: "Krypton" },
+            { n: "37", s: "Rb", nm: "Rubidium" }, { n: "38", s: "Sr", nm: "Strontium" }, { n: "39", s: "Y", nm: "Yttrium" },
+            { n: "40", s: "Zr", nm: "Zirconium" }, { n: "41", s: "Nb", nm: "Niobium" }, { n: "42", s: "Mo", nm: "Molybdenum" },
+            { n: "43", s: "Tc", nm: "Technetium" }, { n: "44", s: "Ru", nm: "Ruthenium" }, { n: "45", s: "Rh", nm: "Rhodium" },
+            { n: "46", s: "Pd", nm: "Palladium" }, { n: "47", s: "Ag", nm: "Silver" }, { n: "48", s: "Cd", nm: "Cadmium" },
+            { n: "49", s: "In", nm: "Indium" }, { n: "50", s: "Sn", nm: "Tin" }, { n: "51", s: "Sb", nm: "Antimony" },
+            { n: "52", s: "Te", nm: "Tellurium" }, { n: "53", s: "I", nm: "Iodine" }, { n: "54", s: "Xe", nm: "Xenon" },
+            { n: "55", s: "Cs", nm: "Caesium" }, { n: "56", s: "Ba", nm: "Barium" }, { n: "57", s: "La", nm: "Lanthanum" },
+            { n: "58", s: "Ce", nm: "Cerium" }, { n: "59", s: "Pr", nm: "Praseodymium" }, { n: "60", s: "Nd", nm: "Neodymium" },
+            { n: "61", s: "Pm", nm: "Promethium" }, { n: "62", s: "Sm", nm: "Samarium" }, { n: "63", s: "Eu", nm: "Europium" },
+            { n: "64", s: "Gd", nm: "Gadolinium" }, { n: "65", s: "Tb", nm: "Terbium" }, { n: "66", s: "Dy", nm: "Dysprosium" },
+            { n: "67", s: "Ho", nm: "Holmium" }, { n: "68", s: "Er", nm: "Erbium" }, { n: "69", s: "Tm", nm: "Thulium" },
+            { n: "70", s: "Yb", nm: "Ytterbium" }, { n: "71", s: "Lu", nm: "Lutetium" }, { n: "72", s: "Hf", nm: "Hafnium" },
+            { n: "73", s: "Ta", nm: "Tantalum" }, { n: "74", s: "W", nm: "Tungsten" }, { n: "75", s: "Re", nm: "Rhenium" },
+            { n: "76", s: "Os", nm: "Osmium" }, { n: "77", s: "Ir", nm: "Iridium" }, { n: "78", s: "Pt", nm: "Platinum" },
+            { n: "79", s: "Au", nm: "Gold" }, { n: "80", s: "Hg", nm: "Mercury" }, { n: "81", s: "Tl", nm: "Thallium" },
+            { n: "82", s: "Pb", nm: "Lead" }, { n: "83", s: "Bi", nm: "Bismuth" }, { n: "84", s: "Po", nm: "Polonium" },
+            { n: "85", s: "At", nm: "Astatine" }, { n: "86", s: "Rn", nm: "Radon" }, { n: "87", s: "Fr", nm: "Francium" },
+            { n: "88", s: "Ra", nm: "Radium" }, { n: "89", s: "Ac", nm: "Actinium" }, { n: "90", s: "Th", nm: "Thorium" },
+            { n: "91", s: "Pa", nm: "Protactinium" }, { n: "92", s: "U", nm: "Uranium" }, { n: "93", s: "Np", nm: "Neptunium" },
+            { n: "94", s: "Pu", nm: "Plutonium" }, { n: "95", s: "Am", nm: "Americium" }, { n: "96", s: "Cm", nm: "Curium" },
+            { n: "97", s: "Bk", nm: "Berkelium" }, { n: "98", s: "Cf", nm: "Californium" }, { n: "99", s: "Es", nm: "Einsteinium" },
+            { n: "100", s: "Fm", nm: "Fermium" }, { n: "101", s: "Md", nm: "Mendelevium" }, { n: "102", s: "No", nm: "Nobelium" },
+            { n: "103", s: "Lr", nm: "Lawrencium" }
+        ];
+        var CL = [
+            { c: "Transition metals", e: ["Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg"] },
+            { c: "Alkali metals", e: ["Li", "Na", "K", "Rb", "Cs", "Fr"] },
+            { c: "Alkaline earth metals", e: ["Be", "Mg", "Ca", "Sr", "Ba", "Ra"] },
+            { c: "Halogens", e: ["F", "Cl", "Br", "I", "At"] },
+            { c: "Noble gases", e: ["He", "Ne", "Ar", "Kr", "Xe", "Rn"] },
+            { c: "Reactive nonmetals", e: ["H", "C", "N", "O", "P", "S", "Se"] },
+            { c: "Metalloids", e: ["B", "Si", "Ge", "As", "Sb", "Te"] },
+            { c: "Post-transition metals", e: ["Al", "Ga", "In", "Sn", "Tl", "Pb", "Bi", "Po"] },
+            { c: "Lanthanoids", e: ["La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu"] },
+            { c: "Actinoids", e: ["Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr"] }
+        ];
+        function searchElement() {
+            var q = document.getElementById("searchInput").value.trim();
+            var r = document.getElementById("results");
+            if (!q) { r.innerHTML = "<p style='color:yellow'>Please enter an element name, symbol, or atomic number.</p>"; return; }
+            var found = null;
+            for (var i = 0; i < PT.length; i++) {
+                var el = PT[i];
+                if (el.nm.toLowerCase() === q.toLowerCase() || el.s.toLowerCase() === q.toLowerCase() || el.n === q) { found = el; break; }
+            }
+            if (found) {
+                var cls = "Unknown";
+                for (var j = 0; j < CL.length; j++) { if (CL[j].e.indexOf(found.s) !== -1) { cls = CL[j].c; break; } }
+                r.innerHTML = "<div style='background:rgba(0,100,0,0.3);padding:20px;border-radius:10px;margin:10px;border:2px solid lime'><h2 style='color:lime'>ELEMENT FOUND!</h2><p style='font-size:24px'><strong>Atomic Number:</strong> " + found.n + "</p><p style='font-size:24px'><strong>Symbol:</strong> " + found.s + "</p><p style='font-size:24px'><strong>Name:</strong> " + found.nm + "</p><p style='font-size:20px'><strong>Classification:</strong> " + cls + "</p></div>";
+            } else {
+                r.innerHTML = "<div style='background:rgba(100,0,0,0.3);padding:20px;border-radius:10px;border:2px solid red'><h2 style='color:red'>Element not found</h2><p>Try name (Gold), symbol (Au), or number (79)</p></div>";
+            }
+        }
+        document.getElementById("searchBtn").addEventListener("click", searchElement);
+        document.getElementById("searchInput").addEventListener("keypress", function (e) { if (e.key === "Enter") searchElement(); });
+    </script>
+</body>
+
+</html>

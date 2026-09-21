@@ -1,45 +1,190 @@
-<html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chinese Zodiac Finder</title>
   <style>
-    .button {
-      color: black;
-      font-family: Roboto, comic sans;
-      font-size: 32px;
-      font-weight: bold;
-      width: 500px;
-      height: 500px;
-      justify-content: center;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
       align-items: center;
-      color: rgb(98, 97, 97);
-      padding: 5px;
+      justify-content: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 50px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ec2d4d, #fa3636);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .emoji-header {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-size: 1.1rem;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input[type="text"]:focus {
+      border-color: #e94560;
+      box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+    }
+
+    input[type="text"]::placeholder {
+      color: #666;
+    }
+
+    .search-btn {
+      margin-top: 20px;
+      padding: 14px 40px;
+      background: linear-gradient(135deg, #e94560, #ff6b6b);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+
+    .search-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+    }
+
+    .search-btn:active {
+      transform: translateY(0);
+    }
+
+    #results {
+      margin-top: 25px;
+      padding: 20px;
+      min-height: 60px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .zodiac-emoji {
+      font-size: 3.5rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .zodiac-name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #0ed515;
+    }
+
+    .not-found {
+      color: #ff9800;
     }
   </style>
 </head>
 
-<body
-  style="margin-top: 1px; padding: 5px; background-color: lightyellow; font-size: 24px; font-family: copperplate; font-weight: bold;">
-  <h1
-    style="margin-top: 0px; padding-left: 2px; padding-bottom: 10px; height: 50px; color: white; background-color: gold; border: 2px solid white; font-size: 30px; font-family: comic sans; font-weight: bold; justify-content: center; align-items: center;">
-    CHINESE ZODIAC
-  </h1>
-  <p id="text"></p>
+<body>
+  <div class="container">
+    <div class="emoji-header">&#x1F432;</div>
+    <h1>Chinese Zodiac Finder</h1>
+    <p class="subtitle">Discover your zodiac animal based on your birth year</p>
+    <label for="yearInput">Enter your birth year:</label>
+    <input type="text" id="yearInput" placeholder="e.g. 1990, 2000, 2024" />
+    <button class="search-btn" id="searchBtn">Find My Zodiac &#x1F50D;</button>
+    <div id="results"></div>
+  </div>
+  <script>
+    const zodiacData = [
+      { years: [1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020], name: "Rat", emoji: "\ud83d\udc00" },
+      { years: [1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021], name: "Ox", emoji: "\ud83d\udc02" },
+      { years: [1926, 1938, 1950, 1962, 1974, 1986, 1998, 2010, 2022], name: "Tiger", emoji: "\ud83d\udc05" },
+      { years: [1927, 1939, 1951, 1963, 1975, 1987, 1999, 2011, 2023], name: "Rabbit", emoji: "\ud83d\udc07" },
+      { years: [1928, 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024], name: "Dragon", emoji: "\ud83d\udc09" },
+      { years: [1929, 1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025], name: "Snake", emoji: "\ud83d\udc0d" },
+      { years: [1930, 1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026], name: "Horse", emoji: "\ud83d\udc0e" },
+      { years: [1931, 1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027], name: "Goat", emoji: "\ud83d\udc10" },
+      { years: [1932, 1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028], name: "Monkey", emoji: "\ud83d\udc12" },
+      { years: [1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029], name: "Rooster", emoji: "\ud83d\udc13" },
+      { years: [1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030], name: "Dog", emoji: "\ud83d\udc15" },
+      { years: [1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031], name: "Pig", emoji: "\ud83d\udc16" }
+    ];
 
-  <py-script type="module"
-    style="margin-left: 20px; margin-top: 0px; font-size: 23px; color: white;" src="Chinese Zodiac.py" target="_blank">
-  </py-script>
+    function searchZodiac() {
+      const year = parseInt(document.getElementById('yearInput').value.trim());
+      const results = document.getElementById('results');
+      if (isNaN(year)) {
+        results.innerHTML = '<span class="not-found">Please enter a valid birth year.</span>';
+        return;
+      }
+      let found = false;
+      for (const animal of zodiacData) {
+        if (animal.years.includes(year)) {
+          results.innerHTML = '<span class="zodiac-emoji">' + animal.emoji + '</span><span class="zodiac-name">Your Chinese Zodiac is ' + animal.name + '!</span><br><br>Birth Year: ' + year;
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        results.innerHTML = '<span class="not-found">Year ' + year + ' not found in database.<br>Try a year between 1924-2031.</span>';
+      }
+    }
 
-  <script type="mpy" src="Chinese Zodiac.py"></script>
-
-  <script style="font-size: 21px;">
-    alert('CHINESE ZODIAC (Mac Only)');
-    alert('ENTER YOUR YEAR OF BIRTH (XXXX) \n TO FINDOUT YOUR CHINESE ZODIAC.');
+    document.getElementById('searchBtn').addEventListener('click', searchZodiac);
+    document.getElementById('yearInput').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') searchZodiac();
+    });
   </script>
 </body>
 

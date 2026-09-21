@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthstone Finder</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,serif;min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff}
+.container{background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border-radius:20px;padding:50px 40px;text-align:center;box-shadow:0 25px 50px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);max-width:500px;width:90%}
+h1{font-size:2.2em;margin-bottom:10px;background:linear-gradient(to right,#e0c3fc,#8ec5fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:1em;color:#a0a0b0;margin-bottom:30px}
+.gem-icon{font-size:3em;margin-bottom:20px}
+label{display:block;font-size:1.1em;margin-bottom:12px;color:#c0c0d0}
+select{width:100%;padding:14px 20px;font-size:1.1em;border:2px solid rgba(255,255,255,0.2);border-radius:12px;background:rgba(255,255,255,0.08);color:#fff;cursor:pointer;appearance:none;-webkit-appearance:none;outline:none;transition:border-color 0.3s,box-shadow 0.3s}
+select:focus{border-color:#8ec5fc;box-shadow:0 0 15px rgba(142,197,252,0.3)}
+select option{background:#1a1a2e;color:#fff}
+.btn{margin-top:25px;padding:14px 40px;font-size:1.1em;font-weight:bold;border:none;border-radius:12px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;cursor:pointer;transition:transform 0.2s,box-shadow 0.3s;width:100%}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(102,126,234,0.4)}
+.btn:active{transform:translateY(0)}
+.result{margin-top:30px;padding:25px;border-radius:15px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);display:none;animation:fadeIn 0.5s ease}
+.result.show{display:block}
+.result .stone-name{font-size:1.8em;font-weight:bold;margin:10px 0;background:linear-gradient(to right,#f093fb,#f5576c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.result .stone-color{width:60px;height:60px;border-radius:50%;margin:0 auto 10px;box-shadow:0 5px 15px rgba(0,0,0,0.3)}
+.result .message{color:#c0c0d0;font-size:1em}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.error{color:#ff6b6b;margin-top:15px;display:none}
+.error.show{display:block}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="gem-icon">&#x1F48E;</div>
+<h1>Birthstone Finder</h1>
+<p class="subtitle">Discover the gemstone associated with your birth month</p>
+<label for="monthSelect">Select your birth month:</label>
+<select id="monthSelect">
+<option value="">-- Choose a Month --</option>
+<option value="January">January</option>
+<option value="February">February</option>
+<option value="March">March</option>
+<option value="April">April</option>
+<option value="May">May</option>
+<option value="June">June</option>
+<option value="July">July</option>
+<option value="August">August</option>
+<option value="September">September</option>
+<option value="October">October</option>
+<option value="November">November</option>
+<option value="December">December</option>
+</select>
+<button class="btn" onclick="findBirthstone()">Find My Birthstone</button>
+<p class="error" id="errorMsg">Please select a month to find your birthstone.</p>
+<div class="result" id="resultDiv">
+<div class="stone-color" id="stoneColor"></div>
+<div class="stone-name" id="stoneName"></div>
+<p class="message" id="stoneMessage"></p>
+</div>
+</div>
+<script>
+const birthstones={
+"January":{stone:"Garnet",color:"#8B0000",desc:"Garnet symbolizes trust, friendship, and vitality."},
+"February":{stone:"Amethyst",color:"#9966CC",desc:"Amethyst represents peace, courage, and stability."},
+"March":{stone:"Aquamarine",color:"#7FFFD4",desc:"Aquamarine embodies serenity, clarity, and harmony."},
+"April":{stone:"Diamond",color:"#B9F2FF",desc:"Diamond symbolizes eternal love and invincibility."},
+"May":{stone:"Emerald",color:"#50C878",desc:"Emerald represents rebirth, love, and wisdom."},
+"June":{stone:"Alexandrite",color:"#8B008B",desc:"Alexandrite symbolizes luck, prosperity, and intellect."},
+"July":{stone:"Ruby",color:"#E0115F",desc:"Ruby represents passion, protection, and prosperity."},
+"August":{stone:"Peridot",color:"#AAFF00",desc:"Peridot symbolizes strength, healing, and harmony."},
+"September":{stone:"Sapphire",color:"#0F52BA",desc:"Sapphire represents wisdom, loyalty, and nobility."},
+"October":{stone:"Tourmaline",color:"#FF69B4",desc:"Tourmaline symbolizes compassion and creativity."},
+"November":{stone:"Topaz",color:"#FFC87C",desc:"Topaz represents love, affection, and good fortune."},
+"December":{stone:"Blue Topaz",color:"#4FC3F7",desc:"Blue Topaz symbolizes calmness, communication, and clarity."}
+};
+function findBirthstone(){
+var month=document.getElementById("monthSelect").value;
+var errorMsg=document.getElementById("errorMsg");
+var resultDiv=document.getElementById("resultDiv");
+errorMsg.classList.remove("show");
+resultDiv.classList.remove("show");
+if(!month){errorMsg.classList.add("show");return;}
+var data=birthstones[month];
+document.getElementById("stoneColor").style.background=data.color;
+document.getElementById("stoneName").textContent=data.stone;
+document.getElementById("stoneMessage").textContent="Your birth stone is "+data.stone+"! "+data.desc;
+resultDiv.classList.add("show");
+}
+document.getElementById("monthSelect").addEventListener("keypress",function(e){if(e.key==="Enter")findBirthstone();});
+</script>
+</body>
+</html>
