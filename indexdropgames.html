@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .dropdown {
+      display: inline-block;
+      transition: 1s;
+    }
+
+    .dropdown button {
+      background-color: red;
+      border-color: black;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 10px 5px;
+    }
+
+    .dropdown .content {
+      display: none;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      transition: 1s;
+      position: absolute;
+      background-color: hsl(0, 0%, 95%);
+      min-width: 100px;
+      box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+      transition: 4s;
+      margin-top: 2px;
+    }
+
+    .dropdown:hover .content {
+      display: block;
+      border: 1px solid grey;
+      transform: rotateX(180);
+    }
+
+    .dropdown:hover button {
+      background-color: red;
+    }
+
+    .dropdown a:hover {
+      background-color: hsl(0, 0%, 85%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dropdown">
+    <button
+      style="justify-content: center; height: 45px; width: 60px; margin-left: 50px; border-radius: 30px; background-color: red; font-size: 21px; margin-top: 0px;">🎮</button>
+    <div class="content">
+      <a href="sudoku.html" target="blank">Sudoku</a>
+      <a href="12-spanish-rock-paper-scissors.html" target="blank">Cachipun</a>
+      <a href="Chinese Zodiac.html" target="blank">Chinese Zodiac</a>
+      <a href="BirthStoneApp.html" target="_blank">Birth Stone</a>
+    </div>
+  </div>
+</body>
+
+</html>
