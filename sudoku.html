@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px;}
+.container{background:white;border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,0.3);text-align:center;max-width:500px;width:100%;}
+h1{color:#4a4a8a;margin-bottom:20px;font-size:2.2em;}
+.grid{display:grid;grid-template-columns:repeat(9,1fr);gap:1px;background:#333;border:3px solid #333;margin:0 auto 20px;max-width:400px;aspect-ratio:1;}
+.cell{background:white;display:flex;align-items:center;justify-content:center;font-size:1.4em;font-weight:bold;cursor:pointer;position:relative;aspect-ratio:1;}
+.cell.given{color:#333;cursor:default;background:#f0f0f0;}
+.cell.selected{background:#bbdefb!important;}
+.cell.error{background:#ffcdd2!important;color:#d32f2f!important;}
+.cell.user{color:#1565c0;}
+.cell.br{border-right:3px solid #333;}
+.cell.bb{border-bottom:3px solid #333;}
+.numpad{display:flex;justify-content:center;gap:8px;margin-bottom:15px;flex-wrap:wrap;}
+.nb{width:40px;height:40px;font-size:1.2em;font-weight:bold;border:2px solid #4a4a8a;border-radius:8px;background:white;color:#4a4a8a;cursor:pointer;}
+.nb:hover{background:#4a4a8a;color:white;}
+.buttons{display:flex;justify-content:center;gap:10px;margin-bottom:15px;flex-wrap:wrap;}
+.btn{padding:12px 24px;font-size:1em;font-weight:bold;border:none;border-radius:8px;cursor:pointer;color:white;transition:transform 0.1s;}
+.btn:hover{transform:scale(1.05);}
+#ng{background:#5c6bc0;font-size:1.1em;padding:14px 28px;}
+#vl{background:#43a047;}
+#sv{background:#fb8c00;}
+#cl{background:#e53935;}
+.msg{margin-top:10px;font-size:1.1em;min-height:25px;}
+.msg.ok{color:#43a047;}
+.msg.no{color:#e53935;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Sudoku</h1>
+<div class="grid" id="grid"></div>
+<div class="numpad" id="np"></div>
+<div class="buttons">
+<button class="btn" id="ng">New Game</button>
+<button class="btn" id="vl">Check</button>
+<button class="btn" id="sv">Solve</button>
+<button class="btn" id="cl">Clear</button>
+</div>
+<div class="msg" id="ms"></div>
+</div>
+<script>
+let B=[],S=[],G=[],sel=null;
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function isValid(board,row,col,num){
+for(let i=0;i<9;i++){if(board[row][i]===num)return false;if(board[i][col]===num)return false;}
+let br=Math.floor(row/3)*3,bc=Math.floor(col/3)*3;
+for(let i=br;i<br+3;i++)for(let j=bc;j<bc+3;j++)if(board[i][j]===num)return false;
+return true;
+}
+
+function solveSudoku(board){
+for(let r=0;r<9;r++){
+for(let c=0;c<9;c++){
+if(board[r][c]===0){
+let nums=shuffle([1,2,3,4,5,6,7,8,9]);
+for(let n of nums){
+if(isValid(board,r,c,n)){
+board[r][c]=n;
+if(solveSudoku(board))return true;
+board[r][c]=0;
+}
+}
+return false;
+}
+}
+}
+return true;
+}
+
+function generatePuzzle(){
+let board=Array.from({length:9},()=>Array(9).fill(0));
+solveSudoku(board);
+let solution=board.map(r=>[...r]);
+let difficulty=[35,40,45,50,55];
+let remove=difficulty[Math.floor(Math.random()*difficulty.length)];
+let cells=[];
+for(let r=0;r<9;r++)for(let c=0;c<9;c++)cells.push([r,c]);
+shuffle(cells);
+for(let i=0;i<remove&&i<cells.length;i++){
+board[cells[i][0]][cells[i][1]]=0;
+}
+return{board,solution};
+}
+
+function init(){
+let puzzle=generatePuzzle();
+S=puzzle.solution;
+G=puzzle.board.map(r=>r.map(v=>v!==0));
+B=puzzle.board.map(r=>[...r]);
+sel=null;
+render();
+msg("","");
+}
+
+function render(){
+let grid=document.getElementById("grid");
+grid.innerHTML="";
+for(let r=0;r<9;r++){
+for(let c=0;c<9;c++){
+let d=document.createElement("div");
+d.className="cell";
+if(G[r][c])d.classList.add("given");
+else if(B[r][c])d.classList.add("user");
+if(c%3===2&&c<8)d.classList.add("br");
+if(r%3===2&&r<8)d.classList.add("bb");
+if(sel&&sel[0]===r&&sel[1]===c)d.classList.add("selected");
+d.textContent=B[r][c]||"";
+if(!G[r][c]){d.onclick=(function(row,col){return function(){sel=[row,col];render();};})(r,c);}
+grid.appendChild(d);
+}
+}
+}
+
+function inp(n){
+if(!sel)return;
+let r=sel[0],c=sel[1];
+if(G[r][c])return;
+B[r][c]=n;
+render();
+}
+
+function check(){
+let wrong=false;
+let grid=document.getElementById("grid");
+let cells=grid.children;
+for(let r=0;r<9;r++){
+for(let c=0;c<9;c++){
+let idx=r*9+c;
+if(!G[r][c]&&B[r][c]!==0){
+if(B[r][c]!==S[r][c]){
+cells[idx].classList.add("error");
+wrong=true;
+}
+}
+}
+}
+if(wrong)msg("Some numbers are wrong.","no");
+else msg("Looking good!","ok");
+}
+
+function solve(){B=S.map(r=>[...r]);render();msg("Solved!","ok");}
+
+function clr(){for(let r=0;r<9;r++)for(let c=0;c<9;c++)if(!G[r][c])B[r][c]=0;render();msg("Cleared.","");}
+
+function msg(t,tp){let m=document.getElementById("ms");m.textContent=t;m.className="msg "+tp;}
+
+let p=document.getElementById("np");
+for(let i=1;i<=9;i++){let b=document.createElement("button");b.className="nb";b.textContent=i;b.onclick=function(){inp(i);};p.appendChild(b);}
+
+document.addEventListener("keydown",function(e){
+if(e.key>="1"&&e.key<="9")inp(parseInt(e.key));
+else if(e.key==="Backspace"||e.key==="Delete"||e.key==="0")inp(0);
+});
+
+document.getElementById("ng").onclick=function(){init();};
+document.getElementById("vl").onclick=check;
+document.getElementById("sv").onclick=solve;
+document.getElementById("cl").onclick=clr;
+init();
+</script>
+</body>
+</html>
