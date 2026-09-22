@@ -1697,7 +1697,7 @@ const countriesData = [
     "gold_reserves": "low/Negligible"
   },
   {
-    "country": "Nauru",
+    "country": "Republic of Naoero",
     "capital": "Yaren",
     "population": 11993,
     "gdp": "160 million (USD)",
@@ -1795,7 +1795,7 @@ const countriesData = [
     "gold_reserves": "low/Negligible"
   },
   {
-    "country": "North Macedonia",
+    "country": "Republic of North Macedonia",
     "capital": "Skopje",
     "population": 1813791,
     "gdp": "16.69 billion (USD)",
