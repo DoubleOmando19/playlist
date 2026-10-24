@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utubeplaylist</title>
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=20260427">
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=20260427">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260427">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png?v=20260427">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png?v=20260427">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20260427">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=20260427">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20260427">
+  <link rel="manifest" href="site.webmanifest?v=20260427">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Utubeplaylist">
+  <meta name="theme-color" content="#F59E0B">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    p {
+      font-family: "Orbitron", "Roboto", Arial;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .button {
+      text-decoration: none;
+      width: 72px;
+      cursor: pointer;
+    }
+
+    body {
+      /*This is the way*/
+      font-family: Roboto;
+      background-color: black;
+      margin: 0;
+      margin-top: 120px;
+      padding-left: 75px;
+      padding-top: 0px;
+      padding-right: 24px;
+      margin-bottom: 1000px;
+      height: 1200px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .equalizer {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 40px;
+      margin-top: -6px;
+      margin-left: 10px;
+    }
+
+    .bar {
+      width: 5px;
+      background-color: white;
+      border-radius: 3px;
+      animation: bounce 2.5s infinite ease-in-out;
+    }
+
+    .bar:nth-child(1) {
+      background-color: #a50000;
+      animation-delay: 0s;
+    }
+
+    .bar:nth-child(2) {
+      background-color: #be0000;
+      animation-delay: 0.1s;
+    }
+
+    .bar:nth-child(3) {
+      background-color: rgb(225, 0, 0);
+      animation-delay: 0.2s;
+    }
+
+    .bar:nth-child(4) {
+      background-color: #ff0000;
+      animation-delay: 0.3s;
+    }
+
+    .bar:nth-child(5) {
+      background-color: #fb1515;
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        height: 8px;
+      }
+
+      50% {
+        height: 28px;
+      }
+    }
+
+    .thumbnail {
+      width: 100%;
+      margin-top: 25px;
+      margin-left: 5px;
+      border: solid 2px black;
+    }
+
+    .video-title {
+      display: flex;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 12px;
+      font-size: .8em;
+      font-weight: bold;
+      height: 20px;
+      margin-bottom: 10px;
+      width: 229px;
+      background-color: rgb(15, 71, 255);
+      box-shadow: 5px 5px 10px black;
+      border-radius: 5px;
+      padding-left: 3px;
+      padding-right: 2px;
+      padding-top: 2px;
+      color: white;
+      transition: 4s;
+      white-space: nowrap;
+    }
+
+    .video-title:hover {
+      display: flex;
+      font-family: "Orbitron", sans-serif;
+      margin-top: 12px;
+      font-size: .85em;
+      font-weight: bold;
+      height: 23px;
+      margin-bottom: 10px;
+      width: 228px;
+      background-color: rgb(15, 71, 255);
+      box-shadow: 5px 5px 10px whitesmoke;
+      border-radius: 5px;
+      padding-left: 5px;
+      padding-top: 2px;
+      color: white;
+      border: 3px solid white;
+      transition: 3s;
+      white-space: nowrap;
+    }
+
+    .video-info-grid {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      color: black;
+      font-weight: bold;
+      font-family: Arial;
+      background-color: rgb(59, 59, 59);
+      border: 1px solid white;
+      border-radius: 10px;
+      box-shadow: 1px 1px 1px black;
+
+    }
+
+    .profile-picture {
+      width: 36px;
+      border-radius: 50px;
+      margin-left: 5px;
+      margin-top: 8px;
+      box-shadow: 5px 5px 10px black;
+      transition: 4s;
+    }
+
+    .profile-picture:hover {
+      width: 36px;
+      border-radius: 50px;
+      margin-left: 5px;
+      margin-top: 8px;
+      border: 3px solid white;
+      box-shadow: 1px 5px 5px 10px white;
+      transition: 4s;
+    }
+
+    .thumbnail-row {
+      position: relative;
+      display: flex;
+      background-color: black;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 2px solid white;
+      box-shadow: 1px 1px 1px black;
+    }
+
+    .video-author,
+    .video-stats {
+      font-size: 14px;
+      color: rgb(87, 87, 87);
+      font-family: 'Roboto';
+      margin-top: 0px;
+    }
+
+    .video-author {
+      font-family: 'Orbitron', sans-serif;
+      color: whitesmoke;
+      font-size: .8em;
+      margin-bottom: 4px;
+      width: 205px;
+      font-weight: bold;
+      background-color: red;
+      box-shadow: 5px 5px 10px black;
+      border-radius: 5px;
+      padding-left: 3px;
+      padding-right: 2px;
+      transition: 4s;
+    }
+
+    .video-author:hover {
+      color: whitesmoke;
+      margin-bottom: 4px;
+      width: 205px;
+      font-weight: bold;
+      background-color: red;
+      box-shadow: 5px 5px 10px white;
+      border-radius: 5px;
+      font-family: "Orbitron", sans-serif;
+      padding-left: 5px;
+      border: 3px solid white;
+      transition: 3s;
+    }
+
+    .video-grid {
+      color: rgb(59, 59, 255);
+      border-color: black;
+      background-color: black;
+      font-family: Arial;
+      margin-top: -28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 15px;
+      row-gap: 4px;
+      padding-top: 5px;
+      text-decoration: none;
+      margin-right: 5px;
+      z-index: 5;
+
+    }
+
+    @media(max-width: 525px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        max-width: 312px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scrollbar-color: rgba(0, 0, 0, 0);
+        scrollbar-width: none;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        justify-content: center;
+        animation: slide 20s linear infinite;
+        font-size: 1em;
+        font-weight: bold;
+        font-family: 'Orbitron', sans-serif;
+        color: whitesmoke;
+        margin-top: 5px;
+        white-space: nowrap;
+        width: 300px;
+        padding-top: 10px;
+      }
+    }
+
+    @media(min-width: 1200px) {
+      .video-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    input {
+      padding: 3px;
+      width: 350px;
+      border: 1px solid grey;
+      font-size: 14px;
+      caret-color: black;
+      color: grey;
+      padding-left: 5px;
+    }
+
+    input:focus {
+      border: 1px solid grey;
+      color: grey;
+      font-size: 14px;
+      padding-left: 5px;
+    }
+
+    input::placeholder {
+      font-size: 14px;
+      color: grey;
+      padding-left: 5px;
+    }
+
+    .sidebar {
+      font-family: Arial;
+      font-size: 10px;
+      position: absolute;
+      left: -3px;
+      bottom: 1200px;
+      top: -7px;
+      max-width: 72px;
+      z-index: 1;
+      padding-top: 0px;
+      border-radius: 50px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      transition: 2s;
+      border: solid 1px black;
+    }
+
+    .sidebar-link {
+      background-color: black;
+      height: 74px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-decoration: none;
+      margin-top: 0px;
+      width: 72px;
+      border: solid 1px black;
+    }
+
+    .sidebar-link:hover {
+      color: white;
+      background-color: black;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .sidebar-link img {
+      height: 24px;
+      margin-bottom: 8px;
+      text-decoration: none;
+      max-width: 72px;
+    }
+
+    .sidebar-link div {
+      font-family: Arial;
+      font-size: 10;
+      text-decoration: none;
+      max-width: 72px;
+    }
+
+    .tabs {
+      text-decoration: none;
+    }
+
+    .utubeheader {
+      font-family: "Orbitron", sans-serif;
+      letter-spacing: normal;
+      cursor: pointer;
+      text-shadow: 1px 1px 1px white;
+      margin-right: 5px;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 65px;
+      position: fixed;
+      top: 0;
+      padding-top: 5px;
+      padding-bottom: 3px;
+      border-bottom: solid 2px black;
+      color: red;
+      background-color: black;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 0px;
+      margin-bottom: 5px;
+      z-index: 1;
+      transition: 3s;
+    }
+
+    .utubeheader:hover {
+      color: white;
+      transition: 2s;
+    }
+
+    .header {
+      height: 44px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      text-decoration: none;
+      margin-top: -45px;
+      font-family: "Orbitron", sans-serif;
+      font-weight: bold;
+      font-size: 13px;
+      background-color: black;
+      color: red;
+      text-shadow: 1px black;
+      margin-bottom: 30px;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      border-top: 2px solid white;
+    }
+
+    .left {
+      width: 100px;
+      padding-top: 17px;
+    }
+
+    .leftleft {
+      width: 150px;
+      padding-top: 17px;
+    }
+
+    .leftleftleft {
+      width: 150px;
+      padding-top: 17px;
+    }
+
+    .middle {
+      flex: 1;
+      max-width: 270px;
+      padding-top: 17px;
+      margin-left: 5px;
+
+    }
+
+    .rightrightright {
+      width: 150px;
+      padding-top: 17px;
+    }
+
+    .rightright {
+      width: 130px;
+      padding-top: 17px;
+    }
+
+    .right {
+      width: 150px;
+      padding-top: 17px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-color: rgba(0, 0, 0, 0);
+      scrollbar-width: none;
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateX(100%);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(-100%);
+        opacity: 1;
+      }
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      justify-content: center;
+      animation: slide 10s linear infinite;
+      font-size: 1em;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      color: whitesmoke;
+      margin-top: 5px;
+      white-space: nowrap;
+      padding-top: 10px;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>
+      <div class="utubeheader">Utubeplaylist
+        <div class="equalizer">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </h1>
+  </div>
+
+  <div class="header">
+    <div style="background-color: black;" class="left">
+      <a style="margin-top: 0px; margin-left: 15px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.nike.com/" target="_blank">Nike</a>
+    </div>
+
+    <div style="background-color: black;" class="leftleft"><a
+        style="margin-top: 0px; margin-left: 24px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.underarmour.ca/" target="_blank">Underarmour</a>
+    </div>
+
+    <div style="background-color: black;" class="leftleftleft"><a
+        style="margin-top: 0px; margin-right: 22px; margin-left: 29px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.sportchek.ca/" target="_blank">SportChek</a>
+    </div>
+
+    <div style="background-color: black;" class="middle">
+      <form action="https://www.google.com/search" target="_blank" method="get">
+        <input style="color: black; font-size: 13px; border: 1px solid black; border-radius: 10px;
+          margin-top: -7px; height: 15px; flex: 1; max-width: 210px; padding-bottom: 2px;
+          margin-bottom: 2px; padding-left: 6px; margin-left: 47px;" type="text" placeholder="Search..." name="q">
+      </form>
+    </div>
+
+    <div style="background-color: black;" class="rightrightright"><a
+        style="margin-top: 0px; margin-left: 55px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.amazon.ca/" target="_blank">Amazon</a></div>
+
+    <div style="background-color: black" class="rightright"><a
+        style="margin-top: 0px; margin-left: 10px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.rabbit.tech/" target="_blank">Rabbit</a></div>
+
+    <div style="background-color: black" class="right"><a
+        style="margin-top: 0px; margin-left: -10px; padding-right: 5px; margin-right: 10px; color: white; font-weight: bold; text-decoration: none;"
+        href="https://www.openai.com/" target="_blank">OpenAI</a>
+    </div>
+  </div>
+
+  <nav
+    style="vertical-align: middle; text-align: center; max-width: 72px; height: 1px; color: black; background-color: black; border: 3px solid black; text-decoration: none;"
+    class="sidebar">
+
+    <div title="YouTube" class="sidebar-link"><a href="https://www.youtube.com/" target="_blank"><button
+          style="border: 1px solid black; max-width: 72px; background-color: black; color: black;">
+          <img
+            style="height: 33px; display: flex; justify-content: center; align-items: center; margin-right: 1px; margin-left: 9px; padding-right: 1px; background-color: black;"
+            src="Youtube.png" loading="preload">
+          <div style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            YOUTUBE</div>
+        </button></a>
+    </div>
+
+    <div title="FIFA" class="sidebar-link"><a href="https://www.fifa.com/" target="_blank">
+        <button style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 2px; margin-right: 7px; background-color: black; border-radius: 50px;"
+            src="Fifa.png" loading="preload">
+          <div style="cursor: pointer; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
+            FIFA</div>
+        </button></a>
+    </div>
+
+    <div title="NBA" class="sidebar-link"><a href="https://www.nba.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 38px; display: flex; justify-content: center; align-items: center; margin-left: 6px; margin-right: 12px; background-color: white; border-color: black;"
+            src="logo-nba.png" loading="preload">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
+            NBA</div>
+        </button></a>
+    </div>
+
+    <div title="Ring Magazine" class="sidebar-link"><a href="https://www.ringmagazine.com" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="padding-left: 4px; height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 0px; margin-right: 10px; background-color: black; border-radius: 7px;"
+            src="Ringmag.png" loading="preload">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            RING</div>
+        </button></a>
+    </div>
+
+    <div title="NFL" class="sidebar-link"><a href="https://nfl.com/?lang=en" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 36px; display: flex; justify-content: center; align-items: center; margin-right: 6px; background-color: black; border-radius: 50px;"
+            src="NFLlogo.png" loading="preload">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            NFL</div>
+        </button></a>
+    </div>
+
+    <div title="UFC" class="sidebar-link"><a href="https://www.ufc.com/" target="_blank">
+        <button style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 32px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: black; border-radius: 50px;"
+            src="UFClogo.jpg" loading="preload">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
+            UFC</div>
+        </button></a>
+    </div>
+
+    <div title="NHL" class="sidebar-link"><a href="https://www.nhl.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: black; border-radius: 55%;"
+            src="NHL.jpg" loading="preload">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            NHL</div>
+        </button></a>
+    </div>
+
+    <div title="CNN" class="sidebar-link"><a href="https://www.cnn.com" target="_blank">
+        <button style="border: 1px solid black; background-color: black;">
+          <img
+            style="height: 33px; margin-top: 2px; margin-left: 0px; margin-right: 3px; display: flex; justify-content: center; align-items: center; background-color: black; border-radius: 95px; font-size: 13px; font-weight: bold;"
+            src="cnn.png" loading="preload">
+          <div style="margin-right: 3px; cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            CNN</div>
+        </button></a>
+    </div>
+
+    <div title="RT News" class="sidebar-link"><a href="https://www.rt.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 6px; margin-right: 9px; background-color: black; border-radius: 50px;"
+            src="RT.png" loading="preload">
+          <div style="cursor: pointer; margin-left: 2px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            RT</div>
+        </button></a>
+    </div>
+
+    <div title="Reuters News" class="sidebar-link"><a href="https://www.reuters.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 2px; background-color: black; border-radius: 50px;"
+            src="Reuters.png" loading="preload">
+          <div style="cursor: pointer; margin-right: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            REUTERS</div>
+        </button></a>
+    </div>
+
+    <div title="TMZ" class="sidebar-link"><a href="https://www.tmz.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 42px; display: flex; justify-content: center; align-items: center; margin-right: 6px; margin-left: 2px; background-color: black; border-radius: 50px;"
+            src="TMZlogo.jpg" loading="preload">
+          <div style="cursor: pointer; margin-left: 4px; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
+            TMZ</div>
+        </button></a>
+    </div>
+
+    <div title="DJI" class="sidebar-link"><a href="https://store.dji.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-right: 7px; background-color: black; border-radius: 50px;"
+            src="DJI.jpg" loading="preload">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            DJI</div>
+        </button></a>
+    </div>
+
+    <div title="Calvin Klein" class="sidebar-link"><a href="https://www.calvinklein.us/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 5px; margin-right: 2px; background-color: black; border-radius: 50px;"
+            src="CK.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            CALVIN</div>
+        </button></a>
+    </div>
+
+    <div title="Diesel" class="sidebar-link"><a href="https://ca.diesel.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 32px; display: flex; justify-content: center; align-items: center; margin-left: 5px; margin-right: 0px; background-color: black; border-radius: 50px;"
+            src="Diesel.webp" loading="lazy">
+          <div style="cursor: pointer; margin-right: 5px; margin-left: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            DIESEL</div>
+        </button></a>
+    </div>
+
+    <div title="Guess" class="sidebar-link"><a href="https://www.guess.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 26px; display: flex; justify-content: center; align-items: center; margin-left: 4px; margin-right: 2px; background-color: black; border-radius: 50px;"
+            src="Guess.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 5px; margin-left: 2px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            GUESS</div>
+        </button></a>
+    </div>
+
+    <div title="Toyota" class="sidebar-link"><a href="https://www.toyota.ca" target="_blank">
+        <button style="border: 1px solid black; background-color: black;">
+          <img
+            style="height: 30px; margin-top: 0px; margin-right: 8px; margin-left: 6px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 95px; font-size: 15; font-weight: bold; font-family: copperplate;"
+            src="TOYOTA.png" loading="lazy">
+          <div style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; margin-right: 2px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            TOYOTA</div>
+        </button></a>
+    </div>
+
+    <div title="Porsche" class="sidebar-link"><a href="https://www.porsche.com/" target="_blank"><button
+          style="max-width: 72px; background-color: black; border: 1px solid black;">
+          <img
+            style="height: 30px; font-size: 14px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 4px; background-color: black; border-radius: 50px;"
+            src="PORSCHE.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            PORSCHE</div>
+        </button></a>
+    </div>
+
+    <div title="BMW" class="sidebar-link"><a href="https://www.bmw.ca/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 4px; background-color: black; border-radius: 50px;"
+            src="BMW.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            BMW</div>
+        </button></a>
+    </div>
+
+    <div title="Tesla" class="sidebar-link"><a href="https://www.tesla.com/" target="_blank"><button
+          style="padding-top: 3px; background-color: black; border: 1px solid black;">
+          <img
+            style="font-size: 12px; padding-top: 9px; height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 5px; background-color: black; border-radius: 50px;"
+            src="TESLA.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 5px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            TESLA</div>
+        </button></a>
+    </div>
+
+    <div title="Ferrari" class="sidebar-link"><a href="https://www.ferrari.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-left: 10px; margin-right: 13px; background-color: black; border-radius: 50%;"
+            src="Ferrari.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            FERRARI</div>
+        </button></a>
+    </div>
+
+    <div title="Bitcoin" class="sidebar-link"><a href="https://coinmarketcap.com/" target="_blank"><button
+          style="max-width: 72px; background-color: black; border: 1px solid black; padding-bottom: 2px;">
+          <img
+            style="padding-top: 6px; height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 9px; margin-right: 11px; background-color: black; border-radius: 50px; font-size: 20px;"
+            src="bitcoin.png" loading="lazy">
+          <div style="cursor: pointer; margin-left: 1px; margin-right: 5px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            BITCOIN</div>
+        </button></a>
+    </div>
+
+    <div title="SpeedTest" class="sidebar-link"><a href="https://www.speedtest.net/" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 13px; background-color: black; border-radius: 50px;"
+            src="SpeedTest.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            SPEEDTEST</div>
+        </button></a>
+    </div>
+
+    <div title="Nvidia" class="sidebar-link"><a href="https://www.nvidia.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black;">
+          <img
+            style="height: 32px; display: flex; justify-content: center; align-items: center; margin-left: 4px; background-color: black; border-radius: 50px;"
+            src="NVIDIA.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 6px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            NVIDIA</div>
+        </button></a>
+    </div>
+
+    <div title="Walmart" class="sidebar-link"><a href="https://www.walmart.ca/" target="_blank"><button
+          style="padding-bottom: 5px; background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 9px; background-color: black; border-radius: 50px;"
+            src="Walmart.png">
+          <div style="padding-bottom: 2px; cursor: pointer; margin-right: 4px; margin-left: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            WALMART</div>
+        </button></a>
+    </div>
+
+    <div title="AliExpress" class="sidebar-link"><a href="https://www.aliexpress.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-left: 12px; background-color: black; border-radius: 50px;"
+            src="Aliexpress.png">
+          <div style="cursor: pointer; margin-left: 2px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            ALIEXPRESS</div>
+        </button></a>
+    </div>
+
+    <div title="Shimano" class="sidebar-link"><a href="https://bike.shimano.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 27px; display: flex; justify-content: center; align-items: center; margin-right: 9px; margin-left: 14px; background-color: black; border-radius: 50px;"
+            src="Shimano.webp" loading="lazy">
+          <div style="cursor: pointer; margin-left: 3px; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            SHIMANO</div>
+        </button></a>
+    </div>
+
+    <div title="Cervelo" class="sidebar-link"><a href="https://www.cervelo.com/en-CA/" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="margin-right: 0px; height: 29px; display: flex; justify-content: center; align-items: center; margin-left: 10px; background-color: black; border-radius: 50px;"
+            src="Cervelo.webp" loading="lazy">
+          <div style="cursor: pointer; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            CERVELO</div>
+        </button></a>
+    </div>
+
+    <div title="Apple" class="sidebar-link"><a href="https://www.apple.com/" target="_blank"><button
+          style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 29px; display: flex; justify-content: center; align-items: center; margin-right: 8px; margin-left: 5px; background-color: black; border-radius: 50px;"
+            src="Apple.png" loading="lazy">
+          <div style="cursor: pointer; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            APPLE</div>
+        </button></a>
+    </div>
+
+    <div title="Alien Gear Holsters" class="sidebar-link"><a href="https://www.aliengearholsters.com/"
+        target="_blank"><button style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="max-width: 72px; height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 2px; mrgin-right: 3px; background-color: black; border-radius: 50px;"
+            src="Alien.webp" loading="lazy">
+          <div style="cursor: pointer; max-width: 72px; margin-right: 4px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            ALIEN</div>
+        </button></a>
+    </div>
+
+    <div title="Glock" class="sidebar-link"><a href="https://us.glock.com/" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 35px; display: flex; justify-content: center; align-items: center; margin-left: 4px; background-color: black; border-radius: 50px;"
+            src="Glock.png" loading="lazy">
+          <div style="cursor: pointer; margin-left: 4px; margin-right: 7px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            GLOCK</div>
+        </button></a>
+    </div>
+
+    <div title="3M" class="sidebar-link"><a href="https://www.3mcanada.ca/" target="_blank"><button
+          style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 5px; background-color: black;"
+            src="MMM.png" loading="lazy">
+          <div style="cursor: pointer; margin-left: 5px; margin-right: 9px; display: flex; justify-content: center; align-items: center; color: white; font-size: 12px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
+            3M</div>
+        </button></a>
+    </div>
+
+    <div title="BestBuy" class="sidebar-link"><a href="https://www.bestbuy.ca" target="_blank">
+        <button style="width: 72px; border: 1px solid black; background-color: black;">
+          <img
+            style="height: 32px; cursor: pointer; margin-top: 0px; margin-left: 11px; margin-right: 9px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 95px; font-size: 12; font-weight: bold; font-family: copperplate;"
+            src="bestbuy.png">
+          <div style="margin-left: 1px; margin-right: 3px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            BESTBUY</div>
+        </button></a>
+    </div>
+
+    <div title="PlayStation" class="sidebar-link"><a href="https://www.playstation.com/" target="_blank"><button
+          style="width: 72px; height: 74px; background-color: black; border: 0px solid black;">
+          <img
+            style="height: 29px; cursor: pointer; margin-right: 11px; font-size: 17px; display: flex; justify-content: center; align-items: center; margin-left: 14px; background-color: black; border-radius: 50px;"
+            src="PlayStation.png" loading="lazy">
+          <div style="cursor: pointer; display: flex; justify-content: center; align-items: center; color: white; font-size: 9px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            PLAYSTATION</div>
+        </button></a>
+    </div>
+
+    <div title="Huggingface" class="sidebar-link"><a href="https://huggingface.co/" target="_blank">
+        <button style="width: 72px; border: 1px solid black; background-color: black;">
+          <img
+            style="cursor: pointer; margin-top: -2px; margin-left: 9px; margin-right: 13px; height: 32px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 50px;"
+            src="huggingface.svg">
+          <div style="margin-left: 1px; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            HUGGINGFACE</div>
+        </button></a>
+    </div>
+
+
+    <div title="DeepSeek" class="sidebar-link"><a href="https://www.deepseek.com" target="_blank">
+        <button style="width: 72px; border: 1px solid black; background-color: black;">
+          <img
+            style="cursor: pointer; margin-top: 0px; margin-left: 11px; margin-right: 8px; height: 35px; display: flex; justify-content: center; align-items: center; border: 1px solid black; background-color: black; border-radius: 50px;"
+            src="Deepseek.png">
+          <div style="margin-left: 1px; margin-right: 1px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            DEEPSEEK</div>
+        </button></a>
+    </div>
+
+    <div title="Science Apps" class="sidebar-link"><a href="indexdrop.html" target="_blank"><button
+          style="background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="padding-left: 0px; cursor: pointer; height: 34px; display: flex; justify-content: center; align-items: center; margin-left: 13px; margin-right: 0px; background-color: black; border-radius: 50%;"
+            src="ScienceApps.png">
+          <div style="margin-left: 4px; margin-right: 6px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            SCIENCEAPPS</div>
+        </button></a>
+    </div>
+
+    <div title="GAMES" class="sidebar-link"><a href="indexdropgames.html" target="_blank"><button
+          style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 30px; display: flex; justify-content: center; align-items: center; margin-right: 13px; margin-left: 11px; background-color: black; border-radius: 30px;"
+            src="PRS.png" loading="lazy">
+          <div style="cursor: pointer; margin-left: 4px; margin-right: 8px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            GAMES</div>
+        </button></a>
+    </div>
+
+    <div title="Photo Shop" class="sidebar-link"><a href="indexPhotoShop.html" target="_blank"><button
+          style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 31px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 10px; background-color: black; border-radius: 30px;"
+            src="Photo1.png" loading="lazy">
+          <div style="cursor: pointer; margin-left: 5px; margin-right: 10px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            PHOTOSHOP</div>
+        </button></a>
+    </div>
+
+    <div title="AutoPlay" class="sidebar-link"><a href="autoplay2.html" target="_blank"><button
+          style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 28px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 12px; background-color: black; border-radius: 30px;"
+            src="Autoplay.png" loading="lazy">
+          <div style="cursor: pointer; margin-left: 5px; margin-right: 11px; display: flex; justify-content: center; align-items: center; color: white; font-size: 10px; font-weight: bold; font-family: 
+            Orbitron sans-serif;">
+            AUTOPLAY</div>
+        </button></a>
+    </div>
+
+    <div title="Pluto" class="sidebar-link"><a href="https://pluto.tv/ca/watch/live-tv/" target="_blank"><button
+          style="margin-top: 0px; background-color: black; border: 1px solid black; max-width: 72px;">
+          <img
+            style="height: 34px; display: flex; justify-content: center; align-items: center; margin-right: 3px; margin-left: 3px; background-color: black; border-radius: 30px;"
+            src="Pluto.png" loading="lazy">
+          <div style="cursor: pointer; margin-left: 2px; margin-right: 9px; display: flex; justify-content: center; align-items: center; color: white; font-size: 11px; font-weight: bold; font-family:
+            Orbitron sans-serif;">
+            PLUTO</div>
+        </button></a>
+    </div>
+
+    <div style="margin-top: 11px;">
+      <a style="font-family: impact; font-weight: bold; font-size: 15px; background-color: black; color: white; padding: 3px;"
+        href="#">JUMP ☝️</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="video-grid">
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Lil Baby - Dead Fresh.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Lil Baby.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Lil Baby - Dead Fresh
+            </h2>
+            <h3 class="video-author">
+              Lil Baby
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="A$AP ROCKY - SWAT TEAM.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Asap Rocky.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              A$ap Rocky - Swat Team
+            </h2>
+            <h3 class="video-author">
+              A$ap Rocky
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Gunna - Pop It.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Gunna.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Gunna - Pop It
+            </h2>
+            <h3 class="video-author">
+              Gunna
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Fatt Smaxk - Smaxk Or Die.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Fatt S.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Fatt Smaxk - Smaxk or Die
+            </h2>
+            <h3 class="video-author">
+              Fatt Smaxk
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Drake - Janice STFU.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Drake.jpg">
+          </div>
+          <div class="video-info">
+            <h2 style="font-size: .79em;" class="video-title">
+              Drake - Janice
+            </h2>
+            <h3 class="video-author">
+              Drake
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="42 Dugg Thick One.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="42 Dugg.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              42 Dugg - Thick One
+            </h2>
+            <h3 class="video-author">
+              42 Dugg
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="BossMan Dlow - Motion Party.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="BossMan Dlow.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              BossMan Dlow - Motion Party
+            </h2>
+            <h3 class="video-author">
+              BossMan Dlow
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Mike WiLL Made-It ft. NBA Youngboy & Chief Keef - ROOMS.mp4" loading="lazy" controls width="280"
+            height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Mike Will.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Mike Will Make It - Rooms
+            </h2>
+            <h3 class="video-author">
+              Mike Will Make It
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="French Montana - Ever Since U Left Me.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="French.jpg">
+          </div>
+          <div class="video-info">
+            <h2 style="margin-top: 12px;" class="video-title">
+              French - Ever Since U Left Me
+            </h2>
+            <h3 style="margin-top: 12px;" class="video-author">
+              French Montana
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 300px; margin-top: -15px" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="CENTRAL CEE - WAGWAN.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Central Cee.jpg">
+          </div>
+          <div class="video-info">
+            <h2 style="font-size: .77em;" class="video-title">
+              Central Cee - Wagwan
+            </h2>
+            <h3 class="video-author">
+              Central Cee
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Future - Konnichiwa.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Future.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Future - Konnichiwa
+            </h2>
+            <h3 class="video-author">
+              Future
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -15px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="A$AP Rocky - Helicopter.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Asap Rocky.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              A$ap Rocky - Helicopter
+            </h2>
+            <h3 class="video-author">
+              A$ap Rocky
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main>
+    <section class="video-grid">
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Cardi B - AH HA.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Cardi B.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Cardi B - AH HA
+            </h2>
+            <h3 class="video-author">
+              Cardi B
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Loe Shimmy Don Toliver - 3am.mp4" loading="preload" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Loe Shimmy.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Loe Shimmy - 3am
+            </h2>
+            <h3 class="video-author">
+              Loe Shimmy
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Lil Uzi Vert - What You Saying.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Lil Uzi.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Lil Uzi - What You Sayin
+            </h2>
+            <h3 class="video-author">
+              Lil Uzi
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px; margin-bottom: 15px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Rick Ross - Minks In Miami.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Rick Ross.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Rick Ross - Minks in Miami
+            </h2>
+            <h3 class="video-author">
+              Rick Ross
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="T.I. - LET 'EM KNOW.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Ti.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              T.I - Let 'Em Know
+            </h2>
+            <h3 class="video-author">
+              T.I
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -20px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Lil Naay Myke Towers - Pending.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Lil Naay.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Lil Naay - Pending
+            </h2>
+            <h3 class="video-author">
+              Lil Naay
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main>
+    <section class="video-grid">
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Yandel - Scarface.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Yandel.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Yandel - Scarface
+            </h2>
+            <h3 class="video-author">
+              Yandel
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Shakira Burna Boy - Dai Dai.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Shakira.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Shakira - Dai Dai
+            </h2>
+            <h3 class="video-author">
+              Shakira, Burna Boy
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -5px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Ryan Castro - LA VILLA ft. Kapo & Gangsta.mp4" loading="lazy" controls width="280" height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Ryan Castro.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Ryan Castro - La Villa
+            </h2>
+            <h3 class="video-author">
+              Ryan Castro
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main>
+    <section class="video-grid">
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Romeo Santos - Dardos.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Romero Santos.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Romero Santos - Dardos
+            </h2>
+            <h3 style="margin-top: 13px;" class="video-author">
+              Romero Santos
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Bonita.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="J Balvin.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              J Balvin - Bonita
+            </h2>
+            <h3 class="video-author">
+              J Balvin
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: 10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Ozuna Beéle - Pikito.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Osuna.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Ozuna - Pikito
+            </h2>
+            <h3 class="video-author">
+              Ozuna
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 3px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="KAROL G - BbY WOW.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Karol G.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Karol G - BbY WoW
+            </h2>
+            <h3 class="video-author">
+              Karol G
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="AIRE.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Aire.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Aire - Lucho
+            </h2>
+            <h3 style="margin-top: 13px;" class="video-author">
+              Aire
+            </h3>
+            <p style="font-size: 19px; color:gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="MYKE TOWERS Primero.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Myke Towers.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              MYKE Towers - Primero
+            </h2>
+            <h3 class="video-author">
+              MYKE Towers
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="Hugel SOLTO Jamaican Bam Bam.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Hugel.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Hugel - Jamaican Bam Bam
+            </h2>
+            <h3 class="video-author">
+              Hugel, Solto
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733; &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 10px; margin-top: 10px; background-color: black;"
+            src="KLAAN - Café Con Ron.mp4" loading="lazy" controls width="280" height="155">
+          </video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Klaan.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Klaan - Cafe Con Ron
+            </h2>
+            <h3 class="video-author">
+              Klaan
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 15px; height: 310px; margin-top: -10px;" class="video-preview">
+        <div class="thumbnail-row">
+          <video
+            style="padding-top: 2px; border-radius: 5px; border: 2px solid black; margin-bottom: 12px; margin-top: 10px; background-color: black;"
+            src="LA GRACIOSA - Quevedo.mp4" loading="lazy" controls width="280" height="155"></video>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-picture" src="Quevedo.jpg">
+          </div>
+          <div class="video-info">
+            <h2 class="video-title">
+              Quevedo - La Graciosa
+            </h2>
+            <h3 class="video-author">
+              Quevedo
+            </h3>
+            <p style="font-size: 19px; color: gold;" class="video-stats">
+              &#9733;
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! AutoPlay !!! </span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span> stream now!!!"</span>
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! Click & Play !!!</span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span> stream now!!!</span>
+    <span style="border-radius: 20px; background-color: red;">🎧</span>
+    <span style="color: rgb(222, 3, 3); font-weight: bold;"> !!! AutoPlay !!! </span>
+    <span> Check it out </span>
+    <span style="font-weight: bold; color: white;"> ' Top Hits of
+      the Month ' </span>
+    <span>stream now</span>
+  </footer>
+  <script>
+    window.onload = runFileForToday;
+    function runFileForToday() {
+      const today = new Date().getDay(); // Get the current day of the week
+      if (today === 0) { // Sunday
+        return;
+      } else if (today === 1) { // Monday
+        window.location.href = ('index5.html');
+      } else if (today === 2) { // Tuesday
+        return;
+      } else if (today === 3) { // Wednesday
+        window.location.href = ('index6.html');
+      } else if (today === 4) { // Thursday
+        return;
+      } else if (today === 5) { // Friday
+        window.location.href = ('index5.html');
+      } else if (today === 6) { // Saturday
+        return;
+      }
+      return today;
+    } 
+  </script>
+</body>
+
+</html>
